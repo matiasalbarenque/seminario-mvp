@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Poppins, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+html {
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+body>div#root {
+  min-height: 100dvh;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+footer.tabs-component a.active .iconify,
+footer.tabs-component a.active .btn-text {
+  color: #1070ed;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 240 4.9% 83.9%
+  }
+}
+
+.monitor-risk-level-indicator {
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  background: linear-gradient(to bottom left, rgba(255, 255, 255, 0.7), transparent, rgba(255, 255, 255, 0.8));
+  text-shadow: 0 0 1px black, 0 0 3px black;
+}
+
+.home-monitor .wave1 {
+  z-index: 1;
+}
+
+.home-monitor .wave2 {
+  animation-name: wave2;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.home-monitor .wave3 {
+  animation-name: wave3;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.home-monitor .wave4 {
+  animation-name: wave4;
+  animation-iteration-count: infinite;
+  animation-duration: 14s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+@keyframes wave2 {
+  from {
+      transform: scale3d(1.4, 1.4, 1.4) translateX(-14vw);
+  }
+  to {
+      transform: scale3d(1.4, 1.4, 1.4) translateX(14vw);
+  }
+}
+@keyframes wave3 {
+  from {
+      transform: scale3d(1.4, 1.4, 1.4) translateX(14vw);
+  }
+  to {
+      transform: scale3d(1.4, 1.4, 1.4) translateX(-14vw);
+  }
+}
+@keyframes wave4 {
+  from {
+      transform: scale3d(-1.4, 1.4, 1.4) translateX(-14vw);
+  }
+  to {
+      transform: scale3d(-1.4, 1.4, 1.4) translateX(14vw);
+  }
+}
