@@ -64,7 +64,7 @@ export const HomePage = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white opacity-40 to-transparent to-40%" />
         <Waves />
         <div className="absolute w-full h-full top-0 left-0 flex justify-center items-center">
-          <div className="monitor-risk-level-indicator w-[18vw] h-[18vw] min-w-24 min-h-24 mb-10 flex justify-center items-center rounded-full">
+          <div className="monitor-risk-level-indicator w-[18vw] h-[18vw] min-w-24 min-h-24 mb-10 flex justify-center items-center rounded-full animate-in zoom-in-75 duration-700">
             <div className="text-[clamp(3.5rem,11vw,10rem)] text-white font-light uppercase">{riskLevel}</div>
           </div>
         </div>
@@ -76,8 +76,8 @@ export const HomePage = () => {
     <div className="min-h-dvh flex flex-col">
       <section className="flex-1 flex flex-col">
         <HomeMonitor />
-        <div className="flex justify-center h-[30vw] z-10">
-          <div className="absolute w-[75%] h-full px-3 py-2 -top-[10vw] rounded-lg bg-white shadow-lg">hi!</div>
+        <div className="flex justify-center h-[30vw] z-10 animate-in fade-in slide-in-from-bottom-6 duration-500">
+          <div className="absolute w-[75%] h-full px-3 py-2 -top-[11vw] rounded-lg bg-white shadow-lg">hi!</div>
         </div>
         <div className="flex-1 p-4 -mt-8">
           <h1 className="text-2xl font-semibold">HOME</h1>

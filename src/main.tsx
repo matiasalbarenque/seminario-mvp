@@ -1,9 +1,8 @@
-import { StrictMode, useEffect } from 'react';
+import { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
 import { useAccountStore } from '@/store/account';
-import { router } from './router.tsx';
+import { Router } from './router.tsx';
 import './index.css';
 
 const App = () => {
@@ -23,10 +22,10 @@ const App = () => {
   }, []);
 
   return (
-    <StrictMode>
-      <RouterProvider router={router} />
+    <>
+      <Router />
       <Toaster />
-    </StrictMode>
+    </>
   );
 };
 

@@ -125,25 +125,38 @@ footer.tabs-component a.active .btn-text {
 
 @keyframes wave2 {
   from {
-      transform: scale3d(1.4, 1.4, 1.4) translateX(-14vw);
+    transform: scale3d(1.4, 1.4, 1.4) translateX(-14vw);
   }
+
   to {
-      transform: scale3d(1.4, 1.4, 1.4) translateX(14vw);
+    transform: scale3d(1.4, 1.4, 1.4) translateX(14vw);
   }
 }
+
 @keyframes wave3 {
   from {
-      transform: scale3d(1.4, 1.4, 1.4) translateX(14vw);
+    transform: scale3d(1.4, 1.4, 1.4) translateX(14vw);
   }
+
   to {
-      transform: scale3d(1.4, 1.4, 1.4) translateX(-14vw);
+    transform: scale3d(1.4, 1.4, 1.4) translateX(-14vw);
   }
 }
+
 @keyframes wave4 {
   from {
-      transform: scale3d(-1.4, 1.4, 1.4) translateX(-14vw);
+    transform: scale3d(-1.4, 1.4, 1.4) translateX(-14vw);
   }
+
   to {
-      transform: scale3d(-1.4, 1.4, 1.4) translateX(14vw);
+    transform: scale3d(-1.4, 1.4, 1.4) translateX(14vw);
   }
+}
+
+header>.avatar-wrapper>button {
+  transition: .25s ease transform;
+}
+
+header>.avatar-wrapper>button[data-state="open"] {
+  transform: scale(.825);
 }
