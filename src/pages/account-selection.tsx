@@ -5,7 +5,7 @@ import { useAccountStore } from '@/store/account';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
-import { sortCompareStrings } from '@/assets/utils/utils';
+import { sortCompareStrings } from '@/assets/utils';
 import type { AccountSelectionForm } from '@/typings/pages/accounts-selection';
 import { RhfInput } from '@/components/ui/rhf/rhf-input';
 

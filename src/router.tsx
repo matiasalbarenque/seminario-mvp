@@ -8,6 +8,8 @@ import { AccountsPage } from './pages/accounts';
 import { AccountSelectionPage } from './pages/account-selection';
 import { AccountsDetailsPage } from './pages/accounts-details';
 import { NotificationsPage } from './pages/notifications';
+import { NotificationsDetailsPage } from './pages/notifications-details';
+import { TermsConditionsPage } from './pages/terms-conditions';
 
 export const Router = () => (
   <BrowserRouter>
@@ -21,6 +23,8 @@ export const Router = () => (
         <Route path="accounts-selection" element={<AccountSelectionPage />} />
         <Route path="accounts/:email/:index" element={<AccountsDetailsPage />} />
         <Route path="notifications" element={<NotificationsPage />} />
+        <Route path="notifications/:id" element={<NotificationsDetailsPage />} />
+        <Route path="terms-conditions" element={<TermsConditionsPage />} />
       </Route>
     </Routes>
   </BrowserRouter>

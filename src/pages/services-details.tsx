@@ -4,7 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useAppStore } from '@/store/app';
-import { services } from '@/assets/mocks/services';
+import { servicesMock } from '@/assets/mocks/services';
 import type {
   CustomAccordionProps,
   CustomSelectProps,
@@ -20,7 +20,7 @@ export const ServicesDetailsPage = () => {
   const [selectValue, setSelectValue] = useState('');
   const [serviceDetails, setServiceDetails] = useState<TermsConditionsRiskDetails[]>([]);
 
-  const service = services.find(a => a.name === params?.name);
+  const service = servicesMock.find(a => a.name === params?.name);
 
   const options = useMemo<RiskSelectOption[]>(() => {
     const opt: RiskSelectOption[] = [];

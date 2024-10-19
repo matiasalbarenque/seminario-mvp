@@ -114,7 +114,10 @@ export const AccountsDetailsPage = () => {
             </div>
             <div className="w-full mt-4 mb-5 border-b border-slate-300" />
           </div>
-          <div className="text-sm pointer-events-none" dangerouslySetInnerHTML={{ __html: breach.Description }} />
+          <div
+            className="text-sm tracking-wide leading-relaxed pointer-events-none"
+            dangerouslySetInnerHTML={{ __html: breach.Description }}
+          />
         </div>
       </div>
     </div>

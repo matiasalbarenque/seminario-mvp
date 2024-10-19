@@ -24,6 +24,7 @@ export default tseslint.config(
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/consistent-type-imports': 'warn',
       'react-hooks/exhaustive-deps': 'off',
+      'prefer-const': 'warn',
     },
   }
 );

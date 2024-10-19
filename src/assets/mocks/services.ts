@@ -1,6 +1,6 @@
 import type { Service } from '@/typings/mocks/services';
 
-export const services: Service[] = [
+export const servicesMock: Service[] = [
   {
     imgUrl: 'instagram.png',
     label: 'Instagram',

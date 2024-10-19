@@ -5,6 +5,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { TermsConditionsDialog } from '@/components/terms-conditions-dialog';
 import { useAccountStore } from '@/store/account';
 import type { BreachCardProps, CustomSelectProps } from '@/typings/pages/accounts';
 import { accountMock } from '@/assets/mocks/account';
@@ -160,6 +161,7 @@ export const AccountsPage = () => {
           </div>
         )}
       </div>
+      <TermsConditionsDialog />
     </div>
   );
 };

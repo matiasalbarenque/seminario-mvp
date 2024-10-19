@@ -7,7 +7,7 @@ export const GeneralLayout = () => {
   const appStore = useAppStore();
 
   return (
-    <div className="min-h-dvh flex flex-col">
+    <div className="h-dvh flex flex-col">
       <Header title={appStore.appConfig.pageTitle} />
       <main className="flex-1 p-4 grid">
         <Outlet />

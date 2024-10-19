@@ -9,16 +9,16 @@ import { Icon } from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { RhfSwitch } from '@/components/ui/rhf/rhf-switch';
-import { sortCompareStrings } from '@/assets/utils/utils';
+import { getRiskAvgLevel, getRiskByLevel, sortCompareStrings } from '@/assets/utils';
 import type { defaultValuesType } from '@/typings/pages/services-selection';
-import { services } from '@/assets/mocks/services';
+import { servicesMock } from '@/assets/mocks/services';
 
 export const ServicesSelectionPage = () => {
   const navigate = useNavigate();
   const appStore = useAppStore();
   const accountStore = useAccountStore();
   const { toast } = useToast();
-  const servicesOrderedMemo = useMemo(() => services.sort((a, b) => sortCompareStrings(a.name, b.name)), []);
+  const servicesOrderedMemo = useMemo(() => servicesMock.sort((a, b) => sortCompareStrings(a.name, b.name)), []);
   const [servicesOrdered, setServicesOrdered] = useState(servicesOrderedMemo);
 
   const defaultValues = useMemo(() => {
@@ -64,7 +64,21 @@ export const ServicesSelectionPage = () => {
         servicesSelected.push(key);
       }
     }
+
+    if (servicesSelected.length === 0) {
+      toast({
+        title: 'Error on saving',
+        description: 'You must select at least one service!',
+        duration: 3000,
+        variant: 'error',
+      });
+      return;
+    }
+
+    const riskAvgLevel = getRiskAvgLevel(servicesMock, servicesSelected);
+    accountStore.setRiskLevel(getRiskByLevel(riskAvgLevel));
     accountStore.setServices(servicesSelected);
+
     toast({
       title: 'Changes saved!',
       description: 'All changes have been saved successfully!',

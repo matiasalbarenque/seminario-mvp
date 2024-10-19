@@ -22,11 +22,11 @@ export default {
           foreground: 'hsl(var(--primary-foreground))',
         },
         level: {
-          a: '#0c9e13',
-          b: '#8bd31d',
-          c: '#facc15',
-          d: '#FE7E27',
-          e: '#EE1A26',
+          a: 'hsl(var(--level-a))',
+          b: 'hsl(var(--level-b))',
+          c: 'hsl(var(--level-c))',
+          d: 'hsl(var(--level-d))',
+          e: 'hsl(var(--level-e))',
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -74,8 +74,8 @@ export default {
         xxs: '0.66667rem',
       },
       fontFamily: {
-        'squada-one': ['Squada One'],
         'open-sans': ['Open Sans'],
+        'squada-one': ['Squada One'],
       },
       keyframes: {
         ping3s: {
