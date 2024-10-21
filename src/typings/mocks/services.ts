@@ -19,4 +19,5 @@ type TermsConditionsRisks = {
 export type TermsConditionsRiskDetails = {
   title: string;
   description: string;
+  source: string;
 };
