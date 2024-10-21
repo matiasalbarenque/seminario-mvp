@@ -32,15 +32,15 @@ export const useNotificationStore = create<NotificationState>()((set, get) => ({
     set({ notifications: [...get().notifications, noti] });
   },
   markNotificationAsRead: (noti: MyNotification) => {
-    const myOtherNoti = get().notifications.filter(a => a.id !== noti.id);
-    set({
-      notifications: [
-        ...myOtherNoti,
-        {
-          ...noti,
+    const notiTemp = get().notifications.map(a => {
+      if (a.id === noti.id) {
+        return {
+          ...a,
           read: true,
-        },
-      ],
+        };
+      }
+      return a;
     });
+    set({ notifications: notiTemp });
   },
 }));

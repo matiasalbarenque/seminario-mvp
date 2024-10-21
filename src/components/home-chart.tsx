@@ -70,10 +70,10 @@ export const RiskServicesChart = () => {
 
   return (
     <div className="p-3 flex flex-col gap-5">
-      <Card>
-        <CardHeader className="pb-4">
+      <Card className="shadow-none">
+        <CardHeader className="py-4">
           <CardTitle>My Services</CardTitle>
-          <CardDescription>Risk Level by Service</CardDescription>
+          <CardDescription>Risk level by service selected</CardDescription>
         </CardHeader>
         <CardContent>
           <ChartContainer config={chartConfig}>
@@ -92,7 +92,12 @@ export const RiskServicesChart = () => {
                 tickLine={false}
                 tickMargin={10}
               />
-              <Bar dataKey="count" radius={4} activeBar={({ ...a }) => <Rectangle {...a} stroke={a.payload.fill} />}>
+              <Bar
+                dataKey="count"
+                radius={4}
+                barSize={42}
+                activeBar={({ ...a }) => <Rectangle {...a} stroke={a.payload.fill} />}
+              >
                 <LabelList position="top" offset={12} className="fill-foreground" fontSize={12} />
               </Bar>
             </BarChart>

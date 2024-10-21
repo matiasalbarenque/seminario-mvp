@@ -4,7 +4,6 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { LevelIndicator } from '@/components/level-indicator';
-import { TermsConditionsDialog } from '@/components/terms-conditions-dialog';
 import { useAppStore } from '@/store/app';
 import { useAccountStore } from '@/store/account';
 import { servicesMock } from '@/assets/mocks/services';
@@ -72,7 +71,6 @@ export const ServicesPage = () => {
           <ServicesList services={myServices} />
         </div>
       </div>
-      <TermsConditionsDialog />
     </div>
   );
 };

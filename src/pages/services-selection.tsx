@@ -65,15 +65,15 @@ export const ServicesSelectionPage = () => {
       }
     }
 
-    if (servicesSelected.length === 0) {
-      toast({
-        title: 'Error on saving',
-        description: 'You must select at least one service!',
-        duration: 3000,
-        variant: 'error',
-      });
-      return;
-    }
+    // if (servicesSelected.length === 0) {
+    //   toast({
+    //     title: 'Error on saving',
+    //     description: 'You must select at least one service!',
+    //     duration: 3000,
+    //     variant: 'error',
+    //   });
+    //   return;
+    // }
 
     const riskAvgLevel = getRiskAvgLevel(servicesMock, servicesSelected);
     accountStore.setRiskLevel(getRiskByLevel(riskAvgLevel));

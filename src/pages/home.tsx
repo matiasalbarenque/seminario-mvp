@@ -3,6 +3,7 @@ import { RiskServicesChart } from '@/components/home-chart';
 import { HomeMonitor } from '@/components/home-monitor';
 import { NotificationAlert } from '@/components/home-notification';
 import { HomeRiskMessage } from '@/components/home-risk-message';
+import { HomeWelcomeCard } from '@/components/home-welcome-card';
 import { SplashScreen } from '@/components/splashscreen';
 
 export const HomePage = () => {
@@ -13,6 +14,7 @@ export const HomePage = () => {
           <HomeMonitor />
           <HomeRiskMessage />
           <RiskServicesChart />
+          <HomeWelcomeCard />
         </section>
         <Footer />
       </div>

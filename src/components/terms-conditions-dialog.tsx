@@ -28,7 +28,7 @@ export const TermsConditionsDialog = () => {
         <DialogHeader>
           <DialogTitle>Terms and Conditions</DialogTitle>
           <DialogDescription>
-            To use the Services and Accounts sections you need to first accept our{' '}
+            To access to Accounts sections you need to first accept our{' '}
             <Link to="/terms-conditions" className="mt-1 text-blue-500">
               Terms and Conditions.
             </Link>
