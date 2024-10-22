@@ -35,7 +35,7 @@ export const HomeRiskMessage = () => {
       };
     }
     return {
-      msg: 'Select the services that you use to know the level of risk you may be facing.',
+      msg: 'Select which ones you use for an in-depth analysis.',
       title: 'To start go to "Services"',
     };
   };

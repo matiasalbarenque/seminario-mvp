@@ -64,7 +64,7 @@ export const ServicesDetailsPage = () => {
 
   useEffect(() => {
     appStore.setAppConfig({
-      pageTitle: `Detalles de ${service?.label}`,
+      pageTitle: `Details of ${service?.label}`,
     });
     if (options.length > 0) {
       selectHandler(options[0].value);
