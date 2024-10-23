@@ -370,6 +370,175 @@ export const servicesMock: Service[] = [
     }
   },
   {
+    name: "disney+",
+    imgUrl: "disney+.png",
+    label: "Disney+",
+    riskLevel: "e",
+    termsConditionsRisks: {
+      e: [
+        {
+          "title": "They store data on you even if you did not interact with the service",
+          "description": "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
+          "source": "https://edit.tosdr.org/points/18003"
+        },
+        {
+          "title": "Private messages can be read",
+          "description": "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          "source": "https://edit.tosdr.org/points/17997"
+        },
+        {
+          "title": "This service still tracks you even if you opted out from tracking",
+          "description": "Users can’t fully opt out of tracking technologies used for non-essential purposes such as advertising, marketing or analytics. The user may be asked for consent for installing some tracking technologies on the device, and even if all are rejected the service will still track its visitors and ignore the choice. This case doesn’t apply to functional cookies that are necessary to provide the services.",
+          "source": "https://edit.tosdr.org/points/18015"
+        }
+      ],
+      c: [
+        {
+          "title": "This service may collect, use, and share location data",
+          "description": "Location-based information is collected and may be used and/or shared with third parties for purposes not directly related to the services provided (i.e. the Service doesn't rely on the use or share of location data to function properly).",
+          "source": "https://edit.tosdr.org/points/17999"
+        },
+        {
+          "title": "Third-party cookies are used for advertising",
+          "description": "The service's website sets third-party cookies (cookies that do not belong to their domain) for purposes not including statistics and analytics.",
+          "source": "https://edit.tosdr.org/points/18018"
+        },
+        {
+          "title": "Many different types of personal data are collected",
+          "description": "The service collects different kinds of personal data, such as name, demographic information, postal address, biometric data, device information, IDs, contacts, call logs.",
+          "source": "https://edit.tosdr.org/points/17996"
+        },
+        {
+          "title": "Some personal data may be kept for business interests or legal obligations",
+          "description": "After the end of the data retention period and/or if you request the deletion of your data, they may still keep it for business interests (fraud detection, transactions...) or legal obligations (tax, legal reporting...).",
+          "source": "https://edit.tosdr.org/points/18012"
+        },
+        {
+          "title": "This service shares your personal data with third parties that are not essential to its operation",
+          "description": "Your personal data is or may be given to third parties non-essential to the service’s operation. This could be a business partner that receives your data to provide targeted advertisements.",
+          "source": "https://edit.tosdr.org/points/18006"
+        },
+        {
+          "title": "Your account can be deleted or permanently suspended without prior notice and without a reason",
+          "description": "At any time, your account can be terminated without explanation and without warning by the service.",
+          "source": "https://edit.tosdr.org/points/17992"
+        },
+        {
+          "title": "You are being tracked via social media cookies/pixels",
+          "description": "These types of cookies/pixels send information to social media sites when you interact with the service.",
+          "source": "https://edit.tosdr.org/points/18022"
+        },
+        {
+          "title": "Information is gathered about you through third parties",
+          "description": "This Service may employ, either identifiable or non-identifiable, data collection from third party sources about you.",
+          "source": "https://edit.tosdr.org/points/17998"
+        },
+        {
+          "title": "You are tracked via web beacons, tracking pixels, browser fingerprinting, and/or device fingerprinting",
+          "description": "Tracking technologies (such as web beacons, tracking pixels...) are employed on users and/or the service assigns a unique ID to a browser or device to track its behaviour.",
+          "source": "https://edit.tosdr.org/points/18000"
+        },
+        {
+          "title": "Your personal data may be used for marketing purposes",
+          "description": "The service may use your personal data for marketing, such as sending you personalised offerings.",
+          "source": "https://edit.tosdr.org/points/18004"
+        },
+        {
+          "title": "Your profile is combined across various products",
+          "description": "When using multiple services from one same company, they can combine these (unrelated) information sources about you to build up a single richer user profile about you.",
+          "source": "https://edit.tosdr.org/points/18019"
+        },
+        {
+          "title": "Your personal data may be sold or otherwise transferred as part of a bankruptcy proceeding or other type of financial transaction",
+          "description": "If the service gets acquired or is involved in a merger, bankruptcy, reorganisation or sale, your personal data may be transferred or sold.",
+          "source": "https://edit.tosdr.org/points/18007"
+        },
+        {
+          "title": "Your personal data is used to employ targeted third-party advertising",
+          "description": "Your Personal Information is traded and shared with advertising companies to target ads on you, either on the website you were visiting or in third party websites.",
+          "source": "https://edit.tosdr.org/points/18005"
+        },
+        {
+          "title": "This service gives your personal data to third parties involved in its operation",
+          "description": "Your personal data is or may be given to third parties essential to the service’s operation.",
+          "source": "https://edit.tosdr.org/points/18008"
+        },
+        {
+          "title": "This service assumes no liability for unauthorized access to your personal information",
+          "description": "This service assumes no liability for unauthorized access to your personal information.",
+          "source": "https://edit.tosdr.org/points/17987"
+        },
+        {
+          "title": "Your biometric data is collected",
+          "description": "This service can collect or use your biometric data. This includes but is not limited to facial recognition, fingerprints, and iris scans.",
+          "source": "https://edit.tosdr.org/points/18001"
+        },
+        {
+          "title": "Your personal data is used for advertising",
+          "description": "Your interaction with the service and data you have shared with them may be gathered to create an advertising ID or profile to target ads on you.",
+          "source": "https://edit.tosdr.org/points/18020"
+        },
+        {
+          "title": "Your data may be processed and stored anywhere in the world",
+          "description": "Your data is stored all over the world, including in countries where data protection rules may differ from the ones of the service's jurisdiction.",
+          "source": "https://edit.tosdr.org/points/18013"
+        },
+        {
+          "title": "Third-party cookies are used for statistics",
+          "description": "For instance, Google Analytics, rather than self-hosted (first-party) statistics software.",
+          "source": "https://edit.tosdr.org/points/18017"
+        },
+        {
+          "title": "Tracking pixels are used in service-to-user communication",
+          "description": "The service tracks the user count or some actions of the user; this is usually used for statistics.",
+          "source": "https://edit.tosdr.org/points/18021"
+        }
+      ],
+      a: [
+        {
+          "title": "You can request access, correction and/or deletion of your data",
+          "description": "Users have the right to access personal data held by the Service, correct it and/or permanently delete it. This usually applies to Services GDPR compliant.",
+          "source": "https://edit.tosdr.org/points/18009"
+        },
+        {
+          "title": "Information is provided about how they collect personal data",
+          "description": "The service details situations in which they collect personal information or means by which they do.",
+          "source": "https://edit.tosdr.org/points/18002"
+        },
+        {
+          "title": "The service reviews its privacy policy on a regular basis",
+          "description": "Users know the date the privacy policy was last updated and can thus infer the next time it will be reviewed.",
+          "source": "https://edit.tosdr.org/points/18014"
+        },
+        {
+          "title": "Information is provided about how your personal data is used",
+          "description": "The Privacy Policy explains the purposes for which data is collected and the way it is processed, used and shared.",
+          "source": "https://edit.tosdr.org/points/18024"
+        },
+        {
+          "title": "A complaint mechanism is provided for the handling of personal data",
+          "description": "The service provides users with contact information for an internal or external structure to lodge complaints.",
+          "source": "https://edit.tosdr.org/points/18025"
+        },
+        {
+          "title": "Information is provided about what kind of information they collect",
+          "description": "The Privacy Policy describes in detail the data collected through the website and through the services provided.",
+          "source": "https://edit.tosdr.org/points/18023"
+        },
+        {
+          "title": "You will be notified about website maintenance",
+          "description": "Users will be notified before their experience is impacted due to website maintenance.",
+          "source": "https://edit.tosdr.org/points/17991"
+        },
+        {
+          "title": "You can opt out of targeted advertising",
+          "description": "The service employs your data to target ads to you, but you can opt-out of this interest-based advertising.",
+          "source": "https://edit.tosdr.org/points/18011"
+        }
+      ],
+    },
+  },
+  {
     "name": "whatsapp",
     "imgUrl": "whatsapp.png",
     "label": "Whatsapp",
