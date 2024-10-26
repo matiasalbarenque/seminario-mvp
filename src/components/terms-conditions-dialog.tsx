@@ -24,18 +24,19 @@ export const TermsConditionsDialog = () => {
 
   return (
     <Dialog open={!accountStore.termsAccepted} onOpenChange={declineTermsHandler}>
-      <DialogContent>
+      <DialogContent hideClose>
         <DialogHeader>
-          <DialogTitle>Terms and Conditions</DialogTitle>
-          <DialogDescription>
-            To access to Accounts sections you need to first accept our{' '}
+          <DialogTitle className="mb-1.5">Términos y Condiciones</DialogTitle>
+          <DialogDescription className="text-gray-700">
+            Para acceder a Cuentas es necesario que leas y aceptes nuestros
+            <br />
             <Link to="/terms-conditions" className="mt-1 text-blue-500">
-              Terms and Conditions.
+              Términos y Condiciones
             </Link>
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button onClick={acceptTermsHandler}>Accept and continue</Button>
+          <Button onClick={acceptTermsHandler}>Aceptar y continuar</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

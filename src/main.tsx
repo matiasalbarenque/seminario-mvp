@@ -21,10 +21,10 @@ const App = () => {
   const loadStorageData = () => {
     // Load services
     const lsServices = localStorage.getItem('account-services');
-    const accountServices = lsServices ? JSON.parse(lsServices) : [];
-    const riskAvgLevel = getRiskAvgLevel(servicesMock, accountServices);
+    const myServices = lsServices ? JSON.parse(lsServices) : [];
+    const riskAvgLevel = getRiskAvgLevel(servicesMock, myServices);
     accountStore.setRiskLevel(getRiskByLevel(riskAvgLevel));
-    accountStore.setServices(accountServices, false);
+    accountStore.setServices(myServices, false);
 
     // Load account emails
     const lsAccounts = localStorage.getItem('account-emails');

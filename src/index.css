@@ -132,7 +132,6 @@ footer.tabs-component a.active .btn-text {
   from {
     transform: rotate(-90deg) scale(0)
   }
-
   to {
     transform: rotate(10deg) scale(1)
   }
@@ -142,7 +141,6 @@ footer.tabs-component a.active .btn-text {
   from {
     transform: scaleY(3) translateY(0)
   }
-
   to {
     transform: scaleY(3) translateY(-5px)
   }
@@ -152,7 +150,6 @@ footer.tabs-component a.active .btn-text {
   from {
     transform: translateY(8px)
   }
-
   to {
     transform: translateY(-7px)
   }
@@ -237,6 +234,25 @@ footer.tabs-component a.active .btn-text {
 
   to {
     transform: scale3d(-1.4, 1.4, 1.4) translateX(14vw);
+  }
+}
+
+.home-monitor-pulse {
+  animation-name: homeMonitorPulse;
+  animation-iteration-count: infinite;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-out;
+  animation-direction: normal;
+}
+
+@keyframes homeMonitorPulse {
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(33);
   }
 }
 

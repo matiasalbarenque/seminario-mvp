@@ -36,9 +36,12 @@ export const ServicesSelectionPage = () => {
 
   useEffect(() => {
     appStore.setAppConfig({
-      pageTitle: 'Select your services',
+      pageTitle: 'Seleccionar servicios',
       hideFooter: true,
     });
+  }, []);
+
+  useEffect(() => {
     const servicesSelected: defaultValuesType = {};
     servicesOrdered.forEach(item => {
       servicesSelected[item?.name] = accountStore.services.some(a => a === item?.name);
@@ -80,9 +83,9 @@ export const ServicesSelectionPage = () => {
     accountStore.setServices(servicesSelected);
 
     toast({
-      title: 'Changes saved!',
-      description: 'All changes have been saved successfully!',
-      duration: 1500,
+      title: 'Cambios guardados',
+      description: '¡Los servicios seleccionados se han guardado satisfactoriamente!',
+      duration: 2000,
       variant: 'success',
     });
     navigate(-1);
@@ -92,8 +95,8 @@ export const ServicesSelectionPage = () => {
     <div className="grid grid-rows-[min-content,auto,min-content] gap-4">
       <Input
         id="service-input"
-        label="Search service"
-        placeholder="Service..."
+        label="Buscar servicio"
+        placeholder="Servicio..."
         onChange={searchInputHandler}
         className="h-11"
       />
@@ -119,8 +122,7 @@ export const ServicesSelectionPage = () => {
         </form>
       </div>
       <Button type="submit" form="form" variant="default" className="w-full h-11 gap-2">
-        <Icon icon="lucide:save" size={18} />
-        Save Selection
+        Guardar
       </Button>
     </div>
   );

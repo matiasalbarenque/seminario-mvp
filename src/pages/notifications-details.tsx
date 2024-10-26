@@ -14,7 +14,7 @@ export const NotificationsDetailsPage = () => {
 
   useEffect(() => {
     appStore.setAppConfig({
-      pageTitle: 'Notifications details',
+      pageTitle: 'Detalle',
       hideFooter: true,
     });
     const noti = notificationStore.notifications.find(a => a.id === params?.id);

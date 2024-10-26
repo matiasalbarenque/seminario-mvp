@@ -25,7 +25,7 @@ export const AccountSelectionPage = () => {
 
   useEffect(() => {
     appStore.setAppConfig({
-      pageTitle: 'Manage your accounts',
+      pageTitle: 'Administrar tus cuentas',
       hideFooter: true,
     });
   }, []);
@@ -41,7 +41,7 @@ export const AccountSelectionPage = () => {
       resetField('email', { defaultValue: '', keepDirty: true });
     } else {
       toast({
-        title: 'Email already exist in the list!',
+        title: '¡El email ya existe en tu cuenta!',
         duration: 1500,
         variant: 'error',
       });
@@ -67,7 +67,7 @@ export const AccountSelectionPage = () => {
           />
           <Button type="submit" className="h-11 gap-2">
             <Icon icon="lucide:plus" size={20} />
-            Add
+            Agregar
           </Button>
         </div>
       </form>
