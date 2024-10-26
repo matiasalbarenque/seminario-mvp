@@ -1,5 +1,6 @@
 import { useAccountStore } from '@/store/account';
 import { getColorByRiskLevel } from '@/assets/utils';
+import { HeaderAvatar } from './header-avatar';
 
 const Waves = () => (
   <>
@@ -32,19 +33,25 @@ const Waves = () => (
 
 export const HomeMonitor = () => {
   const accountStore = useAccountStore();
-  const baseClass = 'home-monitor min-h-48 h-[45vw] overflow-hidden transition-colors duration-1000';
   const bgColor = getColorByRiskLevel(accountStore.riskLevel);
   return (
-    <div className={`${baseClass} bg-gray-400 ${bgColor}`}>
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white opacity-40 to-transparent to-40%" />
-      <Waves />
-      <div className="absolute w-full h-full top-0 left-0 flex justify-center items-center">
-        <div className="monitor-risk-level-indicator w-[18vw] h-[18vw] min-w-24 min-h-24 mb-10 flex justify-center items-center rounded-full animate-in zoom-in-75 duration-700">
-          <div className="text-[clamp(3.5rem,11vw,10rem)] text-white font-light uppercase select-none">
-            {accountStore.riskLevel}
+    <>
+      <div
+        className={`home-monitor min-h-48 h-[45vw] overflow-hidden transition-colors duration-1000 bg-gray-400 ${bgColor}`}
+      >
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white opacity-40 to-transparent to-40%" />
+        <Waves />
+        <div className="absolute w-full h-full top-0 left-0 flex justify-center items-center">
+          <div className="monitor-risk-level-indicator w-[18vw] h-[18vw] min-w-24 min-h-24 mb-10 flex justify-center items-center rounded-full animate-in zoom-in-75 duration-700">
+            <div className="text-[clamp(3.5rem,11vw,10rem)] text-white font-light uppercase select-none">
+              {accountStore.riskLevel}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div className="absolute top-4 right-4">
+        <HeaderAvatar />
+      </div>
+    </>
   );
 };

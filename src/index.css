@@ -87,6 +87,77 @@ footer.tabs-component a.active .btn-text {
   }
 }
 
+.splashscreen {
+  animation-name: splashScreen;
+  animation-delay: 1.75s;
+  animation-duration: .75s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes splashScreen {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0
+  }
+}
+
+.antidoto-logo .drop,
+.antidoto-logo .plunger,
+.antidoto-logo .plunger-flange {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.antidoto-logo .drop {
+  animation-name: needleDrop;
+  transform-origin: 45% 15%;
+}
+
+.antidoto-logo .plunger {
+  animation-name: needlePlunger;
+  transform-origin: 45% 70%;
+}
+
+.antidoto-logo .plunger-flange {
+  animation-name: needlePlungerFlange;
+  transform-origin: 45% 70%;
+}
+
+@keyframes needleDrop {
+  from {
+    transform: rotate(-90deg) scale(0)
+  }
+
+  to {
+    transform: rotate(10deg) scale(1)
+  }
+}
+
+@keyframes needlePlunger {
+  from {
+    transform: scaleY(3) translateY(0)
+  }
+
+  to {
+    transform: scaleY(3) translateY(-5px)
+  }
+}
+
+@keyframes needlePlungerFlange {
+  from {
+    transform: translateY(8px)
+  }
+
+  to {
+    transform: translateY(-7px)
+  }
+}
+
 .monitor-risk-level-indicator {
   border-top: 1px solid white;
   border-right: 1px solid white;
@@ -180,12 +251,15 @@ header>.avatar-wrapper>button[data-state="open"] {
 footer a:not(.active) svg.iconify:not(.active) {
   display: block;
 }
+
 footer a:not(.active) svg.iconify.active {
   display: none;
 }
+
 footer a.active svg.iconify:not(.active) {
   display: none;
 }
+
 footer a.active svg.iconify.active {
   display: block;
 }

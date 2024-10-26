@@ -75,7 +75,7 @@ export default {
       },
       fontFamily: {
         'open-sans': ['Open Sans'],
-        'squada-one': ['Squada One'],
+        'dm-sans': ['DM Sans'],
       },
       keyframes: {
         ping3s: {
