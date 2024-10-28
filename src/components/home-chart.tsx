@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, LabelList, Rectangle, XAxis } from 'recharts';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartContainer } from '@/components/ui/chart';
-import { Icon } from '@/components/ui/icon';
 import { useAccountStore } from '@/store/account';
 import { sortCompareStrings } from '@/assets/utils';
 import type { ChartConfig } from '@/components/ui/chart';
@@ -42,25 +40,25 @@ export const RiskServicesChart = () => {
   }, [servicesSelectedRiskLevelMemo]);
 
   const chartConfig: ChartConfig = {
-    a: {
-      label: 'A',
-      color: 'hsl(var(--level-a))',
-    },
-    b: {
-      label: 'B',
-      color: 'hsl(var(--level-b))',
-    },
-    c: {
-      label: 'C',
-      color: 'hsl(var(--level-c))',
+    e: {
+      label: 'Altísimo',
+      color: 'hsl(var(--level-e))',
     },
     d: {
-      label: 'D',
+      label: 'Alto',
       color: 'hsl(var(--level-d))',
     },
-    e: {
-      label: 'E',
-      color: 'hsl(var(--level-e))',
+    c: {
+      label: 'Medio',
+      color: 'hsl(var(--level-c))',
+    },
+    b: {
+      label: 'Bajo',
+      color: 'hsl(var(--level-b))',
+    },
+    a: {
+      label: 'Inexistente',
+      color: 'hsl(var(--level-a))',
     },
   };
 
@@ -72,8 +70,8 @@ export const RiskServicesChart = () => {
     <div className="p-3 flex flex-col gap-5">
       <Card className="shadow-none">
         <CardHeader className="py-4">
-          <CardTitle>My Services</CardTitle>
-          <CardDescription>Risk level by service selected</CardDescription>
+          <CardTitle>Mis servicios</CardTitle>
+          <CardDescription>Nivel de riesgo por servicio</CardDescription>
         </CardHeader>
         <CardContent>
           <ChartContainer config={chartConfig}>
@@ -104,14 +102,6 @@ export const RiskServicesChart = () => {
           </ChartContainer>
         </CardContent>
       </Card>
-      <Alert>
-        <Icon icon="solar:chat-dots-outline" size={20} />
-        <AlertTitle>About the risk letter shown above</AlertTitle>
-        <AlertDescription>
-          The letter you see at the top is calculated taking into account the average risk of all your selected
-          applications
-        </AlertDescription>
-      </Alert>
     </div>
   );
 };

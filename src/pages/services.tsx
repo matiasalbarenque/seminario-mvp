@@ -17,7 +17,7 @@ export const ServicesPage = () => {
 
   useEffect(() => {
     appStore.setAppConfig({
-      pageTitle: 'Services',
+      pageTitle: 'Servicios',
     });
   }, []);
 
@@ -58,12 +58,9 @@ export const ServicesPage = () => {
 
   return (
     <div className="grid grid-rows-[min-content,auto] gap-4">
-      <div className="flex justify-end">
-        <Button asChild variant="outline">
-          <Link to="/services-selection" className="gap-2">
-            Select Services
-            <Icon icon="radix-icons:switch" size={18} />
-          </Link>
+      <div className="flex">
+        <Button asChild className="rounded-full min-h-10 tracking-wide">
+          <Link to="/services-selection">Seleccionar servicios</Link>
         </Button>
       </div>
       <div className="overflow-auto">

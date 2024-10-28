@@ -87,6 +87,74 @@ footer.tabs-component a.active .btn-text {
   }
 }
 
+.splashscreen {
+  animation-name: splashScreen;
+  animation-delay: 1.75s;
+  animation-duration: .75s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes splashScreen {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0
+  }
+}
+
+.antidoto-logo .drop,
+.antidoto-logo .plunger,
+.antidoto-logo .plunger-flange {
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.antidoto-logo .drop {
+  animation-name: needleDrop;
+  transform-origin: 45% 15%;
+}
+
+.antidoto-logo .plunger {
+  animation-name: needlePlunger;
+  transform-origin: 45% 70%;
+}
+
+.antidoto-logo .plunger-flange {
+  animation-name: needlePlungerFlange;
+  transform-origin: 45% 70%;
+}
+
+@keyframes needleDrop {
+  from {
+    transform: rotate(-90deg) scale(0)
+  }
+  to {
+    transform: rotate(10deg) scale(1)
+  }
+}
+
+@keyframes needlePlunger {
+  from {
+    transform: scaleY(3) translateY(0)
+  }
+  to {
+    transform: scaleY(3) translateY(-5px)
+  }
+}
+
+@keyframes needlePlungerFlange {
+  from {
+    transform: translateY(8px)
+  }
+  to {
+    transform: translateY(-7px)
+  }
+}
+
 .monitor-risk-level-indicator {
   border-top: 1px solid white;
   border-right: 1px solid white;
@@ -169,6 +237,49 @@ footer.tabs-component a.active .btn-text {
   }
 }
 
+.home-monitor-pulse {
+  animation-name: homeMonitorPulse;
+  animation-iteration-count: infinite;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-out;
+  animation-direction: normal;
+}
+
+@keyframes homeMonitorPulse {
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(33);
+  }
+}
+
+.home-monitor-icon {
+  animation-name: homeMonitorIcon;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+  filter: drop-shadow(0 0 3px white) drop-shadow(0 0 1px rgba(255 255 255 / 0.4));
+}
+
+@keyframes homeMonitorIcon {
+  0% {
+    transform: scale(0.9) scaleY(0.9) rotate(0);
+  }
+  25% {
+    transform: scale(1.1) scaleY(1) rotate(10deg);
+  }
+  50% {
+    transform: scale(0.9) scaleY(1) rotate(0);
+  }
+  100% {
+    transform: scale(1.1) scaleY(0.9) rotate(-10deg);
+  }
+}
+
 header>.avatar-wrapper>button {
   transition: .25s ease transform;
 }
@@ -180,12 +291,15 @@ header>.avatar-wrapper>button[data-state="open"] {
 footer a:not(.active) svg.iconify:not(.active) {
   display: block;
 }
+
 footer a:not(.active) svg.iconify.active {
   display: none;
 }
+
 footer a.active svg.iconify:not(.active) {
   display: none;
 }
+
 footer a.active svg.iconify.active {
   display: block;
 }

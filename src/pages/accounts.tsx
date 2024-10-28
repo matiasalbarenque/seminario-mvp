@@ -9,6 +9,7 @@ import { TermsConditionsDialog } from '@/components/terms-conditions-dialog';
 import { useAccountStore } from '@/store/account';
 import type { BreachCardProps, CustomSelectProps } from '@/typings/pages/accounts';
 import { accountMock } from '@/assets/mocks/account';
+import { formatDate } from '@/assets/utils';
 import type { Account } from '@/typings/mocks/account';
 
 export const AccountsPage = () => {
@@ -20,7 +21,7 @@ export const AccountsPage = () => {
 
   useEffect(() => {
     appStore.setAppConfig({
-      pageTitle: 'Accounts',
+      pageTitle: 'Cuentas',
     });
   }, []);
 
@@ -109,11 +110,12 @@ export const AccountsPage = () => {
           />
           <div className="flex items-center gap-1">
             <Icon icon="solar:calendar-linear" size={18} className="text-slate-500" />
-            <span className="text-sm text-slate-600">Breach date: {breach.BreachDate}</span>
+            <span className="text-sm text-slate-600">Fecha de la vulneración:</span>
           </div>
+          <div className="text-sm text-slate-600 pl-6">{formatDate(breach.BreachDate || '')}</div>
           <div className="flex items-center gap-1">
             <Icon icon="ion:bug-outline" size={18} className="text-slate-500" />
-            <span className="text-sm text-slate-600">Compromised data:</span>
+            <span className="text-sm text-slate-600">Datos comprometidos:</span>
           </div>
           <div className="flex flex-wrap gap-1.5">
             {breach.DataClasses.map(a => (
@@ -128,7 +130,7 @@ export const AccountsPage = () => {
           <div className="pt-1">
             <Button variant="outline" asChild>
               <Link to={`/accounts/${selectValue}/${index}`}>
-                See details
+                Ver más detalles
                 <Icon icon="solar:arrow-right-outline" size={18} className="ml-2" />
               </Link>
             </Button>
@@ -144,7 +146,7 @@ export const AccountsPage = () => {
         <div className="flex-1">
           <CustomSelect value={selectValue} options={accountStore.accounts} onChange={selectHandler} />
         </div>
-        <Button variant="outline" className="h-11" asChild>
+        <Button className="h-11" asChild>
           <Link to="/accounts-selection">
             <Icon icon="solar:settings-outline" size={20} />
           </Link>

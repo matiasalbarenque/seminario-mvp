@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useAppStore } from '@/store/app';
 import { Icon } from '@/components/ui/icon';
 import { accountMock } from '@/assets/mocks/account';
+import { formatDate } from '@/assets/utils';
 import type { Breach } from '@/typings/mocks/account';
 
 export const AccountsDetailsPage = () => {
@@ -13,7 +14,7 @@ export const AccountsDetailsPage = () => {
 
   useEffect(() => {
     appStore.setAppConfig({
-      pageTitle: 'Vulnerability details',
+      pageTitle: 'Detalles',
       hideFooter: true,
     });
     getEmailBreach(params?.email, params?.index);
@@ -93,13 +94,13 @@ export const AccountsDetailsPage = () => {
             <div className="flex items-center gap-1">
               <Icon icon="solar:calendar-linear" size={18} className="text-slate-600" />
               <span className="text-sm text-slate-800">
-                <span className="font-medium">Breach date:</span> {breach.BreachDate}
+                <span className="font-medium">Fecha de la vulneración:</span> {formatDate(breach.BreachDate || '')}
               </span>
             </div>
             <div className="flex items-center gap-1">
               <Icon icon="ion:bug-outline" size={18} className="text-slate-600" />
               <span className="text-sm text-slate-800">
-                <span className="font-medium">Compromised data:</span>
+                <span className="font-medium">Datos comprometidos:</span>
               </span>
             </div>
             <div className="flex flex-wrap gap-1.5">

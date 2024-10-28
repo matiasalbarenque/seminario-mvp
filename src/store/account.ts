@@ -4,7 +4,7 @@ import type { AccountState } from '@/typings/state/account';
 export const useAccountStore = create<AccountState>()(set => ({
   accounts: [],
   services: [],
-  riskLevel: '?',
+  riskLevel: -1,
   termsAccepted: false,
   setAccounts: (accounts: string[], persist: boolean = true) => {
     set({ accounts });
@@ -18,7 +18,7 @@ export const useAccountStore = create<AccountState>()(set => ({
       localStorage.setItem('account-services', JSON.stringify(services));
     }
   },
-  setRiskLevel: (riskLevel: string) => {
+  setRiskLevel: (riskLevel: number) => {
     set({ riskLevel });
   },
   setTermsAccepted: (termsAccepted: boolean, persist: boolean = true) => {

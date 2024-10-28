@@ -6,7 +6,7 @@ export const TermsConditionsPage = () => {
 
   useEffect(() => {
     appStore.setAppConfig({
-      pageTitle: 'Terms & Conditions',
+      pageTitle: 'Términos y Condiciones',
       hideFooter: true,
     });
   }, []);

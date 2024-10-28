@@ -9,6 +9,7 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog';
 import { useAccountStore } from '@/store/account';
+import scrollSvg from '@/assets/icons/scroll.svg';
 
 export const TermsConditionsDialog = () => {
   const navigate = useNavigate();
@@ -24,18 +25,28 @@ export const TermsConditionsDialog = () => {
 
   return (
     <Dialog open={!accountStore.termsAccepted} onOpenChange={declineTermsHandler}>
-      <DialogContent>
+      <DialogContent hideClose>
         <DialogHeader>
-          <DialogTitle>Terms and Conditions</DialogTitle>
+          <DialogTitle className="mb-2">
+            <div className="w-full flex flex-col items-center gap-4">
+              <div>Términos y Condiciones</div>
+              <div className="w-20 h-20">
+                <img src={scrollSvg} width="100%" height="100%" />
+              </div>
+            </div>
+          </DialogTitle>
           <DialogDescription>
-            To access to Accounts sections you need to first accept our{' '}
+            Para acceder a Cuentas es necesario que leas y aceptes nuestros
+            <br />
             <Link to="/terms-conditions" className="mt-1 text-blue-500">
-              Terms and Conditions.
+              Términos y Condiciones
             </Link>
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button onClick={acceptTermsHandler}>Accept and continue</Button>
+          <Button onClick={acceptTermsHandler} className="rounded-full min-h-10 tracking-wide">
+            Aceptar y continuar
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

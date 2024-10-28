@@ -10,7 +10,7 @@ export const NotificationsPage = () => {
 
   useEffect(() => {
     appStore.setAppConfig({
-      pageTitle: 'Notifications',
+      pageTitle: 'Notificaciones',
       hideFooter: true,
     });
   }, []);
