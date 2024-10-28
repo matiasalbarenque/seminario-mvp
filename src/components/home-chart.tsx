@@ -40,25 +40,25 @@ export const RiskServicesChart = () => {
   }, [servicesSelectedRiskLevelMemo]);
 
   const chartConfig: ChartConfig = {
-    a: {
-      label: 'A',
-      color: 'hsl(var(--level-a))',
-    },
-    b: {
-      label: 'B',
-      color: 'hsl(var(--level-b))',
-    },
-    c: {
-      label: 'C',
-      color: 'hsl(var(--level-c))',
+    e: {
+      label: 'Altísimo',
+      color: 'hsl(var(--level-e))',
     },
     d: {
-      label: 'D',
+      label: 'Alto',
       color: 'hsl(var(--level-d))',
     },
-    e: {
-      label: 'E',
-      color: 'hsl(var(--level-e))',
+    c: {
+      label: 'Medio',
+      color: 'hsl(var(--level-c))',
+    },
+    b: {
+      label: 'Bajo',
+      color: 'hsl(var(--level-b))',
+    },
+    a: {
+      label: 'Inexistente',
+      color: 'hsl(var(--level-a))',
     },
   };
 
@@ -71,7 +71,7 @@ export const RiskServicesChart = () => {
       <Card className="shadow-none">
         <CardHeader className="py-4">
           <CardTitle>Mis servicios</CardTitle>
-          <CardDescription>Nivel de riesgo de cada servicio</CardDescription>
+          <CardDescription>Nivel de riesgo por servicio</CardDescription>
         </CardHeader>
         <CardContent>
           <ChartContainer config={chartConfig}>

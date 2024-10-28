@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAccountStore } from '@/store/account';
-import { getColorByRiskLevel } from '@/assets/utils';
+import { getColorByRiskLevel, getIconByRiskLevel } from '@/assets/utils';
 import { HeaderAvatar } from './header-avatar';
 import { HomeMonitorDialog } from './home-monitor-dialog';
 
@@ -55,8 +55,13 @@ export const HomeMonitor = () => {
             onClick={toggleDialowHandler}
           >
             <div className="home-monitor-pulse absolute w-1 h-1 bg-white rounded-full" />
-            <div className="text-[clamp(3.5rem,11vw,10rem)] text-white font-light uppercase select-none">
-              {accountStore.riskLevel}
+            <div className="p-4">
+              <img
+                src={getIconByRiskLevel(accountStore.riskLevel)}
+                width="100%"
+                height="100%"
+                className="home-monitor-icon"
+              />
             </div>
           </div>
         </div>

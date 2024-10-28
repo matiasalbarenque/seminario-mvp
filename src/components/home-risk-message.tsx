@@ -5,13 +5,13 @@ import { useAccountStore } from '@/store/account';
 export const HomeRiskMessage = () => {
   const accountStore = useAccountStore();
 
-  const getRiskMessage = (a: string) => {
-    if (a === 'a') return '✨ ¡Todo está bien! ✨';
-    if (a === 'b') return '✅ Riesgo bajo ✅';
-    if (a === 'c') return '⚠️ Riesgo medio ⚠️';
-    if (a === 'd') return '⛔ Riesgo alto ⛔';
-    if (a === 'e') return '🔥 Riesgo más alto 🔥';
-    return 'Selecciona tus servicios';
+  const getRiskMessage = (a: number) => {
+    if (a === -1) return 'Selecciona tus servicios';
+    if (a < 2) return '🔥 Riesgo más alto 🔥';
+    if (a < 4) return '⛔ Riesgo alto ⛔';
+    if (a < 6) return '⚠️ Riesgo medio ⚠️';
+    if (a < 8) return '✅ Riesgo bajo ✅';
+    return '✨ ¡Todo está bien! ✨';
   };
 
   return (
@@ -22,11 +22,13 @@ export const HomeRiskMessage = () => {
             {getRiskMessage(accountStore.riskLevel)}
           </div>
           <div>
-            <Button className="rounded-full" asChild>
-              <Link to="/services" className="gap-2">
-                Ir a Servicios
-              </Link>
-            </Button>
+            {accountStore.riskLevel < 8 && (
+              <Button className="rounded-full" asChild>
+                <Link to="/services" className="gap-2">
+                  Ir a Servicios
+                </Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>

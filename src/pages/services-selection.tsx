@@ -5,11 +5,10 @@ import debounce from 'lodash.debounce';
 import { useAppStore } from '@/store/app';
 import { useAccountStore } from '@/store/account';
 import { Button } from '@/components/ui/button';
-import { Icon } from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { RhfSwitch } from '@/components/ui/rhf/rhf-switch';
-import { getRiskAvgLevel, getRiskByLevel, sortCompareStrings } from '@/assets/utils';
+import { getRiskAvgLevel, sortCompareStrings } from '@/assets/utils';
 import type { defaultValuesType } from '@/typings/pages/services-selection';
 import { servicesMock } from '@/assets/mocks/services';
 
@@ -79,7 +78,7 @@ export const ServicesSelectionPage = () => {
     // }
 
     const riskAvgLevel = getRiskAvgLevel(servicesMock, servicesSelected);
-    accountStore.setRiskLevel(getRiskByLevel(riskAvgLevel));
+    accountStore.setRiskLevel(riskAvgLevel);
     accountStore.setServices(servicesSelected);
 
     toast({
@@ -121,7 +120,7 @@ export const ServicesSelectionPage = () => {
           </div>
         </form>
       </div>
-      <Button type="submit" form="form" variant="default" className="w-full h-11 gap-2">
+      <Button type="submit" form="form" className="w-full rounded-full min-h-10 tracking-wide">
         Guardar
       </Button>
     </div>

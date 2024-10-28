@@ -256,6 +256,30 @@ footer.tabs-component a.active .btn-text {
   }
 }
 
+.home-monitor-icon {
+  animation-name: homeMonitorIcon;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+  filter: drop-shadow(0 0 3px white) drop-shadow(0 0 1px rgba(255 255 255 / 0.4));
+}
+
+@keyframes homeMonitorIcon {
+  0% {
+    transform: scale(0.9) scaleY(0.9) rotate(0);
+  }
+  25% {
+    transform: scale(1.1) scaleY(1) rotate(10deg);
+  }
+  50% {
+    transform: scale(0.9) scaleY(1) rotate(0);
+  }
+  100% {
+    transform: scale(1.1) scaleY(0.9) rotate(-10deg);
+  }
+}
+
 header>.avatar-wrapper>button {
   transition: .25s ease transform;
 }

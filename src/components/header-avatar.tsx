@@ -35,7 +35,7 @@ export const HeaderAvatar = () => {
           Mi perfil
         </DropdownMenuItem>
         <Link to="/notifications">
-          <DropdownMenuItem>
+          <DropdownMenuItem disabled>
             <div className="mr-2">
               <Icon icon="ion:notifications-outline" size={18} />
               {notiCounter > 0 && <div className="absolute w-2 h-2 right-0 top-0 bg-red-600 rounded-full scale-90" />}

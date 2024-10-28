@@ -59,10 +59,8 @@ export const ServicesPage = () => {
   return (
     <div className="grid grid-rows-[min-content,auto] gap-4">
       <div className="flex">
-        <Button asChild>
-          <Link to="/services-selection" className="gap-2">
-            Seleccionar servicios
-          </Link>
+        <Button asChild className="rounded-full min-h-10 tracking-wide">
+          <Link to="/services-selection">Seleccionar servicios</Link>
         </Button>
       </div>
       <div className="overflow-auto">
