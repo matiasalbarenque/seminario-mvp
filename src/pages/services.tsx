@@ -5,27 +5,18 @@ import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { LevelIndicator } from '@/components/level-indicator';
 import { useAppStore } from '@/store/app';
-import { useAccountStore } from '@/store/account';
-import { servicesMock } from '@/assets/mocks/services';
-import { sortCompareStrings } from '@/assets/utils';
 import type { Service } from '@/typings/mocks/services';
+import useMyServices from '@/hooks/use-my-services';
 
 export const ServicesPage = () => {
   const appStore = useAppStore();
-  const accountStore = useAccountStore();
-  const [myServices, setMyServices] = useState<Service[]>([]);
+  const myServices = useMyServices();
 
   useEffect(() => {
     appStore.setAppConfig({
       pageTitle: 'Servicios',
     });
   }, []);
-
-  useEffect(() => {
-    const servicesOrdered = servicesMock.sort((a, b) => sortCompareStrings(a.name, b.name));
-    const servicesSelected = servicesOrdered.filter(a => accountStore.services.some(b => b === a?.name));
-    setMyServices(servicesSelected);
-  }, [accountStore.services]);
 
   const ServicesList = (props: { services: Service[] }) => {
     if (props.services.length === 0) {

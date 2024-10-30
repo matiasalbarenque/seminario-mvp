@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { forwardRef, useEffect, useMemo, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, LabelList, Rectangle, XAxis } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartContainer } from '@/components/ui/chart';
@@ -6,6 +6,9 @@ import { useAccountStore } from '@/store/account';
 import { sortCompareStrings } from '@/assets/utils';
 import type { ChartConfig } from '@/components/ui/chart';
 import { servicesMock } from '@/assets/mocks/services';
+import HomeRiskServiceDialog from './home-risk-service-dialog';
+import { RiskLevels } from '@/typings/mocks/services';
+import useMyServices from '@/hooks/use-my-services';
 
 type ChartData = {
   riskLevel: string;
@@ -13,15 +16,34 @@ type ChartData = {
   fill: string;
 };
 
+export const homeChartConfig: ChartConfig = {
+  e: {
+    label: 'Altísimo',
+    color: 'hsl(var(--level-e))',
+  },
+  d: {
+    label: 'Alto',
+    color: 'hsl(var(--level-d))',
+  },
+  c: {
+    label: 'Medio',
+    color: 'hsl(var(--level-c))',
+  },
+  b: {
+    label: 'Bajo',
+    color: 'hsl(var(--level-b))',
+  },
+  a: {
+    label: 'Inexistente',
+    color: 'hsl(var(--level-a))',
+  },
+};
+
 export const RiskServicesChart = () => {
-  const accountStore = useAccountStore();
   const [chartData, setChartData] = useState<ChartData[]>([]);
 
-  const servicesSelectedRiskLevelMemo = useMemo(() => {
-    const servicesOrdered = servicesMock.sort((a, b) => sortCompareStrings(a.name, b.name));
-    const servicesSelected = servicesOrdered.filter(a => accountStore.services.some(b => b === a?.name));
-    return servicesSelected.map(a => a.riskLevel as string);
-  }, [accountStore.services]);
+  const myServices = useMyServices();
+  const servicesSelectedRiskLevelMemo = useMemo(() => myServices.map(a => a.riskLevel as string), [myServices]);
 
   useEffect(() => {
     if (servicesSelectedRiskLevelMemo.length > 0) {
@@ -39,28 +61,8 @@ export const RiskServicesChart = () => {
     }
   }, [servicesSelectedRiskLevelMemo]);
 
-  const chartConfig: ChartConfig = {
-    e: {
-      label: 'Altísimo',
-      color: 'hsl(var(--level-e))',
-    },
-    d: {
-      label: 'Alto',
-      color: 'hsl(var(--level-d))',
-    },
-    c: {
-      label: 'Medio',
-      color: 'hsl(var(--level-c))',
-    },
-    b: {
-      label: 'Bajo',
-      color: 'hsl(var(--level-b))',
-    },
-    a: {
-      label: 'Inexistente',
-      color: 'hsl(var(--level-a))',
-    },
-  };
+  const [open, setOpen] = useState(false);
+  const [selectedRiskLevel, setSelectedRiskLevel] = useState<RiskLevels>();
 
   if (chartData.length === 0) {
     return <></>;
@@ -74,7 +76,7 @@ export const RiskServicesChart = () => {
           <CardDescription>Nivel de riesgo por servicio</CardDescription>
         </CardHeader>
         <CardContent>
-          <ChartContainer config={chartConfig}>
+          <ChartContainer config={homeChartConfig}>
             <BarChart
               accessibilityLayer
               data={chartData}
@@ -86,7 +88,7 @@ export const RiskServicesChart = () => {
               <XAxis
                 axisLine={false}
                 dataKey="riskLevel"
-                tickFormatter={a => chartConfig[a]?.label as string}
+                tickFormatter={a => homeChartConfig[a]?.label as string}
                 tickLine={false}
                 tickMargin={10}
               />
@@ -94,6 +96,10 @@ export const RiskServicesChart = () => {
                 dataKey="count"
                 radius={4}
                 barSize={42}
+                onClick={bar => {
+                  setSelectedRiskLevel(bar.riskLevel as RiskLevels);
+                  setOpen(true);
+                }}
                 activeBar={({ ...a }) => <Rectangle {...a} stroke={a.payload.fill} />}
               >
                 <LabelList position="top" offset={12} className="fill-foreground" fontSize={12} />
@@ -102,6 +108,7 @@ export const RiskServicesChart = () => {
           </ChartContainer>
         </CardContent>
       </Card>
+      <HomeRiskServiceDialog onClose={() => setOpen(false)} open={open} selectedRiskLevel={selectedRiskLevel} />
     </div>
   );
 };

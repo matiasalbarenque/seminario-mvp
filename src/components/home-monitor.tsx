@@ -3,6 +3,9 @@ import { useAccountStore } from '@/store/account';
 import { getColorByRiskLevel, getIconByRiskLevel } from '@/assets/utils';
 import { HeaderAvatar } from './header-avatar';
 import { HomeMonitorDialog } from './home-monitor-dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@radix-ui/react-dialog';
+import { Button } from './ui/button';
+import { DialogHeader, DialogFooter } from './ui/dialog';
 
 const Waves = () => (
   <>
@@ -35,11 +38,11 @@ const Waves = () => (
 
 export const HomeMonitor = () => {
   const accountStore = useAccountStore();
-  const [showDialow, SetShowDialow] = useState(false);
+  const [showDialow, setShowDialow] = useState(false);
   const bgColor = getColorByRiskLevel(accountStore.riskLevel);
 
   const toggleDialowHandler = () => {
-    SetShowDialow(a => !a);
+    setShowDialow(a => !a);
   };
 
   return (
