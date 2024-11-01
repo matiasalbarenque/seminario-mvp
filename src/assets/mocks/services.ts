@@ -9,26 +9,26 @@ export const servicesMock: Service[] = [
     termsConditionsRisks: {
       e: [
         {
-          title: "They store data on you even if you did not interact with the service",
-          description: "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
+          title: "Almacenan datos tuyos incluso si no interactuaste con el servicio.",
+          description: "Algunos servicios almacenan datos tuyos, incluso si no proporcionaste esos datos vos mismo. Por ejemplo, los usuarios pueden dar acceso a su agenda de contactos, y luego un servicio también podría almacenar los números de teléfono de esos contactos.",
           source: "https://edit.tosdr.org/points/12228",
           imgUrl: "They store data on you even if you did not interact with the service.png",
         },
         {
-          title: "Your identity is used in ads that are shown to other users",
-          description: "Ads shown to other users may include a reference to you as an implied endorsement. Might give away information about your own personal lifestyle to strangers.",
+          title: "Tu identidad se utiliza en anuncios que se muestran a otros usuarios.",
+          description: "Los anuncios que se muestran a otros usuarios pueden incluir una referencia a vos como un respaldo implícito. Podrían revelar información sobre tu estilo de vida personal a desconocidos.",
           source: "https://edit.tosdr.org/points/11358",
           imgUrl: "Your identity is used in ads that are shown to other users.png",
         },
         {
-          title: "Private messages can be read",
-          description: "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          title: "Los mensajes privados pueden ser leídos.",
+          description: "El Servicio puede acceder, escanear, revisar o leer todas las comunicaciones de los usuarios, incluidos los mensajes privados, que pueden contener datos personales o sensibles.",
           source: "https://edit.tosdr.org/points/12190",
           imgUrl: "Private messages can be read.png",
         },
         {
-          title: "This service holds onto content that you've deleted",
-          description: "Content may remain in backup servers and be retained after deletion, and thus never be completely deleted. This case doesn't apply to contributions that can't be removed due to the nature of the service.",
+          title: "Este servicio retiene contenido que has eliminado.",
+          description: "El contenido puede permanecer en servidores de respaldo y ser retenido después de la eliminación, por lo que nunca se elimina por completo. Este caso no se aplica a las contribuciones que no se pueden eliminar debido a la naturaleza del servicio.",
           source: "https://edit.tosdr.org/points/12230",
           imgUrl: "This service holds onto content that you've deleted.png",
         }
@@ -77,9 +77,9 @@ export const servicesMock: Service[] = [
     termsConditionsRisks: {
       e: [
         {
-          "title": "They store data on you even if you did not interact with the service",
-          "description": "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
-          "source": "https://edit.tosdr.org/points/31562",
+          title: "Almacenan datos tuyos incluso si no interactuaste con el servicio.",
+          description: "Algunos servicios almacenan datos tuyos, incluso si no proporcionaste esos datos vos mismo. Por ejemplo, los usuarios pueden dar acceso a su agenda de contactos, y luego un servicio también podría almacenar los números de teléfono de esos contactos.",
+          source: "https://edit.tosdr.org/points/31562",
           imgUrl: "They store data on you even if you did not interact with the service.png",
         }
       ],
@@ -269,32 +269,32 @@ export const servicesMock: Service[] = [
     "termsConditionsRisks": {
       "e": [
         {
-          "title": "They store data on you even if you did not interact with the service",
-          "description": "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
+          title: "Almacenan datos tuyos incluso si no interactuaste con el servicio.",
+          description: "Algunos servicios almacenan datos tuyos, incluso si no proporcionaste esos datos vos mismo. Por ejemplo, los usuarios pueden dar acceso a su agenda de contactos, y luego un servicio también podría almacenar los números de teléfono de esos contactos.",
           "source": "https://edit.tosdr.org/points/12804",
           "imgUrl": "They store data on you even if you did not interact with the service.png",
         },
         {
-          "title": "Private messages can be read",
-          "description": "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          title: "Los mensajes privados pueden ser leídos.",
+          description: "El Servicio puede acceder, escanear, revisar o leer todas las comunicaciones de los usuarios, incluidos los mensajes privados, que pueden contener datos personales o sensibles.",
           "source": "https://edit.tosdr.org/points/12796",
           "imgUrl": "Private messages can be read.png",
         },
         {
-          "title": "Specific content can be deleted without reason and may be removed without prior notice",
-          "description": "This service can delete specific content. Usually they will claim they reserve the right to do it at their sole discretion, which is legalese for saying they won't give a specific reason. If the terms say they will not notify you, it shall be included in the quote but if it does not explicitly say they will give you a notice, it can be reasonably inferred that they can do it without telling you.",
+          title: "Contenido específico puede ser eliminado sin motivo y puede ser removido sin previo aviso.",
+          description: "Este servicio puede eliminar contenido específico. Por lo general, dirán que se reservan el derecho de hacerlo a su exclusivo criterio, lo cual es una forma legal de decir que no darán un motivo específico. Si los términos dicen que no te notificarán, eso debe incluirse en la cita, pero si no dice explícitamente que te darán un aviso, se puede inferir razonablemente que pueden hacerlo sin decírtelo.",
           "source": "https://edit.tosdr.org/points/5854",
           "imgUrl": "Specific content can be deleted without reason and may be removed without prior notice.png",
         },
         {
-          "title": "Your browsing history can be viewed by the service",
-          "description": "The service can view your search history and the websites you visit, which is an extremely intrusive way of collecting information that may include personal and/or sensitive data.",
+          title: "Tu historial de navegación puede ser visto por el servicio.",
+          description: "El servicio puede ver tu historial de búsqueda y los sitios web que visitas, lo cual es una forma extremadamente intrusiva de recopilar información que puede incluir datos personales y/o sensibles." ,
           "source": "https://edit.tosdr.org/points/12806",
           "imgUrl": "Your browsing history can be viewed by the service.png",
         },
         {
-          "title": "This service holds onto content that you've deleted",
-          "description": "Content may remain in backup servers and be retained after deletion, and thus never be completely deleted. This case doesn't apply to contributions that can't be removed due to the nature of the service.",
+          title: "Este servicio retiene contenido que has eliminado.",
+          description: "El contenido puede permanecer en servidores de respaldo y ser retenido después de la eliminación, por lo que nunca se elimina por completo. Este caso no se aplica a las contribuciones que no se pueden eliminar debido a la naturaleza del servicio.",
           "source": "https://edit.tosdr.org/points/12794",
           "imgUrl": "This service holds onto content that you've deleted.png",
         }
@@ -338,14 +338,14 @@ export const servicesMock: Service[] = [
     "termsConditionsRisks": {
       "e": [
         {
-          "title": "Your browsing history can be viewed by the service",
-          "description": "The service can view your search history and the websites you visit, which is an extremely intrusive way of collecting information that may include personal and/or sensitive data.",
+          title: "Tu historial de navegación puede ser visto por el servicio.",
+          description: "El servicio puede ver tu historial de búsqueda y los sitios web que visitas, lo cual es una forma extremadamente intrusiva de recopilar información que puede incluir datos personales y/o sensibles." ,
           "source": "https://edit.tosdr.org/points/11339",
           "imgUrl": "Your browsing history can be viewed by the service.png",
         },
         {
-          "title": "This service holds onto content that you've deleted",
-          "description": "Content may remain in backup servers and be retained after deletion, and thus never be completely deleted. This case doesn't apply to contributions that can't be removed due to the nature of the service.",
+          title: "Este servicio retiene contenido que has eliminado.",
+          description: "El contenido puede permanecer en servidores de respaldo y ser retenido después de la eliminación, por lo que nunca se elimina por completo. Este caso no se aplica a las contribuciones que no se pueden eliminar debido a la naturaleza del servicio.",
           "source": "https://edit.tosdr.org/points/837",
           "imgUrl": "This service holds onto content that you've deleted.png",
         }
@@ -389,20 +389,20 @@ export const servicesMock: Service[] = [
     termsConditionsRisks: {
       e: [
         {
-          "title": "They store data on you even if you did not interact with the service",
-          "description": "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
+          title: "Almacenan datos tuyos incluso si no interactuaste con el servicio.",
+          description: "Algunos servicios almacenan datos tuyos, incluso si no proporcionaste esos datos vos mismo. Por ejemplo, los usuarios pueden dar acceso a su agenda de contactos, y luego un servicio también podría almacenar los números de teléfono de esos contactos.",
           "source": "https://edit.tosdr.org/points/18003",
           "imgUrl": "They store data on you even if you did not interact with the service.png",
         },
         {
-          "title": "Private messages can be read",
-          "description": "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          title: "Los mensajes privados pueden ser leídos.",
+          description: "El Servicio puede acceder, escanear, revisar o leer todas las comunicaciones de los usuarios, incluidos los mensajes privados, que pueden contener datos personales o sensibles.",
           "source": "https://edit.tosdr.org/points/17997",
           imgUrl: "Private messages can be read.png",
         },
         {
-          "title": "This service still tracks you even if you opted out from tracking",
-          "description": "Users can’t fully opt out of tracking technologies used for non-essential purposes such as advertising, marketing or analytics. The user may be asked for consent for installing some tracking technologies on the device, and even if all are rejected the service will still track its visitors and ignore the choice. This case doesn’t apply to functional cookies that are necessary to provide the services.",
+          title: "Este servicio aún te rastrea incluso si optaste por no ser rastreado.",
+          description: "Los usuarios no pueden optar por completo por no ser rastreados por tecnologías utilizadas para fines no esenciales, como publicidad, marketing o análisis. Se puede pedir el consentimiento del usuario para instalar algunas tecnologías de rastreo en el dispositivo, y aunque se rechacen todas, el servicio seguirá rastreando a sus visitantes e ignorará la elección. Este caso no se aplica a las cookies funcionales que son necesarias para proporcionar los servicios.",
           "source": "https://edit.tosdr.org/points/18015",
           imgUrl: "This service still tracks you even if you opted out from tracking.png",
         }
@@ -628,26 +628,26 @@ export const servicesMock: Service[] = [
     "termsConditionsRisks": {
       "e": [
         {
-          "title": "They store data on you even if you did not interact with the service",
-          "description": "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
+          title: "Almacenan datos tuyos incluso si no interactuaste con el servicio.",
+          description: "Algunos servicios almacenan datos tuyos, incluso si no proporcionaste esos datos vos mismo. Por ejemplo, los usuarios pueden dar acceso a su agenda de contactos, y luego un servicio también podría almacenar los números de teléfono de esos contactos.",
           "source": "https://edit.tosdr.org/points/20633",
           "imgUrl": "They store data on you even if you did not interact with the service.png",
         },
         {
-          "title": "Your identity is used in ads that are shown to other users",
-          "description": "Ads shown to other users may include a reference to you as an implied endorsement. Might give away information about your own personal lifestyle to strangers.",
+          title: "Tu identidad se utiliza en anuncios que se muestran a otros usuarios.",
+          description: "Los anuncios que se muestran a otros usuarios pueden incluir una referencia a vos como un respaldo implícito. Podrían revelar información sobre tu estilo de vida personal a desconocidos.",
           "source": "https://edit.tosdr.org/points/20617",
           "imgUrl": "Your identity is used in ads that are shown to other users.png",
         },
         {
-          "title": "Private messages can be read",
-          "description": "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          title: "Los mensajes privados pueden ser leídos.",
+          description: "El Servicio puede acceder, escanear, revisar o leer todas las comunicaciones de los usuarios, incluidos los mensajes privados, que pueden contener datos personales o sensibles.",
           "source": "https://edit.tosdr.org/points/20638",
           "imgUrl": "Private messages can be read.png",
         },
         {
-          "title": "Specific content can be deleted without reason and may be removed without prior notice",
-          "description": "This service can delete specific content. Usually they will claim they reserve the right to do it at their sole discretion, which is legalese for saying they won't give a specific reason. If the terms say they will not notify you, it shall be included in the quote but if it does not explicitly say they will give you a notice, it can be reasonably inferred that they can do it without telling you.",
+          title: "Contenido específico puede ser eliminado sin motivo y puede ser removido sin previo aviso.",
+          description: "Este servicio puede eliminar contenido específico. Por lo general, dirán que se reservan el derecho de hacerlo a su exclusivo criterio, lo cual es una forma legal de decir que no darán un motivo específico. Si los términos dicen que no te notificarán, eso debe incluirse en la cita, pero si no dice explícitamente que te darán un aviso, se puede inferir razonablemente que pueden hacerlo sin decírtelo.",
           "source": "https://edit.tosdr.org/points/20613",
           "imgUrl": "Specific content can be deleted without reason and may be removed without prior notice.png",
         }
@@ -696,20 +696,20 @@ export const servicesMock: Service[] = [
     "termsConditionsRisks": {
       "e": [
         {
-          "title": "Private messages can be read",
-          "description": "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          title: "Los mensajes privados pueden ser leídos.",
+          description: "El Servicio puede acceder, escanear, revisar o leer todas las comunicaciones de los usuarios, incluidos los mensajes privados, que pueden contener datos personales o sensibles.",
           "source": "https://edit.tosdr.org/points/13308",
           "imgUrl": "Private messages can be read.png",
         },
         {
-          "title": "Specific content can be deleted without reason and may be removed without prior notice",
-          "description": "This service can delete specific content. Usually they will claim they reserve the right to do it at their sole discretion, which is legalese for saying they won't give a specific reason. If the terms say they will not notify you, it shall be included in the quote but if it does not explicitly say they will give you a notice, it can be reasonably inferred that they can do it without telling you.",
+          title: "Contenido específico puede ser eliminado sin motivo y puede ser removido sin previo aviso.",
+          description: "Este servicio puede eliminar contenido específico. Por lo general, dirán que se reservan el derecho de hacerlo a su exclusivo criterio, lo cual es una forma legal de decir que no darán un motivo específico. Si los términos dicen que no te notificarán, eso debe incluirse en la cita, pero si no dice explícitamente que te darán un aviso, se puede inferir razonablemente que pueden hacerlo sin decírtelo.",
           "source": "https://edit.tosdr.org/points/8179",
           "imgUrl": "Specific content can be deleted without reason and may be removed without prior notice.png",
         },
         {
-          "title": "You waive your moral rights",
-          "description": "Moral rights are rights to creators of literary, dramatic, musical and artistic works, as well as directors of films. 'The moral rights include the right of attribution, the right to have a work published anonymously or pseudonymously, and the right to the integrity of the work. The preserving of the integrity of the work allows the author to object to alteration, distortion, or mutilation of the work that is 'prejudicial to the author's honor or reputation'. Anything else that may detract from the artist's relationship with the work even after it leaves the artist's possession or ownership may bring these moral rights into play. Moral rights are distinct from any economic rights tied to copyrights. Even if an artist has assigned his or her copyright rights to a work to a third party, he or she still maintains the moral rights to the work.' -Wikipedia In general, any terms that use the exact words 'moral rights' as rights that are waived will fall under this Case.",
+          title: "Renunciás a tus derechos morales.",
+          description: "Los derechos morales son derechos de los creadores de obras literarias, dramáticas, musicales y artísticas, así como de los directores de cine. 'Los derechos morales incluyen el derecho de atribución, el derecho a que una obra sea publicada de forma anónima o bajo seudónimo, y el derecho a la integridad de la obra. La preservación de la integridad de la obra permite al autor oponerse a alteraciones, distorsiones o mutilaciones de la obra que sean 'perjudiciales para el honor o la reputación del autor'. Cualquier otra cosa que pueda menoscabar la relación del artista con la obra, incluso después de que esta deje de estar en posesión o propiedad del artista, puede hacer que estos derechos morales entren en juego. Los derechos morales son distintos de cualquier derecho económico vinculado a los derechos de autor. Incluso si un artista ha cedido sus derechos de autor sobre una obra a un tercero, todavía mantiene los derechos morales sobre la obra.' -Wikipedia. En general, cualquier término que utilice las palabras exactas 'derechos morales' como derechos que se renuncian caerá bajo este caso.",
           "source": "https://edit.tosdr.org/points/9849",
           "imgUrl": "You waive your moral rights.png",
         }
@@ -758,8 +758,8 @@ export const servicesMock: Service[] = [
     "termsConditionsRisks": {
       "e": [
         {
-          "title": "Private messages can be read",
-          "description": "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          title: "Los mensajes privados pueden ser leídos.",
+          description: "El Servicio puede acceder, escanear, revisar o leer todas las comunicaciones de los usuarios, incluidos los mensajes privados, que pueden contener datos personales o sensibles.",
           "source": "https://edit.tosdr.org/points/10606",
           "imgUrl": "Private messages can be read.png",
         }
@@ -818,14 +818,14 @@ export const servicesMock: Service[] = [
     "termsConditionsRisks": {
       "e": [
         {
-          "title": "Private messages can be read",
-          "description": "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          title: "Los mensajes privados pueden ser leídos.",
+          description: "El Servicio puede acceder, escanear, revisar o leer todas las comunicaciones de los usuarios, incluidos los mensajes privados, que pueden contener datos personales o sensibles.",
           "source": "https://edit.tosdr.org/points/9070",
           "imgUrl": "Private messages can be read.png",
         },
         {
-          "title": "Specific content can be deleted without reason and may be removed without prior notice",
-          "description": "This service can delete specific content. Usually they will claim they reserve the right to do it at their sole discretion, which is legalese for saying they won't give a specific reason. If the terms say they will not notify you, it shall be included in the quote but if it does not explicitly say they will give you a notice, it can be reasonably inferred that they can do it without telling you.",
+          title: "Contenido específico puede ser eliminado sin motivo y puede ser removido sin previo aviso.",
+          description: "Este servicio puede eliminar contenido específico. Por lo general, dirán que se reservan el derecho de hacerlo a su exclusivo criterio, lo cual es una forma legal de decir que no darán un motivo específico. Si los términos dicen que no te notificarán, eso debe incluirse en la cita, pero si no dice explícitamente que te darán un aviso, se puede inferir razonablemente que pueden hacerlo sin decírtelo.",
           "source": "https://edit.tosdr.org/points/11419",
           "imgUrl": "Specific content can be deleted without reason and may be removed without prior notice.png",
         }
@@ -889,8 +889,8 @@ export const servicesMock: Service[] = [
     termsConditionsRisks: {
       e: [
         {
-          title: "Specific content can be deleted without reason and may be removed without prior notice",
-          description: "This service can delete specific content. Usually they will claim they reserve the right to do it at their sole discretion, which is legalese for saying they won't give a specific reason. If the terms say they will not notify you, it shall be included in the quote but if it does not explicitly say they will give you a notice, it can be reasonably inferred that they can do it without telling you.",
+          title: "Contenido específico puede ser eliminado sin motivo y puede ser removido sin previo aviso.",
+          description: "Este servicio puede eliminar contenido específico. Por lo general, dirán que se reservan el derecho de hacerlo a su exclusivo criterio, lo cual es una forma legal de decir que no darán un motivo específico. Si los términos dicen que no te notificarán, eso debe incluirse en la cita, pero si no dice explícitamente que te darán un aviso, se puede inferir razonablemente que pueden hacerlo sin decírtelo.",
           source: "https://edit.tosdr.org/points/1255",
           imgUrl: "Specific content can be deleted without reason and may be removed without prior notice.png",
         }
@@ -979,32 +979,32 @@ export const servicesMock: Service[] = [
     termsConditionsRisks: {
       e: [
         {
-          title: "They store data on you even if you did not interact with the service",
-          description: "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
+          title: "Almacenan datos tuyos incluso si no interactuaste con el servicio.",
+          description: "Algunos servicios almacenan datos tuyos, incluso si no proporcionaste esos datos vos mismo. Por ejemplo, los usuarios pueden dar acceso a su agenda de contactos, y luego un servicio también podría almacenar los números de teléfono de esos contactos.",
           source: "https://edit.tosdr.org/points/10493",
           imgUrl: "They store data on you even if you did not interact with the service.png",
         },
         {
-          title: "Your identity is used in ads that are shown to other users",
-          description: "Ads shown to other users may include a reference to you as an implied endorsement. Might give away information about your own personal lifestyle to strangers.",
+          title: "Tu identidad se utiliza en anuncios que se muestran a otros usuarios.",
+          description: "Los anuncios que se muestran a otros usuarios pueden incluir una referencia a vos como un respaldo implícito. Podrían revelar información sobre tu estilo de vida personal a desconocidos.",
           source: "https://edit.tosdr.org/points/4598",
           imgUrl: "Your identity is used in ads that are shown to other users.png",
         },
         {
-          title: "Private messages can be read",
-          description: "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          title: "Los mensajes privados pueden ser leídos.",
+          description: "El Servicio puede acceder, escanear, revisar o leer todas las comunicaciones de los usuarios, incluidos los mensajes privados, que pueden contener datos personales o sensibles.",
           source: "https://edit.tosdr.org/points/10687",
           imgUrl: "Private messages can be read.png",
         },
         {
-          title: "Your browsing history can be viewed by the service",
-          description: "The service can view your search history and the websites you visit, which is an extremely intrusive way of collecting information that may include personal and/or sensitive data.",
+          title: "Tu historial de navegación puede ser visto por el servicio.",
+          description: "El servicio puede ver tu historial de búsqueda y los sitios web que visitas, lo cual es una forma extremadamente intrusiva de recopilar información que puede incluir datos personales y/o sensibles." ,
           source: "https://edit.tosdr.org/points/17261",
           imgUrl: "Your browsing history can be viewed by the service.png",
         },
         {
-          title: "This service holds onto content that you've deleted",
-          description: "Content may remain in backup servers and be retained after deletion, and thus never be completely deleted. This case doesn't apply to contributions that can't be removed due to the nature of the service.",
+          title: "Este servicio retiene contenido que has eliminado.",
+          description: "El contenido puede permanecer en servidores de respaldo y ser retenido después de la eliminación, por lo que nunca se elimina por completo. Este caso no se aplica a las contribuciones que no se pueden eliminar debido a la naturaleza del servicio.",
           source: "https://edit.tosdr.org/points/4356",
           imgUrl: "This service holds onto content that you've deleted.png",
         }
@@ -1098,32 +1098,32 @@ export const servicesMock: Service[] = [
     termsConditionsRisks: {
       e: [
         {
-          title: "They store data on you even if you did not interact with the service",
-          description: "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
+          title: "Almacenan datos tuyos incluso si no interactuaste con el servicio.",
+          description: "Algunos servicios almacenan datos tuyos, incluso si no proporcionaste esos datos vos mismo. Por ejemplo, los usuarios pueden dar acceso a su agenda de contactos, y luego un servicio también podría almacenar los números de teléfono de esos contactos.",
           source: "https://edit.tosdr.org/points/13969",
           imgUrl: "They store data on you even if you did not interact with the service.png",
         },
         {
-          title: "Your identity is used in ads that are shown to other users",
-          description: "Ads shown to other users may include a reference to you as an implied endorsement. Might give away information about your own personal lifestyle to strangers.",
+          title: "Tu identidad se utiliza en anuncios que se muestran a otros usuarios.",
+          description: "Los anuncios que se muestran a otros usuarios pueden incluir una referencia a vos como un respaldo implícito. Podrían revelar información sobre tu estilo de vida personal a desconocidos.",
           source: "https://edit.tosdr.org/points/12831",
           imgUrl: "Your identity is used in ads that are shown to other users.png",
         },
         {
-          title: "Private messages can be read",
-          description: "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          title: "Los mensajes privados pueden ser leídos.",
+          description: "El Servicio puede acceder, escanear, revisar o leer todas las comunicaciones de los usuarios, incluidos los mensajes privados, que pueden contener datos personales o sensibles.",
           source: "https://edit.tosdr.org/points/13935",
           imgUrl: "Private messages can be read.png",
         },
         {
-          title: "Your browsing history can be viewed by the service",
-          description: "The service can view your search history and the websites you visit, which is an extremely intrusive way of collecting information that may include personal and/or sensitive data.",
+          title: "Tu historial de navegación puede ser visto por el servicio.",
+          description: "El servicio puede ver tu historial de búsqueda y los sitios web que visitas, lo cual es una forma extremadamente intrusiva de recopilar información que puede incluir datos personales y/o sensibles." ,
           source: "https://edit.tosdr.org/points/12819",
           imgUrl: "Your browsing history can be viewed by the service.png",
         },
         {
-          title: "This service holds onto content that you've deleted",
-          description: "Content may remain in backup servers and be retained after deletion, and thus never be completely deleted. This case doesn't apply to contributions that can't be removed due to the nature of the service.",
+          title: "Este servicio retiene contenido que has eliminado.",
+          description: "El contenido puede permanecer en servidores de respaldo y ser retenido después de la eliminación, por lo que nunca se elimina por completo. Este caso no se aplica a las contribuciones que no se pueden eliminar debido a la naturaleza del servicio.",
           source: "https://edit.tosdr.org/points/13948",
           imgUrl: "This service holds onto content that you've deleted.png",
         }
@@ -1192,14 +1192,14 @@ export const servicesMock: Service[] = [
     termsConditionsRisks: {
       e: [
         {
-          title: "Content you post may be edited by the service for any reason",
-          description: "This service can edit any content on the service for whatever the reason and at their sole discretion.",
+          title: "El contenido que publiques puede ser editado por el servicio por cualquier motivo.",
+          description: "Este servicio puede editar cualquier contenido en el servicio por cualquier motivo y a su exclusivo criterio.",
           source: "https://edit.tosdr.org/points/20942",
           imgUrl: "Content you post may be edited by the service for any reason.png",
         },
         {
-          title: "Specific content can be deleted without reason and may be removed without prior notice",
-          description: "This service can delete specific content. Usually they will claim they reserve the right to do it at their sole discretion, which is legalese for saying they won't give a specific reason. If the terms say they will not notify you, it shall be included in the quote but if it does not explicitly say they will give you a notice, it can be reasonably inferred that they can do it without telling you.",
+          title: "Contenido específico puede ser eliminado sin motivo y puede ser removido sin previo aviso.",
+          description: "Este servicio puede eliminar contenido específico. Por lo general, dirán que se reservan el derecho de hacerlo a su exclusivo criterio, lo cual es una forma legal de decir que no darán un motivo específico. Si los términos dicen que no te notificarán, eso debe incluirse en la cita, pero si no dice explícitamente que te darán un aviso, se puede inferir razonablemente que pueden hacerlo sin decírtelo.",
           source: "https://edit.tosdr.org/points/11301",
           imgUrl: "Specific content can be deleted without reason and may be removed without prior notice.png",
         }
@@ -1248,26 +1248,26 @@ export const servicesMock: Service[] = [
     termsConditionsRisks: {
       e: [
         {
-          title: "They store data on you even if you did not interact with the service",
-          description: "Some services store data on you even if you did not provide that data yourself. For example, users might provide access to their address book, after which a service might also store the phone numbers of that person's contacts.",
+          title: "Almacenan tus datos incluso si no interactuaste con el servicio.",
+          description: "Algunos servicios almacenan tus datos, incluso si no proporcionaste esos datos vos mismo. Por ejemplo, los usuarios pueden dar acceso a su agenda de contactos, y luego un servicio también podría almacenar los números de teléfono de esos contactos.",
           source: "https://edit.tosdr.org/points/12956",
           imgUrl: "They store data on you even if you did not interact with the service.png",
         },
         {
-          title: "Private messages can be read",
-          description: "The Service is able to access, scan, review or read all user communications, including private messages, which may contain personal or sensitive data.",
+          title: "Los mensajes privados pueden ser leídos.",
+          description: "El Servicio puede acceder, escanear, revisar o leer todas las comunicaciones de los usuarios, incluidos los mensajes privados, que pueden contener datos personales o sensibles.",
           source: "https://edit.tosdr.org/points/12990",
           imgUrl: "Private messages can be read.png",
         },
         {
-          title: "Specific content can be deleted without reason and may be removed without prior notice",
-          description: "This service can delete specific content. Usually they will claim they reserve the right to do it at their sole discretion, which is legalese for saying they won't give a specific reason. If the terms say they will not notify you, it shall be included in the quote but if it does not explicitly say they will give you a notice, it can be reasonably inferred that they can do it without telling you.",
+          title: "Contenido específico puede ser eliminado sin motivo y puede ser removido sin previo aviso.",
+          description: "Este servicio puede eliminar contenido específico. Por lo general, dirán que se reservan el derecho de hacerlo a su exclusivo criterio, lo cual es una forma legal de decir que no darán un motivo específico. Si los términos dicen que no te notificarán, eso debe incluirse en la cita, pero si no dice explícitamente que te darán un aviso, se puede inferir razonablemente que pueden hacerlo sin decírtelo.",
           source: "https://edit.tosdr.org/points/12961",
           imgUrl: "Specific content can be deleted without reason and may be removed without prior notice.png",
         },
         {
-          title: "This service holds onto content that you've deleted",
-          description: "Content may remain in backup servers and be retained after deletion, and thus never be completely deleted. This case doesn't apply to contributions that can't be removed due to the nature of the service.",
+          title: "Este servicio retiene contenido que has eliminado.",
+          description: "El contenido puede permanecer en servidores de respaldo y ser retenido después de la eliminación, por lo que nunca se elimina por completo. Este caso no se aplica a las contribuciones que no se pueden eliminar debido a la naturaleza del servicio.",
           source: "https://edit.tosdr.org/points/12962",
           imgUrl: "This service holds onto content that you've deleted.png",
         }
@@ -1316,14 +1316,14 @@ export const servicesMock: Service[] = [
     termsConditionsRisks: {
       e: [
         {
-          title: "Specific content can be deleted without reason and may be removed without prior notice",
-          description: "This service can delete specific content. Usually they will claim they reserve the right to do it at their sole discretion, which is legalese for saying they won't give a specific reason. If the terms say they will not notify you, it shall be included in the quote but if it does not explicitly say they will give you a notice, it can be reasonably inferred that they can do it without telling you.",
+          title: "Contenido específico puede ser eliminado sin motivo y puede ser removido sin previo aviso.",
+          description: "Este servicio puede eliminar contenido específico. Por lo general, dirán que se reservan el derecho de hacerlo a su exclusivo criterio, lo cual es una forma legal de decir que no darán un motivo específico. Si los términos dicen que no te notificarán, eso debe incluirse en la cita, pero si no dice explícitamente que te darán un aviso, se puede inferir razonablemente que pueden hacerlo sin decírtelo.",
           source: "https://edit.tosdr.org/points/12733",
           imgUrl: "Specific content can be deleted without reason and may be removed without prior notice.png",
         },
         {
-          title: "You waive your moral rights",
-          description: "Moral rights are rights to creators of literary, dramatic, musical and artistic works, as well as directors of films. 'The moral rights include the right of attribution, the right to have a work published anonymously or pseudonymously, and the right to the integrity of the work. The preserving of the integrity of the work allows the author to object to alteration, distortion, or mutilation of the work that is 'prejudicial to the author's honor or reputation'. Anything else that may detract from the artist's relationship with the work even after it leaves the artist's possession or ownership may bring these moral rights into play. Moral rights are distinct from any economic rights tied to copyrights. Even if an artist has assigned his or her copyright rights to a work to a third party, he or she still maintains the moral rights to the work.' -Wikipedia In general, any terms that use the exact words 'moral rights' as rights that are waived will fall under this Case.",
+          title: "Renunciás a tus derechos morales.",
+          description: "Los derechos morales son derechos de los creadores de obras literarias, dramáticas, musicales y artísticas, así como de los directores de cine. 'Los derechos morales incluyen el derecho de atribución, el derecho a que una obra sea publicada de forma anónima o bajo seudónimo, y el derecho a la integridad de la obra. La preservación de la integridad de la obra permite al autor oponerse a alteraciones, distorsiones o mutilaciones de la obra que sean 'perjudiciales para el honor o la reputación del autor'. Cualquier otra cosa que pueda menoscabar la relación del artista con la obra, incluso después de que esta deje de estar en posesión o propiedad del artista, puede hacer que estos derechos morales entren en juego. Los derechos morales son distintos de cualquier derecho económico vinculado a los derechos de autor. Incluso si un artista ha cedido sus derechos de autor sobre una obra a un tercero, todavía mantiene los derechos morales sobre la obra.' -Wikipedia. En general, cualquier término que utilice las palabras exactas 'derechos morales' como derechos que se renuncian caerá bajo este caso.",
           source: "https://edit.tosdr.org/points/12744",
           imgUrl: "You waive your moral rights.png",
         }

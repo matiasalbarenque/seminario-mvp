@@ -27,21 +27,21 @@ export const ServicesDetailsPage = () => {
     if (service?.termsConditionsRisks?.e) {
       opt.push({
         className: 'bg-level-e text-white',
-        label: 'Highest Risk',
+        label: 'Riesgo Alto',
         value: 'e',
       });
     }
     if (service?.termsConditionsRisks?.d) {
       opt.push({
         className: 'bg-level-d text-white',
-        label: 'High Risk',
+        label: 'wip',
         value: 'd',
       });
     }
     if (service?.termsConditionsRisks?.c) {
       opt.push({
         className: 'bg-level-c text-black',
-        label: 'Medium Risk',
+        label: 'Riesgo Medio',
         value: 'c',
       });
     }
@@ -55,7 +55,7 @@ export const ServicesDetailsPage = () => {
     if (service?.termsConditionsRisks?.a) {
       opt.push({
         className: 'bg-level-a text-white',
-        label: 'Lowest Risk',
+        label: 'Sin riesgo',
         value: 'a',
       });
     }
