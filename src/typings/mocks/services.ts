@@ -13,11 +13,17 @@ type TermsConditionsRisks = {
   b?: TermsConditionsRiskDetails[];
   c?: TermsConditionsRiskDetails[];
   d?: TermsConditionsRiskDetails[];
-  e?: TermsConditionsRiskDetails[];
+  e?: TermsConditionsHighRiskDetails[];
 };
 
 export type TermsConditionsRiskDetails = {
   title: string;
   description: string;
   source: string;
+
+};export type TermsConditionsHighRiskDetails = {
+  title: string;
+  description: string;
+  source: string;
+  imgUrl: string;
 };
