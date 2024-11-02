@@ -37,20 +37,18 @@ const HomeRiskServiceDialog = ({ onClose, open, selectedRiskLevel }: HomeRiskSer
               {config.label}
             </span>
           </DialogTitle>
-          <DialogDescription className="grid grid-cols-2 gap-3 pt-3">
-            {myServicesFiltered.map(service => {
-              return (
-                <Link to={`/services/${service.name}`}>
-                  <Card>
-                    <div className="flex items-center justify-center p-3">
-                      <div className=" w-16 h-16">
-                        <img src={`/img/apps/${service.imgUrl}`} alt={service.label} />
-                      </div>
+          <DialogDescription className="grid grid-cols-2 gap-3 pt-3 max-h-96 overflow-auto py-2">
+            {myServicesFiltered.map(service => (
+              <Link to={`/services/${service.name}`}>
+                <Card>
+                  <div className="flex items-center justify-center p-3">
+                    <div className=" w-16 h-16">
+                      <img src={`/img/apps/${service.imgUrl}`} alt={service.label} />
                     </div>
-                  </Card>
-                </Link>
-              );
-            })}
+                  </div>
+                </Card>
+              </Link>
+            ))}
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
