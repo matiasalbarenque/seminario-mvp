@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from './ui/dialog';
 import { RiskLevels } from '@/typings/mocks/services';
 import { homeChartConfig } from './home-chart';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card } from './ui/card';
 import useMyServices from '@/hooks/use-my-services';
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';

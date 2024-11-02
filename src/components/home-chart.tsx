@@ -1,11 +1,8 @@
-import { forwardRef, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, LabelList, Rectangle, XAxis } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartContainer } from '@/components/ui/chart';
-import { useAccountStore } from '@/store/account';
-import { sortCompareStrings } from '@/assets/utils';
 import type { ChartConfig } from '@/components/ui/chart';
-import { servicesMock } from '@/assets/mocks/services';
 import HomeRiskServiceDialog from './home-risk-service-dialog';
 import { RiskLevels } from '@/typings/mocks/services';
 import useMyServices from '@/hooks/use-my-services';
