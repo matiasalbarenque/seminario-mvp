@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useRoutes } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import debounce from 'lodash.debounce';
 import { useAppStore } from '@/store/app';
@@ -14,6 +14,7 @@ import { servicesMock } from '@/assets/mocks/services';
 
 export const ServicesSelectionPage = () => {
   const navigate = useNavigate();
+
   const appStore = useAppStore();
   const accountStore = useAccountStore();
   const { toast } = useToast();
@@ -87,7 +88,7 @@ export const ServicesSelectionPage = () => {
       duration: 2000,
       variant: 'success',
     });
-    navigate(-1);
+    navigate('/');
   };
 
   return (
