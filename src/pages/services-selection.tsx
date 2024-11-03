@@ -11,6 +11,8 @@ import { RhfSwitch } from '@/components/ui/rhf/rhf-switch';
 import { getRiskAvgLevel, sortCompareStrings } from '@/assets/utils';
 import type { defaultValuesType } from '@/typings/pages/services-selection';
 import { servicesMock } from '@/assets/mocks/services';
+import { Icon } from '@/components/ui/icon';
+import ReportServiceDialog from '@/components/report-service-dialog';
 
 export const ServicesSelectionPage = () => {
   const navigate = useNavigate();
@@ -91,6 +93,8 @@ export const ServicesSelectionPage = () => {
     navigate('/');
   };
 
+  const [openReportServiceDialog, setOpenReportServiceDialog] = useState(false);
+
   return (
     <div className="grid grid-rows-[min-content,auto,min-content] gap-4">
       <Input
@@ -119,11 +123,27 @@ export const ServicesSelectionPage = () => {
               </div>
             ))}
           </div>
+          <div className="text-center mt-4">
+            {servicesOrdered.length === 0 && (
+              <Icon icon="material-symbols-light:search-off" size={64} className="mx-auto mb-2" />
+            )}
+            <h3 className="text-sm mb-1">¿No encontraste lo que buscabas?</h3>
+            <button
+              onClick={() => {
+                setOpenReportServiceDialog(true);
+              }}
+              className="text-sm text-[#1070ed] font-semibold"
+              type="button"
+            >
+              Sugerir servicio
+            </button>
+          </div>
         </form>
       </div>
       <Button type="submit" form="form" className="w-full rounded-full min-h-10 tracking-wide">
         Guardar
       </Button>
+      <ReportServiceDialog onClose={() => setOpenReportServiceDialog(false)} open={openReportServiceDialog} />
     </div>
   );
 };
