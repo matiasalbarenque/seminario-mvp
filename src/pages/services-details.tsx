@@ -13,6 +13,7 @@ import type {
 } from '@/typings/pages/services-details';
 import type { RiskLevels, TermsConditionsRiskDetails } from '@/typings/mocks/services';
 import { Icon } from '@/components/ui/icon';
+import { getDescriptionByRiskLevel, getIconByRiskLevel } from '@/assets/utils';
 
 export const ServicesDetailsPage = () => {
   const params = useParams();
@@ -27,35 +28,35 @@ export const ServicesDetailsPage = () => {
     if (service?.termsConditionsRisks?.e) {
       opt.push({
         className: 'bg-level-e text-white',
-        label: 'Riesgo Alto',
+        label: getDescriptionByRiskLevel('e'),
         value: 'e',
       });
     }
     if (service?.termsConditionsRisks?.d) {
       opt.push({
         className: 'bg-level-d text-white',
-        label: 'wip',
+        label: getDescriptionByRiskLevel('d'),
         value: 'd',
       });
     }
     if (service?.termsConditionsRisks?.c) {
       opt.push({
         className: 'bg-level-c text-black',
-        label: 'Riesgo Medio',
+        label: getDescriptionByRiskLevel('c'),
         value: 'c',
       });
     }
     if (service?.termsConditionsRisks?.b) {
       opt.push({
         className: 'bg-level-b text-black',
-        label: 'Low Risk',
+        label: getDescriptionByRiskLevel('b'),
         value: 'b',
       });
     }
     if (service?.termsConditionsRisks?.a) {
       opt.push({
         className: 'bg-level-a text-white',
-        label: 'Sin riesgo',
+        label: getDescriptionByRiskLevel('a'),
         value: 'a',
       });
     }
@@ -88,14 +89,14 @@ export const ServicesDetailsPage = () => {
     return (
       <Select value={value} onValueChange={onChange}>
         <SelectTrigger className="w-full h-12">
-          <SelectValue placeholder="Select a risk" />
+          <SelectValue placeholder="Select un riesgo" />
         </SelectTrigger>
         <SelectContent>
           {options.map(a => (
             <SelectItem value={a.value} key={`select-risk-${a.value}`} className="h-10">
-              <div className="flex">
-                <div className={`w-5 mr-2 flex justify-center rounded-full uppercase ${a.className}`}>{a.value}</div>
-                {a.label}
+              <div className="flex items-center gap-1.5">
+                <img src={getIconByRiskLevel(a.value)} width="24px" height="24px" />
+                <div className="font-medium">{a.label}</div>
               </div>
             </SelectItem>
           ))}
@@ -105,34 +106,31 @@ export const ServicesDetailsPage = () => {
   };
 
   const CustomAccordion = (props: CustomAccordionProps) => {
-    const { details, riskLevel } = props;
-
-    const riskLevelCasted = riskLevel as RiskLevels;
-    let className = '';
-    if (riskLevelCasted === 'e') {
-      className = 'hover:bg-red-50 hover:border-red-300';
-    } else if (riskLevelCasted === 'd') {
-      className = 'hover:bg-orange-50 hover:border-orange-300';
-    } else if (riskLevelCasted === 'c') {
-      className = 'hover:bg-yellow-50 hover:border-yellow-300';
-    } else if (riskLevelCasted === 'b') {
-      className = 'hover:bg-lime-50 hover:border-lime-400';
-    } else if (riskLevelCasted === 'a') {
-      className = 'hover:bg-green-50 hover:border-green-500';
-    }
-
+    const { details } = props;
     return (
       <Accordion type="single" collapsible>
         {details.map((item, index) => {
-          const titleMaxLength = 80;
+          const titleMaxLength = 60;
           const title =
             item.title.length <= titleMaxLength ? item.title : `${item.title.substring(0, titleMaxLength)}...`;
+          const imgUrl = item.imgUrl || 'no-image.jpg';
           return (
             <AccordionItem value={`accordion-item-${index}`} key={`accordion-item-${index}`}>
-              <AccordionTrigger
-                className={`px-2.5 py-2 my-3 text-left border border-transparent rounded-md hover:no-underline ${className}`}
-              >
-                {title}
+              <AccordionTrigger className="gap-2 px-1 py-2 my-1 text-left">
+                <div className="flex gap-3 h-14">
+                  <div className="shrink-0 flex justify-center items-center">
+                    <div className="w-12 h-12 bg-white border border-black border-opacity-60 rounded-full overflow-hidden">
+                      <img
+                        src={`/img/cases/${imgUrl}`}
+                        alt={item.title}
+                        width="48px"
+                        height="48px"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center no-underline">{title}</div>
+                </div>
               </AccordionTrigger>
               <AccordionContent className="px-2">{item.description}</AccordionContent>
             </AccordionItem>
@@ -145,9 +143,9 @@ export const ServicesDetailsPage = () => {
   const NoDataPlaceholder = (props: NoDataPlaceholderProps) => (
     <Alert>
       <Icon icon="carbon:document-unknown" size={18} />
-      <AlertTitle>No data available!</AlertTitle>
+      <AlertTitle>Sin información</AlertTitle>
       <AlertDescription>
-        We are working on adding details for {props.service}. Check it out soon to get more information.
+        Estamos trabajando para agregar detalles para {props.service}. Vuelve pronto para obtener más información.
       </AlertDescription>
     </Alert>
   );
@@ -163,7 +161,7 @@ export const ServicesDetailsPage = () => {
   return (
     <div className="grid grid-rows-[min-content,auto] gap-4">
       <div className="flex items-center gap-3">
-        <div className="w-12 h-12 p-2.5 border rounded-full overflow-hidden shadow-lg">
+        <div className="w-14 h-14 p-2.5 border border-black border-opacity-20 rounded-full overflow-hidden shadow-md">
           <img src={`/img/apps/${service?.imgUrl}`} alt={service?.label} />
         </div>
         <div className="flex-1">
