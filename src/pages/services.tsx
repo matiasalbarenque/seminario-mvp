@@ -63,14 +63,29 @@ export const ServicesPage = () => {
 
   const ServiceCategoryWrapper = (props: ServiceCategoryWrapperProps) => {
     const { children, riskLevel } = props;
+
+    let borderColor = '';
+    if (riskLevel === 'e') {
+      borderColor = 'border-level-e';
+    } else if (riskLevel === 'd') {
+      borderColor = 'border-level-d';
+    } else if (riskLevel === 'c') {
+      borderColor = 'border-level-c';
+    } else if (riskLevel === 'b') {
+      borderColor = 'border-level-b';
+    } else if (riskLevel === 'a') {
+      borderColor = 'border-level-a';
+    }
+
     return (
-      <div className="flex flex-col shadow">
-        <div
-          className={`px-2 h-12 flex items-center rounded-tl-md rounded-tr-md bg-level-${riskLevel} bg-opacity-90 border-b border-black border-opacity-5`}
-        >
+      <div className="flex flex-col">
+        <div className={`px-2 h-12 flex items-center rounded-tl-md rounded-tr-md bg-level-${riskLevel}`}>
           <div className="flex gap-2 items-center">
-            <div className="w-16 h-4 flex justify-center">
-              <div className="absolute -top-8 w-14 h-14 p-2 bg-white border border-black border-opacity-40 rounded-full">
+            <div className="w-14 h-4 flex justify-center">
+              <div
+                className={`absolute -top-8 w-14 h-14 p-2 border-[5px] ${borderColor} border-opacity-100 rounded-full`}
+                style={{ backgroundColor: '#fff' }}
+              >
                 <img src={getIconByRiskLevel(riskLevel)} width="100%" height="100%" />
               </div>
             </div>
@@ -79,7 +94,9 @@ export const ServicesPage = () => {
             </div>
           </div>
         </div>
-        <div className={`flex flex-col gap-1.5 p-1.5 bg-level-${riskLevel} bg-opacity-50 rounded-bl-sm rounded-br-sm`}>
+        <div
+          className={`flex flex-col gap-1.5 p-1.5 bg-level-${riskLevel} bg-opacity-60 rounded-bl-sm rounded-br-sm shadow`}
+        >
           {children}
         </div>
       </div>

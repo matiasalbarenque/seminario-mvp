@@ -21,13 +21,6 @@ export default {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
-        level: {
-          a: 'hsla(var(--level-a) / var(--tw-bg-opacity, 1))',
-          b: 'hsla(var(--level-b) / var(--tw-bg-opacity, 1))',
-          c: 'hsla(var(--level-c) / var(--tw-bg-opacity, 1))',
-          d: 'hsla(var(--level-d) / var(--tw-bg-opacity, 1))',
-          e: 'hsla(var(--level-e) / var(--tw-bg-opacity, 1))',
-        },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -63,6 +56,24 @@ export default {
           3: 'hsl(var(--chart-3))',
           4: 'hsl(var(--chart-4))',
           5: 'hsl(var(--chart-5))',
+        },
+      },
+      backgroundColor: {
+        level: {
+          a: 'hsla(var(--level-a) / var(--tw-bg-opacity, 1))',
+          b: 'hsla(var(--level-b) / var(--tw-bg-opacity, 1))',
+          c: 'hsla(var(--level-c) / var(--tw-bg-opacity, 1))',
+          d: 'hsla(var(--level-d) / var(--tw-bg-opacity, 1))',
+          e: 'hsla(var(--level-e) / var(--tw-bg-opacity, 1))',
+        },
+      },
+      borderColor: {
+        level: {
+          a: 'hsla(var(--level-a) / var(--tw-border-opacity, 1))',
+          b: 'hsla(var(--level-b) / var(--tw-border-opacity, 1))',
+          c: 'hsla(var(--level-c) / var(--tw-border-opacity, 1))',
+          d: 'hsla(var(--level-d) / var(--tw-border-opacity, 1))',
+          e: 'hsla(var(--level-e) / var(--tw-border-opacity, 1))',
         },
       },
       borderRadius: {
