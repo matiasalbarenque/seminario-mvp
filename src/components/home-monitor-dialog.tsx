@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { useAccountStore } from '@/store/account';
-import { getIconByRiskLevel } from '@/assets/utils';
+import { getIconByRiskAverage } from '@/assets/utils';
 import type { HomeMonitorDialogProps } from '@/typings/components/home-monitor-dialog';
 
 export const HomeMonitorDialog = (props: HomeMonitorDialogProps) => {
@@ -41,7 +41,7 @@ export const HomeMonitorDialog = (props: HomeMonitorDialogProps) => {
           <DialogTitle>
             <div className="w-full flex justify-center">
               <div className="w-20 h-20">
-                <img src={getIconByRiskLevel(accountStore.riskLevel)} width="100%" height="100%" />
+                <img src={getIconByRiskAverage(accountStore.riskLevel)} width="100%" height="100%" />
               </div>
             </div>
           </DialogTitle>

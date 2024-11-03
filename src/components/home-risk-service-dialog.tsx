@@ -1,10 +1,10 @@
-import { HomeMonitorDialogProps } from '@/typings/components/home-monitor-dialog';
+import type { HomeMonitorDialogProps } from '@/typings/components/home-monitor-dialog';
 import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from './ui/dialog';
-import { RiskLevels } from '@/typings/mocks/services';
+import type { RiskLevels } from '@/typings/mocks/services';
 import { homeChartConfig } from './home-chart';
 import { Card } from './ui/card';
-import useMyServices from '@/hooks/use-my-services';
+import { useMyServices } from '@/hooks/use-my-services';
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ const HomeRiskServiceDialog = ({ onClose, open, selectedRiskLevel }: HomeRiskSer
           </DialogTitle>
           <DialogDescription className="grid grid-cols-2 gap-3 pt-3 max-h-96 overflow-auto py-2">
             {myServicesFiltered.map(service => (
-              <Link to={`/services/${service.name}`}>
+              <Link to={`/services/${service.name}`} key={service.name}>
                 <Card>
                   <div className="flex items-center justify-center p-3">
                     <div className=" w-16 h-16">

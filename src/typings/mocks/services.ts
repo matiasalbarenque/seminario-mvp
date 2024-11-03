@@ -1,3 +1,5 @@
+import type { PropsWithChildren } from 'react';
+
 export type RiskLevels = 'a' | 'b' | 'c' | 'd' | 'e';
 
 export type Service = {
@@ -8,22 +10,21 @@ export type Service = {
   termsConditionsRisks?: TermsConditionsRisks;
 };
 
-type TermsConditionsRisks = {
-  a?: TermsConditionsRiskDetails[];
-  b?: TermsConditionsRiskDetails[];
-  c?: TermsConditionsRiskDetails[];
-  d?: TermsConditionsRiskDetails[];
-  e?: TermsConditionsHighRiskDetails[];
+export type TermsConditionsRisks<T = TermsConditionsRiskDetails[]> = {
+  a?: T;
+  b?: T;
+  c?: T;
+  d?: T;
+  e?: T;
 };
 
 export type TermsConditionsRiskDetails = {
   title: string;
   description: string;
   source: string;
+  imgUrl?: string;
+};
 
-};export type TermsConditionsHighRiskDetails = {
-  title: string;
-  description: string;
-  source: string;
-  imgUrl: string;
+export type ServiceCategoryWrapperProps = PropsWithChildren & {
+  riskLevel: string;
 };

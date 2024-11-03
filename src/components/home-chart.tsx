@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, LabelList, Rectangle, XAxis } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartContainer } from '@/components/ui/chart';
+import { useMyServices } from '@/hooks/use-my-services';
 import type { ChartConfig } from '@/components/ui/chart';
+import type { RiskLevels } from '@/typings/mocks/services';
 import HomeRiskServiceDialog from './home-risk-service-dialog';
-import { RiskLevels } from '@/typings/mocks/services';
-import useMyServices from '@/hooks/use-my-services';
 
 type ChartData = {
   riskLevel: string;
@@ -15,7 +15,7 @@ type ChartData = {
 
 export const homeChartConfig: ChartConfig = {
   e: {
-    label: 'Altísimo',
+    label: 'Elevado',
     color: 'hsl(var(--level-e))',
   },
   d: {
@@ -37,29 +37,26 @@ export const homeChartConfig: ChartConfig = {
 };
 
 export const RiskServicesChart = () => {
-  const [chartData, setChartData] = useState<ChartData[]>([]);
-
+  const [open, setOpen] = useState(false);
+  const [selectedRiskLevel, setSelectedRiskLevel] = useState<RiskLevels>();
   const myServices = useMyServices();
-  const servicesSelectedRiskLevelMemo = useMemo(() => myServices.map(a => a.riskLevel as string), [myServices]);
 
-  useEffect(() => {
-    if (servicesSelectedRiskLevelMemo.length > 0) {
-      const chartDataTemp: ChartData[] = [];
+  const chartData = useMemo(() => {
+    const chartDataTemp: ChartData[] = [];
+    const servicesSelectedRiskLevel = myServices.map(a => a.riskLevel as string);
+    if (servicesSelectedRiskLevel.length > 0) {
       'abcde'.split('').forEach(l => {
-        if (servicesSelectedRiskLevelMemo.includes(l)) {
+        if (servicesSelectedRiskLevel.includes(l)) {
           chartDataTemp.push({
             riskLevel: l,
-            count: servicesSelectedRiskLevelMemo.filter(a => a === l).length,
+            count: servicesSelectedRiskLevel.filter(a => a === l).length,
             fill: `var(--color-${l})`,
           });
         }
       });
-      setChartData(chartDataTemp);
     }
-  }, [servicesSelectedRiskLevelMemo]);
-
-  const [open, setOpen] = useState(false);
-  const [selectedRiskLevel, setSelectedRiskLevel] = useState<RiskLevels>();
+    return chartDataTemp;
+  }, [myServices.map(a => a.name)]);
 
   if (chartData.length === 0) {
     return <></>;

@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import { useAccountStore } from '@/store/account';
-import { getColorByRiskLevel, getIconByRiskLevel } from '@/assets/utils';
+import { getColorByRiskLevel, getIconByRiskAverage } from '@/assets/utils';
 import { HeaderAvatar } from './header-avatar';
 import { HomeMonitorDialog } from './home-monitor-dialog';
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@radix-ui/react-dialog';
-import { Button } from './ui/button';
-import { DialogHeader, DialogFooter } from './ui/dialog';
 
 const Waves = () => (
   <>
@@ -60,7 +57,7 @@ export const HomeMonitor = () => {
             <div className="home-monitor-pulse absolute w-1 h-1 bg-white rounded-full" />
             <div className="p-4">
               <img
-                src={getIconByRiskLevel(accountStore.riskLevel)}
+                src={getIconByRiskAverage(accountStore.riskLevel)}
                 width="100%"
                 height="100%"
                 className="home-monitor-icon"
