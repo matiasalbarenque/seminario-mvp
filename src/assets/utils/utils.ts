@@ -25,7 +25,7 @@ export const getColorByRiskLevel = (a: number) => {
   return 'bg-level-a';
 };
 
-export const getIconByRiskLevel = (a: number) => {
+export const getIconByRiskAverage = (a: number) => {
   if (a === -1) return questionSvg;
   if (a < 2) return fireSvg;
   if (a < 4) return noEntrySvg;
@@ -37,6 +37,22 @@ export const getIconByRiskLevel = (a: number) => {
 export const getValueByRiskLevel = (l: string): number => {
   const levels = 'edcba';
   return levels.includes(l) ? levels.indexOf(l) * 2 + 1 : 0;
+};
+
+export const getDescriptionByRiskLevel = (l: string): string => {
+  if (l === 'e') return 'Riesgo elevado';
+  if (l === 'd') return 'Riesgo alto';
+  if (l === 'c') return 'Riesgo medio';
+  if (l === 'b') return 'Riesgo bajo';
+  return 'Sin Riesgo';
+};
+
+export const getIconByRiskLevel = (l: string) => {
+  if (l === 'e') return fireSvg;
+  if (l === 'd') return noEntrySvg;
+  if (l === 'c') return warningSvg;
+  if (l === 'b') return checkSvg;
+  return sparksSvg;
 };
 
 export const getRiskAvgLevel = (services: Service[], myServices: string[]) => {
