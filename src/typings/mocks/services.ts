@@ -2,12 +2,12 @@ import type { PropsWithChildren } from 'react';
 
 export type RiskLevels = 'a' | 'b' | 'c' | 'd' | 'e';
 
-export type Service = {
+export type ServiceMock = {
   imgUrl: string;
   name: string;
   label: string;
   riskLevel: RiskLevels;
-  termsConditionsRisks?: TermsConditionsRisks;
+  termsConditionsRisks: TermsConditionsRisks;
 };
 
 export type TermsConditionsRisks<T = TermsConditionsRiskDetails[]> = {
@@ -23,6 +23,18 @@ export type TermsConditionsRiskDetails = {
   description: string;
   source: string;
   imgUrl?: string;
+};
+
+export type Service = ServiceMock & {
+  casesCounter: ServiceCasesCounter;
+};
+
+export type ServiceCasesCounter = {
+  a: number;
+  b: number;
+  c: number;
+  d: number;
+  e: number;
 };
 
 export type ServiceCategoryWrapperProps = PropsWithChildren & {

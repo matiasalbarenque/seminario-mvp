@@ -1,6 +1,6 @@
-import type { Service } from '@/typings/mocks/services';
+import type { ServiceMock } from '@/typings/mocks/services';
 
-export const servicesMock: Service[] = [
+export const servicesMock: ServiceMock[] = [
   {
     name: "instagram",
     imgUrl: "instagram.png",

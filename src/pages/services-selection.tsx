@@ -3,24 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import debounce from 'lodash.debounce';
 import { useAppStore } from '@/store/app';
+import { useServiceStore } from '@/store/service';
 import { useAccountStore } from '@/store/account';
 import { Button } from '@/components/ui/button';
+import { Icon } from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { RhfSwitch } from '@/components/ui/rhf/rhf-switch';
-import { getRiskAvgLevel, sortCompareStrings } from '@/assets/utils';
-import type { defaultValuesType } from '@/typings/pages/services-selection';
-import { servicesMock } from '@/assets/mocks/services';
-import { Icon } from '@/components/ui/icon';
 import ReportServiceDialog from '@/components/report-service-dialog';
+import { getRiskAvgLevel } from '@/assets/utils';
+import type { defaultValuesType } from '@/typings/pages/services-selection';
 
 export const ServicesSelectionPage = () => {
   const navigate = useNavigate();
-
   const appStore = useAppStore();
+  const serviceStore = useServiceStore();
   const accountStore = useAccountStore();
   const { toast } = useToast();
-  const servicesOrderedMemo = useMemo(() => servicesMock.sort((a, b) => sortCompareStrings(a.name, b.name)), []);
+  const servicesOrderedMemo = useMemo(() => serviceStore.services.sort((a, b) => a.name.localeCompare(b.name)), []);
   const [servicesOrdered, setServicesOrdered] = useState(servicesOrderedMemo);
 
   const defaultValues = useMemo(() => {
@@ -70,17 +70,7 @@ export const ServicesSelectionPage = () => {
       }
     }
 
-    // if (servicesSelected.length === 0) {
-    //   toast({
-    //     title: 'Error on saving',
-    //     description: 'You must select at least one service!',
-    //     duration: 3000,
-    //     variant: 'error',
-    //   });
-    //   return;
-    // }
-
-    const riskAvgLevel = getRiskAvgLevel(servicesMock, servicesSelected);
+    const riskAvgLevel = getRiskAvgLevel(serviceStore.services, servicesSelected);
     accountStore.setRiskLevel(riskAvgLevel);
     accountStore.setServices(servicesSelected);
 

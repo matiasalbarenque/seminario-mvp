@@ -1,28 +1,37 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Toaster } from '@/components/ui/toaster';
+import { useServiceStore } from '@/store/service';
 import { useAccountStore } from '@/store/account';
 //import { useNotificationStore } from '@/store/notification';
 import { Router } from './router.tsx';
-import { servicesMock } from '@/assets/mocks/services';
 
-import { getRiskAvgLevel } from '@/assets/utils';
+import { getRiskAvgLevel, servicesPreparation } from '@/assets/utils';
 import './index.css';
 
 const App = () => {
+  const isInit = useRef(false);
+  const serviceStore = useServiceStore();
   const accountStore = useAccountStore();
   //const notificationStore = useNotificationStore();
 
   useEffect(() => {
-    loadStorageData();
-    //notificationStore.initNotifications();
+    if (!isInit.current) {
+      isInit.current = true;
+      loadStorageData();
+      //notificationStore.initNotifications();
+    }
   }, []);
 
   const loadStorageData = () => {
-    // Load services
+    // Prepare services
+    const services = servicesPreparation();
+    serviceStore.setServices(services);
+
+    // Load my services
     const lsServices = localStorage.getItem('account-services');
     const myServices = lsServices ? JSON.parse(lsServices) : [];
-    const riskAvgLevel = getRiskAvgLevel(servicesMock, myServices);
+    const riskAvgLevel = getRiskAvgLevel(services, myServices);
     accountStore.setRiskLevel(riskAvgLevel);
     accountStore.setServices(myServices, false);
 

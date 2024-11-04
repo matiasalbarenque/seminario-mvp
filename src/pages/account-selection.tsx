@@ -5,7 +5,6 @@ import { useAccountStore } from '@/store/account';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
-import { sortCompareStrings } from '@/assets/utils';
 import type { AccountSelectionForm } from '@/typings/pages/accounts-selection';
 import { RhfInput } from '@/components/ui/rhf/rhf-input';
 
@@ -31,7 +30,7 @@ export const AccountSelectionPage = () => {
   }, []);
 
   useEffect(() => {
-    const accounts = accountStore.accounts.sort((a, b) => sortCompareStrings(a, b));
+    const accounts = accountStore.accounts.sort((a, b) => a.localeCompare(b));
     setAccountsOrdered(accounts);
   }, [accountStore.accounts]);
 
