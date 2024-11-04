@@ -4,7 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useAppStore } from '@/store/app';
-import { servicesMock } from '@/assets/mocks/services';
+import { useServiceStore } from '@/store/service';
 import type {
   CustomAccordionProps,
   CustomSelectProps,
@@ -18,10 +18,11 @@ import { getDescriptionByRiskLevel, getIconByRiskLevel } from '@/assets/utils';
 export const ServicesDetailsPage = () => {
   const params = useParams();
   const appStore = useAppStore();
+  const serviceStore = useServiceStore();
   const [selectValue, setSelectValue] = useState('');
   const [serviceDetails, setServiceDetails] = useState<TermsConditionsRiskDetails[]>([]);
 
-  const service = servicesMock.find(a => a.name === params?.name);
+  const service = serviceStore.services.find(a => a.name === params?.name);
 
   const options = useMemo<RiskSelectOption[]>(() => {
     const opt: RiskSelectOption[] = [];

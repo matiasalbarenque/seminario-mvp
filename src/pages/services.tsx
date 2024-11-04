@@ -4,7 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { useAppStore } from '@/store/app';
-import type { Service, ServiceCategoryWrapperProps, TermsConditionsRisks } from '@/typings/mocks/services';
+import type { ServiceMock, ServiceCategoryWrapperProps, TermsConditionsRisks } from '@/typings/mocks/services';
 import { useMyServices } from '@/hooks/use-my-services';
 import { getDescriptionByRiskLevel, getIconByRiskLevel } from '@/assets/utils';
 
@@ -43,7 +43,7 @@ export const ServicesPage = () => {
     return cases.slice(0, 4);
   };
 
-  const ServiceCases = (props: { service: Service }) => {
+  const ServiceCases = (props: { service: ServiceMock }) => {
     const { service } = props;
     const serviceCases = getServiceTermsConditionsRisks(service.termsConditionsRisks);
     return (
@@ -103,7 +103,16 @@ export const ServicesPage = () => {
     );
   };
 
-  const ServicesList = (props: { services: Service[] }) => {
+  const ServicesListCase = ({ cases }: { cases: number }) => {
+    if (cases === 0) return <></>;
+    return (
+      <div className="text-xs text-gray-500">
+        {cases} {cases > 1 ? 'casos' : 'caso'}
+      </div>
+    );
+  };
+
+  const ServicesList = (props: { services: ServiceMock[] }) => {
     if (props.services.length === 0) {
       return (
         <Alert>
@@ -124,7 +133,10 @@ export const ServicesPage = () => {
                 <div className="w-[72px] p-2 flex justify-center items-center border-r">
                   <img src={`/img/apps/${c.imgUrl}`} alt={c.label} className="w-8 h-auto" />
                 </div>
-                <div className="flex-1 flex items-center text-sm font-medium">{c.label}</div>
+                <div className="flex-1 flex flex-col justify-center">
+                  <div className="text-sm font-semibold line-clamp-1">{c.label}</div>
+                  <ServicesListCase cases={c.casesCounter[a]} />
+                </div>
                 <div className="w-28 flex justify-center items-center">
                   <ServiceCases service={c} />
                 </div>

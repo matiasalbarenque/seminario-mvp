@@ -5,15 +5,37 @@ import noEntrySvg from '@/assets/icons/no-entry.svg';
 import questionSvg from '@/assets/icons/question.svg';
 import checkSvg from '@/assets/icons/check.svg';
 import sparksSvg from '@/assets/icons/sparks.svg';
-import type { Service } from '@/typings/mocks/services';
+import type { Service, ServiceCasesCounter } from '@/typings/mocks/services';
+import { servicesMock } from '@/assets/mocks/services';
+
+export const servicesPreparation = (): Service[] => {
+  const services: Service[] = servicesMock.map(s => ({
+    ...s,
+    casesCounter: {
+      e: s.termsConditionsRisks?.e ? s.termsConditionsRisks.e.length : 0,
+      d: s.termsConditionsRisks?.d ? s.termsConditionsRisks.d.length : 0,
+      c: s.termsConditionsRisks?.c ? s.termsConditionsRisks.c.length : 0,
+      b: s.termsConditionsRisks?.b ? s.termsConditionsRisks.b.length : 0,
+      a: s.termsConditionsRisks?.a ? s.termsConditionsRisks.a.length : 0,
+    },
+  }));
+
+  const sortService = (a: Service, b: Service, l: keyof ServiceCasesCounter) =>
+    b.casesCounter[l] - a.casesCounter[l] || b.riskLevel.localeCompare(a.riskLevel) || a.name.localeCompare(b.name);
+
+  const servicesOrdered = [
+    services.filter(s => s.riskLevel === 'e').sort((a, b) => sortService(a, b, 'e')),
+    services.filter(s => s.riskLevel === 'd').sort((a, b) => sortService(a, b, 'd')),
+    services.filter(s => s.riskLevel === 'c').sort((a, b) => sortService(a, b, 'c')),
+    services.filter(s => s.riskLevel === 'b').sort((a, b) => sortService(a, b, 'b')),
+    services.filter(s => s.riskLevel === 'a').sort((a, b) => sortService(a, b, 'a')),
+  ];
+
+  return servicesOrdered.flat();
+};
 
 export const formatDate = (date: string, dateFormat = 'dd/MM/yyyy') => {
   return format(new Date(date), dateFormat);
-};
-
-export const sortCompareStrings = (a: string, b: string) => {
-  if (a === b) return 0;
-  return a < b ? -1 : 1;
 };
 
 export const getColorByRiskLevel = (a: number) => {

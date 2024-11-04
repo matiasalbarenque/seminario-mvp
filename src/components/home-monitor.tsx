@@ -55,7 +55,7 @@ export const HomeMonitor = () => {
             onClick={toggleDialowHandler}
           >
             <div className="home-monitor-pulse absolute w-1 h-1 bg-white rounded-full" />
-            <div className="p-4">
+            <div className="p-4 w-full h-full">
               <img
                 src={getIconByRiskAverage(accountStore.riskLevel)}
                 width="100%"
