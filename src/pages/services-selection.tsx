@@ -20,7 +20,7 @@ export const ServicesSelectionPage = () => {
   const serviceStore = useServiceStore();
   const accountStore = useAccountStore();
   const { toast } = useToast();
-  const servicesOrderedMemo = useMemo(() => serviceStore.services.sort((a, b) => a.name.localeCompare(b.name)), []);
+  const servicesOrderedMemo = useMemo(() => serviceStore.services.toSorted((a, b) => a.name.localeCompare(b.name)), []);
   const [servicesOrdered, setServicesOrdered] = useState(servicesOrderedMemo);
 
   const defaultValues = useMemo(() => {
