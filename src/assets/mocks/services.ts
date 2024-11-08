@@ -45,7 +45,7 @@ export const servicesMock: ServiceMock[] = [
           "title": "Guardan tus datos por tiempo indefinido",
           "description": "Puede guardar información sobre ti, como tu ubicación, durante mucho tiempo, a veces sin un límite claro.",
           "source": "https://edit.tosdr.org/points/10701",
-          "imgUrl": "ubicacion.png"
+          "imgUrl": "keepData.png"
         },
         {
           "title": "La app pide permisos demás",
