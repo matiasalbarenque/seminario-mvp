@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAccountStore } from '@/store/account';
-import { getColorByRiskLevel, getIconByRiskAverage } from '@/assets/utils';
+import { getColorByRiskAverage, getIconByRiskAverage } from '@/assets/utils';
 import { HeaderAvatar } from './header-avatar';
 import { HomeMonitorDialog } from './home-monitor-dialog';
 
@@ -35,11 +35,11 @@ const Waves = () => (
 
 export const HomeMonitor = () => {
   const accountStore = useAccountStore();
-  const [showDialow, setShowDialow] = useState(false);
-  const bgColor = getColorByRiskLevel(accountStore.riskLevel);
+  const [showDialog, setShowDialog] = useState(false);
+  const bgColor = getColorByRiskAverage(accountStore.riskLevel);
 
-  const toggleDialowHandler = () => {
-    setShowDialow(a => !a);
+  const toggleDialogHandler = () => {
+    setShowDialog(a => !a);
   };
 
   return (
@@ -52,7 +52,7 @@ export const HomeMonitor = () => {
         <div className="absolute w-full h-full top-0 left-0 pb-10 flex justify-center items-center">
           <div
             className="monitor-risk-level-indicator w-[18vw] h-[18vw] min-w-24 min-h-24 flex justify-center items-center rounded-full animate-in zoom-in-75 duration-700"
-            onClick={toggleDialowHandler}
+            onClick={toggleDialogHandler}
           >
             <div className="home-monitor-pulse absolute w-1 h-1 bg-white rounded-full" />
             <div className="p-4 w-full h-full">
@@ -69,7 +69,7 @@ export const HomeMonitor = () => {
       <div className="absolute top-4 right-4">
         <HeaderAvatar />
       </div>
-      <HomeMonitorDialog open={showDialow} onClose={toggleDialowHandler} />
+      <HomeMonitorDialog open={showDialog} onClose={toggleDialogHandler} />
     </>
   );
 };
