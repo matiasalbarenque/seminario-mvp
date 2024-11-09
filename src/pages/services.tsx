@@ -9,7 +9,6 @@ import type { ServiceMock, ServiceCategoryWrapperProps } from '@/typings/mocks/s
 import { useMyServices } from '@/hooks/use-my-services';
 import { getDescriptionByRiskLevel, getIconByRiskLevel, getRiskMessage } from '@/assets/utils';
 
-// Mapeo de mensajes por nivel de riesgo
 export const ServicesPage = () => {
   const appStore = useAppStore();
   const myServices = useMyServices();
