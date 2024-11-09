@@ -36,7 +36,7 @@ export const ServicesPage = () => {
       borderColor = 'border-level-a';
     }
 
-    // Obtener título de riesgo y mensaje específico
+
     const riskTitle = getDescriptionByRiskLevel(riskLevel);
     const riskMessage = getRiskMessage(riskLevel);
 
@@ -56,7 +56,6 @@ export const ServicesPage = () => {
               {riskTitle}
             </div>
           </div>
-          {/* Icono de información con modal a la derecha */}
           <Dialog.Root>
             <Dialog.Trigger asChild>
               <div className="cursor-pointer">
