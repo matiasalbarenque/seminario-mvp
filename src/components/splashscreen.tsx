@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useAppStore } from '@/store/app';
-import background from '@/assets/img/splashscreen.svg';
 
 export const SplashScreen = () => {
   const appStore = useAppStore();
@@ -38,10 +37,7 @@ export const SplashScreen = () => {
   );
 
   return (
-    <div
-      className="splashscreen absolute top-0 left-0 w-full h-full flex justify-center items-center bg-black z-50"
-      style={{ backgroundImage: `url(${background})` }}
-    >
+    <div className="splashscreen absolute top-0 left-0 w-full h-full flex justify-center items-center bg-black z-50">
       <AntidotoLogo />
     </div>
   );

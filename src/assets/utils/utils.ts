@@ -38,13 +38,22 @@ export const formatDate = (date: string, dateFormat = 'dd/MM/yyyy') => {
   return format(new Date(date), dateFormat);
 };
 
-export const getColorByRiskLevel = (a: number) => {
+export const getColorByRiskAverage = (a: number) => {
   if (a === -1) return 'bg-gray-400';
   if (a < 2) return 'bg-level-e';
   if (a < 4) return 'bg-level-d';
   if (a < 6) return 'bg-level-c';
   if (a < 8) return 'bg-level-b';
   return 'bg-level-a';
+};
+
+export const getColorByRiskLevel = (a: string) => {
+  if (a === 'e') return 'bg-level-e';
+  if (a === 'd') return 'bg-level-d';
+  if (a === 'c') return 'bg-level-c';
+  if (a === 'b') return 'bg-level-b';
+  if (a === 'a') return 'bg-level-a';
+  return 'bg-gray-400';
 };
 
 export const getIconByRiskAverage = (a: number) => {
