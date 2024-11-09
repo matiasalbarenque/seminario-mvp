@@ -78,6 +78,18 @@ export const getDescriptionByRiskLevel = (l: string): string => {
   return 'Sin Riesgo';
 };
 
+export const getRiskMessage = (riskLevel: string): string => {
+  const messages: Record<string, string> = {
+    a: "Son los mejores términos de uso: te tratan justamente, respetan tus derechos y no van a abusar de tus datos.",
+    b: "Los términos de uso son justos para los usuarios pero podrían ser mejorados.",
+    c: "Los términos de uso no están mal pero algunos problemas necesitan tu consideración.",
+    d: "Los términos de uso son muy injustos o hay problemas importantes que exigen tu atención.",
+    e: "Los términos de uso plantean preocupaciones muy serias."
+  };
+  
+  return messages[riskLevel] || "Nivel de riesgo desconocido";
+};
+
 export const getIconByRiskLevel = (l: string) => {
   if (l === 'e') return fireSvg;
   if (l === 'd') return noEntrySvg;
