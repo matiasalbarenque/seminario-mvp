@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { useServiceStore } from '@/store/service';
 import { useAccountStore } from '@/store/account';
 //import { useNotificationStore } from '@/store/notification';
+import { LOCAL_STORAGE } from '@/constants';
 import { Router } from './router.tsx';
 
 import { getRiskAvgLevel, servicesPreparation } from '@/assets/utils';
@@ -29,21 +30,21 @@ const App = () => {
     serviceStore.setServices(services);
 
     // Load my services
-    const lsServices = localStorage.getItem('account-services');
+    const lsServices = localStorage.getItem(LOCAL_STORAGE.MY_SERVICES);
     const myServices = lsServices ? JSON.parse(lsServices) : [];
+    accountStore.setMyServices(myServices);
     const riskAvgLevel = getRiskAvgLevel(services, myServices);
     accountStore.setRiskLevel(riskAvgLevel);
-    accountStore.setServices(myServices, false);
 
     // Load account emails
-    const lsAccounts = localStorage.getItem('account-emails');
+    const lsAccounts = localStorage.getItem(LOCAL_STORAGE.ACCOUNT_EMAILS);
     const accountEmails = lsAccounts
       ? JSON.parse(lsAccounts)
       : ['georgelucas@gmail.com', 'stevenspielberg@gmail.com', 'tarantino@gmail.com'];
     accountStore.setAccounts(accountEmails, false);
 
     // Load terms accepted
-    const lsTermsAccepted = localStorage.getItem('terms-accepted');
+    const lsTermsAccepted = localStorage.getItem(LOCAL_STORAGE.TERMS_ACCEPTED);
     accountStore.setTermsAccepted(JSON.parse(lsTermsAccepted || 'false'), false);
   };
 

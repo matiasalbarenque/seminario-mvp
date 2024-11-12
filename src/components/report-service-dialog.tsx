@@ -1,15 +1,10 @@
-import { HomeMonitorDialogProps } from '@/typings/components/home-monitor-dialog';
+import { useState } from 'react';
 import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from './ui/dialog';
-import { AccountSelectionForm } from '@/typings/pages/accounts-selection';
-import { useForm } from 'react-hook-form';
-import { RhfInput } from './ui/rhf/rhf-input';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
-import { watch } from 'fs';
-import { useState } from 'react';
-import { useNotificationStore } from '@/store/notification';
 import { useToast } from '@/hooks/use-toast';
+import type { HomeMonitorDialogProps } from '@/typings/components/home-monitor-dialog';
 
 type ServiceTypeValues = 'web' | 'app';
 

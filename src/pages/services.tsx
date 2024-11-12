@@ -1,11 +1,11 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { useAppStore } from '@/store/app';
-import type { ServiceMock, ServiceCategoryWrapperProps } from '@/typings/mocks/services';
+import type { ServiceCategoryWrapperProps, Service } from '@/typings/mocks/services';
 import { useMyServices } from '@/hooks/use-my-services';
 import { getDescriptionByRiskLevel, getIconByRiskLevel, getRiskMessage } from '@/assets/utils';
 
@@ -35,13 +35,14 @@ export const ServicesPage = () => {
       borderColor = 'border-level-a';
     }
 
-
     const riskTitle = getDescriptionByRiskLevel(riskLevel);
     const riskMessage = getRiskMessage(riskLevel);
 
     return (
       <div className="flex flex-col">
-        <div className={`px-2 h-12 flex items-center justify-between rounded-tl-md rounded-tr-md bg-level-${riskLevel}`}>
+        <div
+          className={`px-2 h-12 flex items-center justify-between rounded-tl-md rounded-tr-md bg-level-${riskLevel}`}
+        >
           <div className="flex gap-2 items-center">
             <div className="w-14 h-4 flex justify-center">
               <div
@@ -51,9 +52,7 @@ export const ServicesPage = () => {
                 <img src={getIconByRiskLevel(riskLevel)} width="100%" height="100%" />
               </div>
             </div>
-            <div className="text-lg font-medium text-white tracking-wide drop-shadow-md">
-              {riskTitle}
-            </div>
+            <div className="text-lg font-medium text-white tracking-wide drop-shadow-md">{riskTitle}</div>
           </div>
           <Dialog.Root>
             <Dialog.Trigger asChild>
@@ -65,9 +64,7 @@ export const ServicesPage = () => {
             <Dialog.Content className="fixed inset-0 flex items-center justify-center p-4 z-50">
               <div className="bg-white rounded-lg p-6 w-full max-w-md">
                 <Dialog.Title className="text-lg font-semibold">{riskTitle}</Dialog.Title>
-                <Dialog.Description className="mt-2 text-gray-700">
-                  {riskMessage}
-                </Dialog.Description>
+                <Dialog.Description className="mt-2 text-gray-700">{riskMessage}</Dialog.Description>
                 <div className="mt-4 flex justify-end">
                   <Dialog.Close asChild>
                     <Button>Cerrar</Button>
@@ -86,7 +83,7 @@ export const ServicesPage = () => {
     );
   };
 
-  const ServicesList = (props: { services: ServiceMock[] }) => {
+  const ServicesList = (props: { services: Service[] }) => {
     if (props.services.length === 0) {
       return (
         <Alert>
