@@ -70,7 +70,7 @@ export const RiskServicesChart = () => {
           <CardDescription>Nivel de riesgo por servicio</CardDescription>
         </CardHeader>
         <CardContent>
-          <ChartContainer config={homeChartConfig}>
+          <ChartContainer config={homeChartConfig} style={{ width: '100%', height: 230 }}>
             <BarChart
               accessibilityLayer
               data={chartData}
