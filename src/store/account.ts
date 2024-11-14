@@ -1,22 +1,32 @@
 import { create } from 'zustand';
-import type { AccountState } from '@/typings/state/account';
+import { LOCAL_STORAGE } from '@/constants';
+import type { AccountState, MyService } from '@/typings/state/account';
 
-export const useAccountStore = create<AccountState>()(set => ({
+export const useAccountStore = create<AccountState>()((set, get) => ({
   accounts: [],
-  services: [],
+  myServices: [],
   riskLevel: -1,
   termsAccepted: false,
   setAccounts: (accounts: string[], persist: boolean = true) => {
     set({ accounts });
     if (persist) {
-      localStorage.setItem('account-emails', JSON.stringify(accounts));
+      localStorage.setItem(LOCAL_STORAGE.ACCOUNT_EMAILS, JSON.stringify(accounts));
     }
   },
-  setServices: (services: string[], persist: boolean = true) => {
-    set({ services });
-    if (persist) {
-      localStorage.setItem('account-services', JSON.stringify(services));
-    }
+  setMyServices: (myServices: MyService[]) => {
+    set({ myServices });
+  },
+  addMyService: (myService: MyService) => {
+    const myServices = [...get().myServices, myService];
+    set({ myServices });
+    localStorage.setItem(LOCAL_STORAGE.MY_SERVICES, JSON.stringify(myServices));
+    return myServices;
+  },
+  removeMyService: (serviceName: string) => {
+    const myServices = get().myServices.filter(a => a.name !== serviceName);
+    set({ myServices });
+    localStorage.setItem(LOCAL_STORAGE.MY_SERVICES, JSON.stringify(myServices));
+    return myServices;
   },
   setRiskLevel: (riskLevel: number) => {
     set({ riskLevel });
@@ -24,7 +34,7 @@ export const useAccountStore = create<AccountState>()(set => ({
   setTermsAccepted: (termsAccepted: boolean, persist: boolean = true) => {
     set({ termsAccepted });
     if (persist) {
-      localStorage.setItem('terms-accepted', JSON.stringify(true));
+      localStorage.setItem(LOCAL_STORAGE.TERMS_ACCEPTED, JSON.stringify(true));
     }
   },
 }));

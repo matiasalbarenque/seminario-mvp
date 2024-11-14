@@ -6,6 +6,7 @@ import questionSvg from '@/assets/icons/question.svg';
 import checkSvg from '@/assets/icons/check.svg';
 import sparksSvg from '@/assets/icons/sparks.svg';
 import type { Service, ServiceCasesCounter } from '@/typings/mocks/services';
+import type { MyService } from '@/typings/state/account';
 import { servicesMock } from '@/assets/mocks/services';
 
 export const servicesPreparation = (): Service[] => {
@@ -80,14 +81,14 @@ export const getDescriptionByRiskLevel = (l: string): string => {
 
 export const getRiskMessage = (riskLevel: string): string => {
   const messages: Record<string, string> = {
-    a: "Son los mejores términos de uso: te tratan justamente, respetan tus derechos y no van a abusar de tus datos.",
-    b: "Los términos de uso son justos para los usuarios pero podrían ser mejorados.",
-    c: "Los términos de uso no están mal pero algunos problemas necesitan tu consideración.",
-    d: "Los términos de uso son muy injustos o hay problemas importantes que exigen tu atención.",
-    e: "Los términos de uso plantean preocupaciones muy serias."
+    a: 'Son los mejores términos de uso: te tratan justamente, respetan tus derechos y no van a abusar de tus datos.',
+    b: 'Los términos de uso son justos para los usuarios pero podrían ser mejorados.',
+    c: 'Los términos de uso no están mal pero algunos problemas necesitan tu consideración.',
+    d: 'Los términos de uso son muy injustos o hay problemas importantes que exigen tu atención.',
+    e: 'Los términos de uso plantean preocupaciones muy serias.',
   };
-  
-  return messages[riskLevel] || "Nivel de riesgo desconocido";
+
+  return messages[riskLevel] || 'Nivel de riesgo desconocido';
 };
 
 export const getIconByRiskLevel = (l: string) => {
@@ -98,9 +99,10 @@ export const getIconByRiskLevel = (l: string) => {
   return sparksSvg;
 };
 
-export const getRiskAvgLevel = (services: Service[], myServices: string[]) => {
+export const getRiskAvgLevel = (services: Service[], myServices: MyService[]) => {
   if (myServices.length === 0) return -1;
-  const servicesSelected = services.filter(a => myServices.some(b => b === a?.name));
+  const myServicesNames = myServices.map(a => a.name);
+  const servicesSelected = services.filter(a => myServicesNames.some(b => b === a?.name));
   const levels = servicesSelected.map(a => getValueByRiskLevel(a.riskLevel));
   const sum = levels.reduce((a, b) => a + b, 0);
   const avg = sum / levels.length;

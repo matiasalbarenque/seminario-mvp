@@ -4,6 +4,8 @@ import { getColorByRiskAverage, getIconByRiskAverage } from '@/assets/utils';
 import { HeaderAvatar } from './header-avatar';
 import { HomeMonitorDialog } from './home-monitor-dialog';
 
+const getIsHighRiskLevel = (a: number) => a >= 0 && a < 6;
+
 const Waves = () => (
   <>
     <svg className="wave1 absolute left-0 -bottom-4" viewBox="0 0 1440 320">
@@ -33,10 +35,20 @@ const Waves = () => (
   </>
 );
 
+const Pulse = (riskLevel: number) => {
+  const pulseColor = getColorByRiskAverage(riskLevel);
+  return (
+    <div
+      className={`background-pulse top-0 left-0 w-full h-full bg-level-c rounded-tl-full rounded-tr-full blur-2xl ${pulseColor} bg-opacity-90`}
+    />
+  );
+};
+
 export const HomeMonitor = () => {
   const accountStore = useAccountStore();
   const [showDialog, setShowDialog] = useState(false);
-  const bgColor = getColorByRiskAverage(accountStore.riskLevel);
+  const isHighRiskLevel = getIsHighRiskLevel(accountStore.riskLevel);
+  const bgColor = isHighRiskLevel ? 'bg-black' : getColorByRiskAverage(accountStore.riskLevel);
 
   const toggleDialogHandler = () => {
     setShowDialog(a => !a);
@@ -44,14 +56,17 @@ export const HomeMonitor = () => {
 
   return (
     <>
-      <div
-        className={`home-monitor min-h-48 h-[45vw] overflow-hidden transition-colors duration-1000 bg-gray-400 ${bgColor}`}
-      >
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white opacity-40 to-transparent to-40%" />
-        <Waves />
-        <div className="absolute w-full h-full top-0 left-0 pb-10 flex justify-center items-center">
+      <div className={`home-monitor min-h-[230px] h-[30vh] overflow-hidden transition-colors duration-1000 ${bgColor}`}>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white opacity-30 to-transparent to-40% z-10" />
+        <div className="absolute top-0 left-0 w-full h-full z-0">
+          <svg viewBox="0 0 1440 320" className="absolute left-0 -bottom-[4.25vw] z-10">
+            <path fill="#fff" d="m0 192 120 16c120 16 360 48 600 48s480-32 600-48l120-16v128H0Z" />
+          </svg>
+          {isHighRiskLevel ? Pulse(accountStore.riskLevel) : <Waves />}
+        </div>
+        <div className="absolute w-full h-full top-0 left-0 pb-8 flex justify-center items-center z-20">
           <div
-            className="monitor-risk-level-indicator w-[18vw] h-[18vw] min-w-24 min-h-24 flex justify-center items-center rounded-full animate-in zoom-in-75 duration-700"
+            className="monitor-risk-level-indicator min-w-24 min-h-24 w-[11vh] h-[11vh] flex justify-center items-center rounded-full animate-in zoom-in-75 duration-700"
             onClick={toggleDialogHandler}
           >
             <div className="home-monitor-pulse absolute w-1 h-1 bg-white rounded-full" />
@@ -60,13 +75,13 @@ export const HomeMonitor = () => {
                 src={getIconByRiskAverage(accountStore.riskLevel)}
                 width="100%"
                 height="100%"
-                className="home-monitor-icon"
+                className={isHighRiskLevel ? 'home-monitor-icon' : ''}
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-4 right-4 z-30">
         <HeaderAvatar />
       </div>
       <HomeMonitorDialog open={showDialog} onClose={toggleDialogHandler} />

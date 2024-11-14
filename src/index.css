@@ -156,8 +156,8 @@ footer.tabs-component a.active .btn-text {
 }
 
 .monitor-risk-level-indicator {
-  border-top: 1px solid white;
-  border-right: 1px solid white;
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
+  border-right: 1px solid rgba(255, 255, 255, 0.75);
   background: linear-gradient(to bottom left, rgba(255, 255, 255, 0.7), transparent, rgba(255, 255, 255, 0.8));
   text-shadow: 0 0 1px black, 0 0 3px black;
 }
@@ -234,6 +234,23 @@ footer.tabs-component a.active .btn-text {
 
   to {
     transform: scale3d(-1.4, 1.4, 1.4) translateX(14vw);
+  }
+}
+
+.home-monitor .background-pulse {
+  animation-name: homeMonitorBgPulse;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes homeMonitorBgPulse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
   }
 }
 

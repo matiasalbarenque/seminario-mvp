@@ -4,7 +4,7 @@ import type { FooterProps } from '@/typings/components/footer';
 
 export const Footer = (props: FooterProps) => {
   return (
-    <footer className={`w-full h-14 flex bg-white border-t tabs-component ${props.className}`}>
+    <footer className={`w-full h-14 flex bg-white border-t tabs-component ${props.className || ''}`}>
       <div className="flex-1 flex justify-center items-center">
         <NavLink to="/">
           <div className="flex flex-col justify-center items-center gap-1">

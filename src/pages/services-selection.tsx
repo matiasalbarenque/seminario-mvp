@@ -8,20 +8,36 @@ import { useAccountStore } from '@/store/account';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
-import { useToast } from '@/hooks/use-toast';
 import { RhfSwitch } from '@/components/ui/rhf/rhf-switch';
 import ReportServiceDialog from '@/components/report-service-dialog';
 import { getRiskAvgLevel } from '@/assets/utils';
 import type { defaultValuesType } from '@/typings/pages/services-selection';
+import { ServiceUsageDialog } from '@/components/service-usage-dialog';
+import type { Service } from '@/typings/mocks/services';
+import type { onCloseServiceDialogParams } from '@/typings/components/service-usage-dialog';
+import type { MyService } from '@/typings/state/account';
 
 export const ServicesSelectionPage = () => {
   const navigate = useNavigate();
   const appStore = useAppStore();
   const serviceStore = useServiceStore();
   const accountStore = useAccountStore();
-  const { toast } = useToast();
-  const servicesOrderedMemo = useMemo(() => serviceStore.services.toSorted((a, b) => a.name.localeCompare(b.name)), []);
-  const [servicesOrdered, setServicesOrdered] = useState(servicesOrderedMemo);
+  const [servicesOrdered, setServicesOrdered] = useState<Service[]>([]);
+  const [openReportServiceDialog, setOpenReportServiceDialog] = useState(false);
+  const [openServiceUsageDialog, setOpenServiceUsageDialog] = useState(false);
+  const [serviceSelected, setServiceSelected] = useState<Service>();
+
+  const servicesOrderedMemo = useMemo(
+    () => serviceStore.services.toSorted((a, b) => a.name.localeCompare(b.name)),
+    [serviceStore.services]
+  );
+
+  useEffect(() => {
+    appStore.setAppConfig({
+      pageTitle: 'Seleccionar servicios',
+      hideFooter: true,
+    });
+  }, []);
 
   const defaultValues = useMemo(() => {
     const defaultValues: defaultValuesType = {};
@@ -31,25 +47,34 @@ export const ServicesSelectionPage = () => {
     return defaultValues;
   }, []);
 
-  const { control, handleSubmit, reset } = useForm({
+  const { control, reset, resetField, watch } = useForm({
     mode: 'onChange',
     defaultValues,
   });
 
   useEffect(() => {
-    appStore.setAppConfig({
-      pageTitle: 'Seleccionar servicios',
-      hideFooter: true,
+    const subscription = watch((value, { name, type }) => {
+      if (type === 'change' && name) {
+        if (value[name]) {
+          setServiceSelected(serviceStore.services.find(a => a.name === name));
+          setOpenServiceUsageDialog(true);
+        } else {
+          const myServices = accountStore.removeMyService(name);
+          computeRiskLevel(myServices);
+        }
+      }
     });
-  }, []);
+    return () => subscription.unsubscribe();
+  }, [watch]);
 
   useEffect(() => {
+    setServicesOrdered(servicesOrderedMemo);
     const servicesSelected: defaultValuesType = {};
-    servicesOrdered.forEach(item => {
-      servicesSelected[item?.name] = accountStore.services.some(a => a === item?.name);
+    servicesOrderedMemo.forEach(item => {
+      servicesSelected[item?.name] = accountStore.myServices.some(a => a.name === item?.name);
     });
     reset(servicesSelected);
-  }, [accountStore.services]);
+  }, [servicesOrderedMemo.length]);
 
   const searchInputHandler = debounce((value: string) => {
     if (value === '') {
@@ -62,28 +87,25 @@ export const ServicesSelectionPage = () => {
     }
   }, 250);
 
-  const onSubmit = async (formData: defaultValuesType) => {
-    const servicesSelected: string[] = [];
-    for (const [key, value] of Object.entries(formData)) {
-      if (value) {
-        servicesSelected.push(key);
+  const onCloseServiceDialog = (params?: onCloseServiceDialogParams) => {
+    if (params?.serviceName) {
+      if (params?.usageSelected) {
+        const myServices = accountStore.addMyService({
+          name: params.serviceName,
+          usage: params?.alreadyUseIt ?? false,
+        });
+        computeRiskLevel(myServices);
+      } else {
+        resetField(params.serviceName, { defaultValue: false, keepDirty: true });
       }
     }
-
-    const riskAvgLevel = getRiskAvgLevel(serviceStore.services, servicesSelected);
-    accountStore.setRiskLevel(riskAvgLevel);
-    accountStore.setServices(servicesSelected);
-
-    toast({
-      title: 'Cambios guardados',
-      description: '¡Los servicios seleccionados se han guardado satisfactoriamente!',
-      duration: 2000,
-      variant: 'success',
-    });
-    navigate('/');
+    setOpenServiceUsageDialog(false);
   };
 
-  const [openReportServiceDialog, setOpenReportServiceDialog] = useState(false);
+  const computeRiskLevel = (myServices: MyService[]) => {
+    const riskAvgLevel = getRiskAvgLevel(serviceStore.services, myServices);
+    accountStore.setRiskLevel(riskAvgLevel);
+  };
 
   return (
     <div className="grid grid-rows-[min-content,auto,min-content] gap-4">
@@ -95,7 +117,7 @@ export const ServicesSelectionPage = () => {
         className="h-11"
       />
       <div className="overflow-auto">
-        <form onSubmit={handleSubmit(onSubmit)} id="form" className="h-0">
+        <form id="form" className="h-0">
           <div className="flex flex-col gap-3">
             {servicesOrdered.map(a => (
               <div className="w-full h-12 flex gap-2.5 rounded-[6px] border shadow-sm overflow-hidden" key={a.name}>
@@ -130,10 +152,11 @@ export const ServicesSelectionPage = () => {
           </div>
         </form>
       </div>
-      <Button type="submit" form="form" className="w-full rounded-full min-h-10 tracking-wide">
-        Guardar
+      <Button onClick={() => navigate('/')} className="w-full rounded-full min-h-10 tracking-wide">
+        Ver resultados
       </Button>
       <ReportServiceDialog onClose={() => setOpenReportServiceDialog(false)} open={openReportServiceDialog} />
+      <ServiceUsageDialog onClose={onCloseServiceDialog} open={openServiceUsageDialog} service={serviceSelected} />
     </div>
   );
 };

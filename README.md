@@ -25,3 +25,4 @@ npm run build
 - Docs de Tailwind: [Sitio Oficial](https://tailwindcss.com/)
 - Tailwind Animations: [Sitio Oficial](https://www.npmjs.com/package/tailwindcss-animate)
 - Docs de Shadcn: [Sitio Oficial](https://ui.shadcn.com/)
+- Íconos: [Sitio Oficial](https://icones.js.org/)
