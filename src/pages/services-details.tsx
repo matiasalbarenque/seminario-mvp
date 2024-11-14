@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Icon } from '@/components/ui/icon';
 import { ServicesDetailsDialog } from '@/components/services-details-dialog';
+import { ServicesRiskInfoDialog } from '@/components/services-risk-info-dialog';
 import { useAppStore } from '@/store/app';
 import { useServiceStore } from '@/store/service';
 import type { NoDataPlaceholderProps, ServiceDetailsData } from '@/typings/pages/services-details';
@@ -15,6 +16,8 @@ export const ServicesDetailsPage = () => {
   const serviceStore = useServiceStore();
   const [dialogData, setDialogData] = useState<TermsConditionsRiskDetails>();
   const [showDialog, setShowDialog] = useState(false);
+  const [showRiskInfoDialog, setShowRiskInfoDialog] = useState(false);
+  const [riskInfoDialogSelected, setRiskInfoDialogSelected] = useState<string>('');
 
   const service = serviceStore.services.find(a => a.name === params?.name);
 
@@ -74,13 +77,21 @@ export const ServicesDetailsPage = () => {
     setShowDialog(false);
   };
 
+  const showRiskInfoDialogHandler = (riskLevel: string) => {
+    setShowRiskInfoDialog(true);
+    setRiskInfoDialogSelected(riskLevel);
+  };
+
   const CategorySeparator = (props: ServiceDetailsData) => {
     const { risk } = props;
     const bgColor = risk ? getColorByRiskLevel(risk) : '';
     const title = risk ? getDescriptionByRiskLevel(risk) : '';
     return (
-      <div className={`px-3 py-2 rounded-md ${bgColor}`} key={`sep-${risk}`}>
+      <div className={`flex items-center justify-between px-3 py-2 rounded-md ${bgColor}`} key={`sep-${risk}`}>
         <div className="text-lg font-medium text-white tracking-wide drop-shadow">{title}</div>
+        <div className="cursor-pointer" onClick={() => showRiskInfoDialogHandler(risk)}>
+          <Icon icon="ic:baseline-info" size={24} className="text-white opacity-75" />
+        </div>
       </div>
     );
   };
@@ -108,6 +119,9 @@ export const ServicesDetailsPage = () => {
         <div className="flex-1 flex items-center">
           <div className="font-medium leading-snug">{props.title}</div>
         </div>
+        <div className="w-12 flex justify-center items-center">
+          <Icon icon="ic:baseline-keyboard-arrow-right" size={26} className="opacity-60" />
+        </div>
       </div>
     );
   };
@@ -122,17 +136,24 @@ export const ServicesDetailsPage = () => {
   };
 
   return (
-    <div className="grid grid-rows-[auto] gap-4">
-      <div className="overflow-y-auto overflow-x-hidden">
-        <div className="h-0 flex flex-col gap-3">
-          {serviceDetails.map((a, i) => (
-            <div className={`${a.type} risk-${a.risk}`} key={`service-wrapper-${a.risk}-${a.type}-${i}`}>
-              {a.type === 'separator' ? <CategorySeparator {...a} /> : <ServiceDetailsContent {...a} />}
-            </div>
-          ))}
+    <>
+      <div className="grid grid-rows-[auto] gap-4">
+        <div className="overflow-y-auto overflow-x-hidden">
+          <div className="h-0 flex flex-col gap-3">
+            {serviceDetails.map((a, i) => (
+              <div className={`${a.type} risk-${a.risk}`} key={`service-wrapper-${a.risk}-${a.type}-${i}`}>
+                {a.type === 'separator' ? <CategorySeparator {...a} /> : <ServiceDetailsContent {...a} />}
+              </div>
+            ))}
+          </div>
         </div>
-        <ServicesDetailsDialog open={showDialog} onClose={closeDialogHandler} data={dialogData} />
       </div>
-    </div>
+      <ServicesDetailsDialog open={showDialog} onClose={closeDialogHandler} data={dialogData} />
+      <ServicesRiskInfoDialog
+        open={showRiskInfoDialog}
+        riskLevel={riskInfoDialogSelected}
+        onClose={() => setShowRiskInfoDialog(false)}
+      />
+    </>
   );
 };
