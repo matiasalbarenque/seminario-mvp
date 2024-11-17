@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
-import { Bar, BarChart, CartesianGrid, LabelList, Rectangle, XAxis } from 'recharts';
+import { Bar, BarChart, CartesianGrid, LabelList, Pie, PieChart, Rectangle, XAxis } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ChartContainer } from '@/components/ui/chart';
+import { ChartContainer, ChartLegend, ChartLegendContent } from '@/components/ui/chart';
 import { useMyServices } from '@/hooks/use-my-services';
 import type { ChartConfig } from '@/components/ui/chart';
 import type { RiskLevels } from '@/typings/mocks/services';
@@ -58,48 +58,72 @@ export const RiskServicesChart = () => {
     return chartDataTemp;
   }, [myServices.map(a => a.name)]);
 
+  console.log(chartData);
+
   if (chartData.length === 0) {
     return <></>;
   }
 
   return (
-    <div className="p-3 flex flex-col gap-5">
+    <div className="px-3 flex flex-col gap-5">
       <Card className="shadow-none">
         <CardHeader className="py-4">
           <CardTitle>Mis servicios</CardTitle>
-          <CardDescription>Nivel de riesgo por servicio</CardDescription>
         </CardHeader>
-        <CardContent>
-          <ChartContainer config={homeChartConfig} style={{ width: '100%', height: 230 }}>
-            <BarChart
-              accessibilityLayer
-              data={chartData}
-              margin={{
-                top: 24,
-              }}
-            >
-              <CartesianGrid vertical={false} />
-              <XAxis
-                axisLine={false}
-                dataKey="riskLevel"
-                tickFormatter={a => homeChartConfig[a]?.label as string}
-                tickLine={false}
-                tickMargin={10}
-              />
-              <Bar
+        <CardContent className="px-0">
+          <ChartContainer
+            config={homeChartConfig}
+            className="mx-auto aspect-square max-h-[300px]"
+            style={{ width: '100%', height: 230 }}
+          >
+            <PieChart>
+              <Pie
+                data={chartData}
                 dataKey="count"
-                radius={4}
-                barSize={42}
                 onClick={bar => {
                   setSelectedRiskLevel(bar.riskLevel as RiskLevels);
                   setOpen(true);
                 }}
-                activeBar={({ ...a }) => <Rectangle {...a} stroke={a.payload.fill} />}
-              >
-                <LabelList position="top" offset={12} className="fill-foreground" fontSize={12} />
-              </Bar>
-            </BarChart>
+                label={({ payload, ...props }) => {
+                  return (
+                    <text
+                      cx={props.cx}
+                      cy={props.cy}
+                      x={props.x}
+                      y={props.y}
+                      textAnchor={props.textAnchor}
+                      dominantBaseline={props.dominantBaseline}
+                      fill="hsla(var(--foreground))"
+                    >
+                      {payload.count}
+                    </text>
+                  );
+                }}
+              />
+            </PieChart>
           </ChartContainer>
+          <div className="mx-auto flex justify-center gap-4 text-xs">
+            {Object.entries(homeChartConfig)
+              .toReversed()
+              .map(([riskLevel, config], i) => {
+                if (config.label === 'Inexistente') return null;
+                const count = chartData.find(a => a.riskLevel === riskLevel)?.count;
+                return (
+                  <div key={i} className="flex items-center gap-2">
+                    <div
+                      className="h-2 w-2 shrink-0 rounded-[2px]"
+                      style={{
+                        backgroundColor: config.color,
+                      }}
+                    />
+                    <div>
+                      <span>{config.label} </span>
+                      <span className="text-xs">{count ?? 0}</span>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
         </CardContent>
       </Card>
       <HomeRiskServiceDialog onClose={() => setOpen(false)} open={open} selectedRiskLevel={selectedRiskLevel} />
