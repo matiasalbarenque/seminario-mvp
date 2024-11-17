@@ -389,12 +389,14 @@ export const servicesMock: ServiceMock[] = [
           description:
             'El servicio puede guardar información sobre ti de manera indefinida, como tu dirección en Internet y detalles de tu actividad.',
           source: 'https://edit.tosdr.org/points/12220',
+          imgUrl: 'keepData.png',
         },
         {
           title: 'Pueden usar tu contenido sin permiso.',
           description:
             'El servicio puede usar tu contenido sin tu aprobación ni compensación, pero no reclama la propiedad sobre él.',
           source: 'https://edit.tosdr.org/points/1035',
+          imgUrl: 'keepData.png',
         },
         {
           title: 'La app pide permisos demás.',
@@ -1343,13 +1345,6 @@ export const servicesMock: ServiceMock[] = [
           description: 'Tus datos pueden ser utilizados para diferentes propósitos, como marketing o análisis.',
           source: 'https://edit.tosdr.org/points/31547',
           imgUrl: 'thumbsDown.png',
-        },
-        {
-          title: 'Comparten tus datos',
-          description:
-            'El servicio puede compartir tus datos con empresas necesarias para su funcionamiento, como aquellas que ayudan a evitar el spam.',
-          source: 'https://edit.tosdr.org/points/31551',
-          imgUrl: 'shareDataYellow.png',
         },
         {
           title: 'Usan tus datos para publicidad',
