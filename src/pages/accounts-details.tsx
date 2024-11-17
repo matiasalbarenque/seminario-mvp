@@ -10,7 +10,7 @@ export const AccountsDetailsPage = () => {
   const params = useParams();
   const appStore = useAppStore();
   const [breach, setBreach] = useState<Breach>();
-  const [isLoading, setIsLoading] = useState(!true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     appStore.setAppConfig({

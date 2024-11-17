@@ -12,7 +12,7 @@ export const Header = (props: HeaderProps) => {
       <button className="w-10 h-10 flex justify-center items-center" onClick={() => navigate(-1)}>
         <Icon icon="solar:arrow-left-outline" size={26} />
       </button>
-      <div className="flex-1 flex justify-center items-center font-medium">{title}</div>
+      <div className="flex-1 px-6 flex justify-center items-center font-medium text-center leading-tight">{title}</div>
       <div className="avatar-wrapper w-10 h-10 flex justify-center items-center">
         <HeaderAvatar />
       </div>

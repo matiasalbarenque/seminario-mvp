@@ -320,3 +320,11 @@ footer a.active svg.iconify:not(.active) {
 footer a.active svg.iconify.active {
   display: block;
 }
+
+.premium-separator {
+  background: linear-gradient(to left, #8f6B29, #eecf7d, #DF9F28);
+}
+.premium-avatar {
+  border: 2px solid #c58f2b;
+  background: linear-gradient(to right bottom, #ffe49b, #d0962a)
+}

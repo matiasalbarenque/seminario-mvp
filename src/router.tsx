@@ -10,6 +10,7 @@ import { AccountsDetailsPage } from './pages/accounts-details';
 import { NotificationsPage } from './pages/notifications';
 import { NotificationsDetailsPage } from './pages/notifications-details';
 import { TermsConditionsPage } from './pages/terms-conditions';
+import { PremiumAdvicesPage } from './pages/premium-advices';
 
 export const Router = () => (
   <BrowserRouter>
@@ -25,6 +26,7 @@ export const Router = () => (
         <Route path="notifications" element={<NotificationsPage />} />
         <Route path="notifications/:id" element={<NotificationsDetailsPage />} />
         <Route path="terms-conditions" element={<TermsConditionsPage />} />
+        <Route path="premium-advices/:name" element={<PremiumAdvicesPage />} />
       </Route>
     </Routes>
   </BrowserRouter>

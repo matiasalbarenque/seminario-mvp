@@ -34,7 +34,7 @@ export const HeaderAvatar = () => {
           <Icon icon="solar:user-rounded-linear" size={18} className="mr-2" />
           Mi perfil
         </DropdownMenuItem>
-        <Link to="/notifications">
+        <Link to="/notifications" className="pointer-events-none">
           <DropdownMenuItem disabled>
             <div className="mr-2">
               <Icon icon="ion:notifications-outline" size={18} />
