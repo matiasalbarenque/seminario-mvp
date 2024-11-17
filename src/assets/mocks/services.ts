@@ -206,55 +206,62 @@ export const servicesMock: ServiceMock[] = [
           imgUrl: 'ubicacion.png',
         },
         {
-          title: 'Pueden mantener tus datos por motivos comerciales o legales',
+          title: 'Pueden mantener tus datos',
           description:
             'Aunque terminen el período de retención de datos o pidas eliminar tu información, pueden seguir guardándola por razones comerciales (como prevención de fraudes) o por obligaciones legales.',
           source: 'https://edit.tosdr.org/points/13937',
           imgUrl: 'keepData.png',
         },
         {
-          title: 'Comparten tus datos con terceros no esenciales',
+          title: 'Comparten tus datos',
           description:
             'El servicio puede compartir tus datos personales con terceros que no son necesarios para su funcionamiento, como socios comerciales que los utilizan para publicidad.',
           source: 'https://edit.tosdr.org/points/14756',
+          imgUrl: 'shareDataYellow.png',
         },
         {
-          title: 'Pueden eliminar tu cuenta sin previo aviso',
+          title: 'Pueden eliminar tu cuenta',
           description:
             'En cualquier momento, el servicio puede suspender o eliminar tu cuenta sin advertencia ni explicación.',
           source: 'https://edit.tosdr.org/points/14762',
+          imgUrl: 'trashYellow.png',
         },
       ],
       a: [
         {
-          title: 'Puedes acceder, corregir y eliminar tus datos',
+          title: 'Puedes gestionar tus datos personales',
           description:
             'Tienes el derecho de acceder a los datos personales que el servicio tiene sobre ti, corregirlos o eliminarlos por completo, especialmente en servicios que cumplen con el GDPR.',
           source: 'https://edit.tosdr.org/points/5844',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'Pueden consultarse los cambios en los acuerdos',
           description:
             'Este servicio permite ver las versiones anteriores de sus acuerdos, lo que te ayuda a entender cómo cambian con el tiempo en cuanto a los derechos de los usuarios.',
           source: 'https://edit.tosdr.org/points/950',
+          imgUrl: 'questionGreen.png',
         },
         {
           title: 'Mantienes la propiedad de tu contenido',
           description:
             'El servicio no reclama la propiedad sobre el contenido que generas. Tú sigues siendo dueño de lo que publicas, sin necesidad de renunciar a derechos morales.',
           source: 'https://edit.tosdr.org/points/13946',
+          imgUrl: 'property.png',
         },
         {
           title: 'Tus sugerencias pueden ser usadas sin compensación',
           description:
             'Si envías sugerencias o ideas, el servicio puede utilizarlas sin necesidad de compensación o permiso previo, aunque no reclama la propiedad sobre ellas.',
           source: 'https://edit.tosdr.org/points/13950',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Puedes obtener una copia de tus datos',
           description:
             'Puedes solicitar una copia de los datos que el servicio tiene sobre ti, lo que te permitirá ver qué información personal se está procesando y almacenando.',
           source: 'https://edit.tosdr.org/points/5843',
+          imgUrl: 'shareDataGreen.png',
         },
       ],
     },
@@ -328,12 +335,14 @@ export const servicesMock: ServiceMock[] = [
           description:
             'Algunos servicios muestran versiones anteriores de sus acuerdos para que puedas ver cómo cambian con el tiempo.',
           source: 'https://edit.tosdr.org/points/12787',
+          imgUrl: 'questionMark.png',
         },
         {
           title: 'Pueden usar tus sugerencias sin pagarte.',
           description:
             'Si das ideas o sugerencias, el servicio puede usarlas sin pagarte, pero no reclama la propiedad de tus ideas.',
           source: 'https://edit.tosdr.org/points/8550',
+          imgUrl: 'thumbsUp.png',
         },
       ],
     },
@@ -401,18 +410,21 @@ export const servicesMock: ServiceMock[] = [
           description:
             'El servicio puede usar tus ideas o comentarios sin compensarte ni pedirte permiso, pero no reclama la propiedad sobre ellos.',
           source: 'https://edit.tosdr.org/points/12227',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Puedes pedir acceso a tus datos.',
           description:
             'Tienes el derecho de ver, corregir o eliminar tus datos personales guardados por el servicio, especialmente en servicios que cumplen con el GDPR.',
           source: 'https://edit.tosdr.org/points/12187',
+          imgUrl: 'shareDataGreen.png',
         },
         {
           title: 'Sigues siendo dueño de tu contenido.',
           description:
             'Este servicio no reclama la propiedad sobre lo que creas, y no necesitas renunciar a tus derechos al publicar tu contenido.',
           source: 'https://edit.tosdr.org/points/27164',
+          imgUrl: 'property.png',
         },
       ],
     },
@@ -461,22 +473,18 @@ export const servicesMock: ServiceMock[] = [
           imgUrl: 'plus.png',
         },
         {
-          title: 'Recopilan muchos datos tuyos',
+          title: 'Recopilan muchos de tus datos',
           description:
             'El servicio recoge datos como tu nombre, dirección, contactos y hasta tus hábitos, para crear un perfil sobre ti.',
           source: 'https://edit.tosdr.org/points/20643',
+          imgUrl: 'keepData.png',
         },
         {
           title: 'Comparte tus datos con terceros',
           description: 'Tus datos pueden ser compartidos con empresas externas, como para publicidad dirigida.',
           source: 'https://edit.tosdr.org/points/20642',
-        },
-        {
-          title: 'Guardan tus datos por más tiempo',
-          description:
-            'Pueden mantener tus datos personales por motivos comerciales o legales, incluso si pides que los eliminen.',
-          source: 'https://edit.tosdr.org/points/20653',
-        },
+          imgUrl: 'shareData.png',
+        }
       ],
       a: [
         {
@@ -484,11 +492,13 @@ export const servicesMock: ServiceMock[] = [
           description:
             'No necesitas renunciar a tus derechos sobre el contenido que subes. El servicio no reclama propiedad sobre él.',
           source: 'https://edit.tosdr.org/points/20614',
+          imgUrl: 'property.png',
         },
         {
-          title: 'Puedes eliminar tu contenido',
+          title: 'Puedes gestionar tus datos personales',
           description: 'Tienes el derecho de pedir que eliminen tu contenido en cualquier momento.',
           source: 'https://edit.tosdr.org/points/5888',
+          imgUrl: 'trashGreen.png',
         },
       ],
     },
@@ -555,17 +565,19 @@ export const servicesMock: ServiceMock[] = [
           description:
             'Este servicio no reclama propiedad sobre el contenido que subes y tú mantienes tus derechos sobre él.',
           source: 'https://edit.tosdr.org/points/8087',
+          imgUrl: 'property.png',
         },
         {
           title: 'Te informan sobre la recopilación de tus datos',
           description: 'El servicio explica cómo y cuándo recopilan tus datos personales.',
           source: 'https://edit.tosdr.org/points/12982',
+          imgUrl: 'property.png',
         },
         {
           title: 'Respetan la opción de No Rastrear (DNT)',
           description: 'Si activas la opción de No Rastrear en tu navegador, el servicio dejará de rastrearte.',
           source: 'https://edit.tosdr.org/points/13013',
-          imgUrl: 'cookies.png',
+          imgUrl: 'greenTracking.png',
         },
       ],
     },
@@ -611,41 +623,46 @@ export const servicesMock: ServiceMock[] = [
           title: 'Usan herramientas de otras empresas para publicidad',
           description: 'Usa herramientas de otras empresas para mostrarte anuncios personalizados.',
           source: 'https://edit.tosdr.org/points/18018',
-          imgUrl: 'cookies.png',
+          imgUrl: 'ads.png',
         },
         {
           title: 'Recopilan muchos tipos de datos personales',
           description: 'Recoge información personal como tu nombre, dirección, contactos, y más.',
           source: 'https://edit.tosdr.org/points/17996',
+          imgUrl: 'keepData.png',
         },
         {
           title: 'Mantienen datos personales por razones legales o comerciales',
           description:
             'Aunque elimines tus datos, pueden mantenerlos por razones legales o para fines comerciales, como detectar fraudes.',
           source: 'https://edit.tosdr.org/points/18012',
+          imgUrl: 'keepData.png',
         },
         {
-          title: 'Comparten tus datos con terceros no esenciales',
+          title: 'Comparten tus datos',
           description: 'El servicio puede compartir tus datos con empresas no esenciales, como anunciantes.',
           source: 'https://edit.tosdr.org/points/18006',
+          imgUrl: 'shareDataYellow.png',
         },
         {
           title: 'Pueden eliminar o suspender tu cuenta sin aviso',
           description:
             'Tu cuenta puede ser eliminada o suspendida en cualquier momento, sin previo aviso ni explicación.',
           source: 'https://edit.tosdr.org/points/17992',
+          imgUrl: 'trashYellow.png',
         },
         {
           title: 'Te siguen en redes sociales',
           description:
             'El servicio utiliza tecnologías para seguir tu actividad en redes sociales, como cuando interactúas con el contenido o haces clic en enlaces relacionados con el servicio.',
           source: 'https://edit.tosdr.org/points/18022',
-          imgUrl: 'cookies.png',
+          imgUrl: 'webTracking.png',
         },
         {
           title: 'Recopilan información a través de terceros',
           description: 'El servicio puede recopilar datos sobre ti desde otras fuentes, ya sean identificables o no.',
           source: 'https://edit.tosdr.org/points/17998',
+          imgUrl: 'shareDataYellow.png',
         },
         {
           title: 'Te rastrean con tecnologías de seguimiento',
@@ -654,113 +671,64 @@ export const servicesMock: ServiceMock[] = [
           imgUrl: 'cookies.png',
         },
         {
-          title: 'Usan tus datos para marketing',
-          description: 'Tus datos pueden ser utilizados para enviarte publicidad personalizada o recomendaciones.',
-          source: 'https://edit.tosdr.org/points/18004',
-          imgUrl: 'ads.png',
-        },
-        {
-          title: 'Combinan tu perfil en varios servicios',
-          description:
-            'Si usas varios servicios de la misma empresa, pueden combinar tu información para crear un perfil más completo.',
-          source: 'https://edit.tosdr.org/points/18019',
-        },
-        {
-          title: 'Pueden vender tus datos en transacciones financieras',
+          title: 'Pueden vender tus datos',
           description:
             'Si el servicio es vendido o adquirido, tus datos personales podrían ser vendidos o transferidos.',
           source: 'https://edit.tosdr.org/points/18007',
+          imgUrl: 'moneyYellow.png',
         },
         {
-          title: 'Usan tus datos para publicidad dirigida de terceros',
+          title: 'Usan tus datos para publicidad',
           description:
             'Tus datos son vendidos o compartidos con empresas de publicidad para mostrarte anuncios específicos.',
           source: 'https://edit.tosdr.org/points/18005',
           imgUrl: 'ads.png',
-        },
-        {
-          title: 'Comparten tus datos con terceros necesarios para su operación',
-          description: 'El servicio puede compartir tus datos con terceros que son esenciales para su funcionamiento.',
-          source: 'https://edit.tosdr.org/points/18008',
-        },
-        {
-          title: 'No asumen responsabilidad por acceso no autorizado a tus datos',
-          description: 'El servicio no se hace responsable si alguien accede a tus datos sin permiso.',
-          source: 'https://edit.tosdr.org/points/17987',
-        },
-        {
-          title: 'Recopilan tus datos biométricos',
-          description:
-            'El servicio puede recoger tus datos biométricos, como huellas dactilares o reconocimiento facial.',
-          source: 'https://edit.tosdr.org/points/18001',
-        },
-        {
-          title: 'Usan tus datos para crear un perfil publicitario',
-          description: 'Tu información es usada para crear un perfil de usuario con fines publicitarios.',
-          source: 'https://edit.tosdr.org/points/18020',
-        },
-        {
-          title: 'Tus datos se almacenan globalmente',
-          description:
-            'Tus datos pueden ser almacenados en servidores en diferentes países, algunos con menos protección de datos.',
-          source: 'https://edit.tosdr.org/points/18013',
-        },
-        {
-          title: 'Usan herramientas para recoger estadísticas',
-          description:
-            'El servicio utiliza herramientas como Google Analytics para obtener información sobre cómo los usuarios usan el servicio, como las páginas que visitan o el tiempo que pasan en ellas.',
-          source: 'https://edit.tosdr.org/points/18017',
-          imgUrl: 'cookies.png',
-        },
-        {
-          title: 'Usan píxeles de seguimiento en la comunicación con el usuario',
-          description:
-            'El servicio usa píxeles para medir la actividad del usuario en su plataforma, generalmente para estadísticas.',
-          source: 'https://edit.tosdr.org/points/18021',
-        },
+        }
       ],
       a: [
         {
-          title: 'Puedes acceder, corregir y eliminar tus datos',
+          title: 'Puedes gestionar tus datos personales',
           description:
             'Puedes pedir acceso a tus datos personales, corregir cualquier error y eliminar tus datos permanentemente.',
           source: 'https://edit.tosdr.org/points/18009',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'Te informan sobre la recopilación de tus datos',
           description: 'El servicio explica cómo y cuándo recopilan tus datos personales.',
           source: 'https://edit.tosdr.org/points/18002',
+          imgUrl: 'knowledge.png',
         },
         {
           title: 'Revisan su política de privacidad regularmente',
           description: 'El servicio actualiza su política de privacidad y te notifica cuando lo hace.',
           source: 'https://edit.tosdr.org/points/18014',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Te explican cómo usan tus datos personales',
           description: 'El servicio te informa sobre el uso que le dan a tus datos y cómo los comparten.',
           source: 'https://edit.tosdr.org/points/18024',
+          imgUrl: 'knowledge.png',
         },
         {
           title: 'Tienen un mecanismo para quejas sobre datos personales',
           description: 'El servicio tiene un sistema para que puedas presentar quejas sobre el manejo de tus datos.',
           source: 'https://edit.tosdr.org/points/18025',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Te explican qué datos recopilan sobre ti',
           description:
             'La política de privacidad describe los datos que el servicio recopila, como tu nombre o dirección.',
           source: 'https://edit.tosdr.org/points/18023',
-        },
-        {
-          title: 'Te avisan antes del mantenimiento del sitio web',
-          description: 'El servicio te avisa si habrá mantenimiento que afecte tu experiencia.',
-          source: 'https://edit.tosdr.org/points/17991',
+          imgUrl: 'knowledge.png',
         },
         {
           title: 'Puedes rechazar la publicidad dirigida',
           description: 'El servicio usa tus datos para publicidad dirigida, pero puedes optar por no participar.',
           source: 'https://edit.tosdr.org/points/18011',
+          imgUrl: 'adsGreen.png',
         },
       ],
     },
@@ -796,11 +764,11 @@ export const servicesMock: ServiceMock[] = [
       ],
       c: [
         {
-          title: 'Comparten tus datos con terceros no esenciales',
+          title: 'Comparten tus datos',
           description:
             'Tus datos pueden ser compartidos con empresas o socios comerciales que no son esenciales para el funcionamiento del servicio, como anunciantes.',
           source: 'https://edit.tosdr.org/points/13326',
-          imgUrl: 'keepData.png',
+          imgUrl: 'shareDataYellow.png',
         },
         {
           title: 'Usan herramientas para recoger estadísticas',
@@ -829,12 +797,14 @@ export const servicesMock: ServiceMock[] = [
           title: 'Te informarán sobre consultas gubernamentales que involucren tus datos',
           description: 'Hará esfuerzos razonables para informarte si el gobierno solicita tus datos personales.',
           source: 'https://edit.tosdr.org/points/5613',
+          imgUrl: 'knowledge.png',
         },
         {
           title: 'Mantienes la propiedad de tu contenido',
           description:
             'No necesitas renunciar a tus derechos sobre el contenido que publiques, y el servicio no reclama propiedad sobre él.',
           source: 'https://edit.tosdr.org/points/8175',
+          imgUrl: 'property.png',
         },
       ],
     },
@@ -865,18 +835,20 @@ export const servicesMock: ServiceMock[] = [
           title: 'Pueden bloquear o censurar tu contenido',
           description: 'El servicio puede rechazar o eliminar cualquier contenido de usuarios sin explicar por qué.',
           source: 'https://edit.tosdr.org/points/10882',
+          imgUrl: 'censoring.png',
         },
         {
           title: 'Tu cuenta puede ser eliminada sin aviso',
           description:
             'El servicio puede suspender o eliminar tu cuenta en cualquier momento, sin previo aviso ni razón.',
           source: 'https://edit.tosdr.org/points/35062',
+          imgUrl: 'trashYellow.png',
         },
         {
           title: 'Recopilan tus datos a través de otros',
           description: 'El servicio puede obtener información sobre ti de otras fuentes fuera de su plataforma.',
           source: 'https://edit.tosdr.org/points/35076',
-          imgUrl: 'keepData.png',
+          imgUrl: 'webTracking.png',
         },
         {
           title: 'Recopilan más datos a través de promociones',
@@ -889,7 +861,7 @@ export const servicesMock: ServiceMock[] = [
           description:
             'Si el servicio cambia de dueño o se vende, tus datos personales podrían ser transferidos a otras empresas.',
           source: 'https://edit.tosdr.org/points/6121',
-          imgUrl: 'keepData.png',
+          imgUrl: 'moneyYellow.png',
         },
         {
           title: 'Te siguen en línea',
@@ -902,6 +874,7 @@ export const servicesMock: ServiceMock[] = [
           description:
             'Si tienes un problema con el servicio, te obligan a resolverlo fuera de los tribunales, mediante un árbitro.',
           source: 'https://edit.tosdr.org/points/11441',
+          imgUrl: 'lawyerBriefcase.png',
         },
       ],
       a: [
@@ -909,12 +882,14 @@ export const servicesMock: ServiceMock[] = [
           title: 'Tus datos solo se comparten con tu permiso',
           description: 'El servicio no compartirá tus datos con otras empresas sin tu consentimiento.',
           source: 'https://edit.tosdr.org/points/11459',
+          imgUrl: 'shareDataGreen.png',
         },
         {
-          title: 'Puedes eliminar tu contenido cuando quieras',
+          title: 'Puedes gestionar tus datos personales',
           description:
             'Puedes eliminar tu contenido en cualquier momento y el servicio lo hará dentro de un plazo razonable.',
           source: 'https://edit.tosdr.org/points/35058',
+          imgUrl: 'trashGreen.png',
         },
       ],
     },
@@ -953,12 +928,8 @@ export const servicesMock: ServiceMock[] = [
           description:
             'El servicio puede eliminar o suspender tu cuenta en cualquier momento, sin previo aviso ni explicación.',
           source: 'https://edit.tosdr.org/points/21520',
-        },
-        {
-          title: 'No puedes unirte a demandas colectivas',
-          description: 'Al aceptar estos términos, renuncias a participar en demandas colectivas contra el servicio.',
-          source: 'https://edit.tosdr.org/points/12768',
-        },
+          imgUrl: 'trashYellow.png',
+        }
       ],
       a: [
         {
@@ -966,17 +937,20 @@ export const servicesMock: ServiceMock[] = [
           description:
             'Tienes derecho a acceder, corregir o eliminar tus datos personales si el servicio cumple con regulaciones como el GDPR.',
           source: 'https://edit.tosdr.org/points/12770',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'El servicio puede usar tus sugerencias sin compensación',
           description: 'Si envías sugerencias o ideas, el servicio puede usarlas sin pagarte ni pedirte permiso.',
           source: 'https://edit.tosdr.org/points/12737',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Mantienes los derechos sobre tu contenido',
           description:
             'El servicio no toma propiedad de tu contenido y no necesitas renunciar a derechos sobre él al publicarlo.',
           source: 'https://edit.tosdr.org/points/27163',
+          imgUrl: 'property.png',
         },
       ],
     },
@@ -1014,13 +988,8 @@ export const servicesMock: ServiceMock[] = [
           title: 'Tu cuenta puede ser eliminada sin aviso',
           description: 'El servicio puede suspender o eliminar tu cuenta sin previo aviso ni razón.',
           source: 'https://edit.tosdr.org/points/21520',
-        },
-        {
-          title: 'No puedes unirte a demandas colectivas',
-          description:
-            'Al aceptar estos términos, renuncias a la opción de unirte a demandas colectivas contra el servicio.',
-          source: 'https://edit.tosdr.org/points/12768',
-        },
+          imgUrl: 'trashYellow.png',
+        }
       ],
       a: [
         {
@@ -1028,17 +997,20 @@ export const servicesMock: ServiceMock[] = [
           description:
             'Tienes derecho a acceder, corregir o eliminar tus datos personales, si el servicio cumple con regulaciones como el GDPR.',
           source: 'https://edit.tosdr.org/points/12770',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'El servicio puede usar tus sugerencias sin compensación',
           description: 'Si envías ideas o sugerencias, el servicio puede usarlas sin pagarte ni pedirte permiso.',
           source: 'https://edit.tosdr.org/points/12737',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Mantienes los derechos sobre tu contenido',
           description:
             'El servicio no toma propiedad de lo que publicas y no necesitas renunciar a derechos sobre tu contenido.',
           source: 'https://edit.tosdr.org/points/27163',
+          imgUrl: 'property.png',
         },
       ],
     },
@@ -1076,13 +1048,8 @@ export const servicesMock: ServiceMock[] = [
           title: 'Tu cuenta puede ser eliminada sin aviso',
           description: 'El servicio puede suspender o eliminar tu cuenta sin previo aviso ni razón.',
           source: 'https://edit.tosdr.org/points/21520',
-        },
-        {
-          title: 'No puedes unirte a demandas colectivas',
-          description:
-            'Al aceptar estos términos, renuncias a la opción de unirte a demandas colectivas contra el servicio.',
-          source: 'https://edit.tosdr.org/points/12768',
-        },
+          imgUrl: 'trashYellow.png',
+        }
       ],
       a: [
         {
@@ -1090,17 +1057,20 @@ export const servicesMock: ServiceMock[] = [
           description:
             'Tienes derecho a acceder, corregir o eliminar tus datos personales, si el servicio cumple con regulaciones como el GDPR.',
           source: 'https://edit.tosdr.org/points/12770',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'El servicio puede usar tus sugerencias sin compensación',
           description: 'Si envías ideas o sugerencias, el servicio puede usarlas sin pagarte ni pedirte permiso.',
           source: 'https://edit.tosdr.org/points/12737',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Mantienes los derechos sobre tu contenido',
           description:
             'El servicio no toma propiedad de lo que publicas y no necesitas renunciar a derechos sobre tu contenido.',
           source: 'https://edit.tosdr.org/points/27163',
+          imgUrl: 'property.png',
         },
       ],
     },
@@ -1139,6 +1109,7 @@ export const servicesMock: ServiceMock[] = [
           description:
             'El servicio puede actualizar sus condiciones en cualquier momento, sin notificarte antes ni después del cambio.',
           source: 'https://edit.tosdr.org/points/1494',
+          imgUrl: 'thumbsDown.png',
         },
         {
           title: 'Recopilan muchos tipos de datos personales',
@@ -1154,18 +1125,21 @@ export const servicesMock: ServiceMock[] = [
           description:
             'El servicio eliminará tus datos cuando ya no los necesiten, dependiendo del tipo de información recopilada.',
           source: 'https://edit.tosdr.org/points/5545',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'Puedes gestionar tus datos personales',
           description:
             'Puedes acceder, corregir o eliminar tus datos personales, especialmente si el servicio cumple con regulaciones de privacidad como el GDPR.',
           source: 'https://edit.tosdr.org/points/5544',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'Las leyes que protegen tu privacidad son fuertes',
           description:
             'Las condiciones están reguladas por leyes de privacidad de países que protegen bien tus datos personales.',
           source: 'https://edit.tosdr.org/points/20939',
+          imgUrl: 'thumbsUp.png',
         },
       ],
     },
@@ -1205,26 +1179,8 @@ export const servicesMock: ServiceMock[] = [
           description:
             'En caso de un conflicto, el servicio obliga a los usuarios a usar un árbitro y renunciar a su derecho a un juicio por jurado.',
           source: 'https://edit.tosdr.org/points/13359',
-        },
-        {
-          title: 'Pueden recopilar más datos mediante promociones',
-          description: 'Se pueden recoger datos adicionales a través de concursos, encuestas, sorteos o promociones.',
-          source: 'https://edit.tosdr.org/points/13983',
-          imgUrl: 'keepData.png',
-        },
-        {
-          title: 'Renuncias a demandar colectivamente',
-          description:
-            'Al aceptar los términos, renuncias a tu derecho de unirte a demandas colectivas, lo que podría limitar tus opciones legales.',
-          source: 'https://edit.tosdr.org/points/13360',
-        },
-        {
-          title: 'Tus datos pueden ser entregados al gobierno sin aviso',
-          description:
-            'El servicio puede entregar tus datos a las autoridades si lo solicitan, sin avisarte de antemano.',
-          source: 'https://edit.tosdr.org/points/13990',
-          imgUrl: 'keepData.png',
-        },
+          imgUrl: 'lawyerBriefcase.png',
+        }
       ],
       a: [
         {
@@ -1232,12 +1188,14 @@ export const servicesMock: ServiceMock[] = [
           description:
             'Tienes el derecho de acceder, corregir o eliminar tus datos personales, si el servicio cumple con regulaciones de privacidad como el GDPR.',
           source: 'https://edit.tosdr.org/points/13994',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Tu cuenta puede ser suspendida por incumplir los términos repetidamente',
           description:
             'Si violas los términos del servicio varias veces, tu cuenta puede ser suspendida. No se suspenderá por una sola infracción.',
           source: 'https://edit.tosdr.org/points/13355',
+          imgUrl: 'thumbsUp.png',
         },
       ],
     },
@@ -1250,35 +1208,25 @@ export const servicesMock: ServiceMock[] = [
     termsConditionsRisks: {
       c: [
         {
-          title: 'Tus datos pueden guardarse por tiempo indefinido',
-          description:
-            'El servicio puede guardar tus datos, como tu dirección en Internet y detalles sobre tu navegador, por tiempo indefinido. Esto les permite seguir tu actividad a lo largo del tiempo.',
-          source: 'https://edit.tosdr.org/points/13026',
-        },
-        {
           title: 'Tus datos pueden ser compartidos con otras empresas',
           description:
             'El servicio puede compartir tus datos con otras empresas, como socios comerciales, aunque no sea necesario para el funcionamiento del servicio, por ejemplo, para mostrar anuncios.',
           source: 'https://edit.tosdr.org/points/21741',
-          imgUrl: 'ads.png',
+          imgUrl: 'shareDataYellow.png',
         },
         {
           title: 'Recopilan varios tipos de datos personales',
           description:
             'El servicio recoge diferentes tipos de datos personales, como tu nombre, dirección, datos de contacto y más.',
           source: 'https://edit.tosdr.org/points/21744',
+          imgUrl: 'keepData.png',
         },
         {
           title: 'Pueden suspender o eliminar tu cuenta sin aviso',
           description:
             'El servicio puede suspender o eliminar tu cuenta en cualquier momento, sin explicaciones ni advertencias.',
           source: 'https://edit.tosdr.org/points/14582',
-        },
-        {
-          title: 'Recopilan datos sobre ti de otras fuentes',
-          description:
-            'El servicio puede obtener información sobre ti de otras fuentes, incluso si esos datos no te identifican directamente.',
-          source: 'https://edit.tosdr.org/points/11580',
+          imgUrl: 'trashYellow.png',
         },
         {
           title: 'Tus datos pueden ser usados para publicidad',
@@ -1298,12 +1246,14 @@ export const servicesMock: ServiceMock[] = [
           description:
             'Si el servicio es comprado o cambia de dueño, tus datos pueden ser vendidos o transferidos a otras empresas.',
           source: 'https://edit.tosdr.org/points/13034',
+          imgUrl: 'moneyYellow.png',
         },
         {
           title: 'Tus datos se usan para muchos fines',
           description:
             'El servicio usa tus datos no solo para ofrecerte su servicio, sino también para publicidad, análisis y otros propósitos.',
           source: 'https://edit.tosdr.org/points/14585',
+          imgUrl: 'thumbsDown.png',
         },
       ],
       a: [
@@ -1312,12 +1262,14 @@ export const servicesMock: ServiceMock[] = [
           description:
             'El servicio no reclama la propiedad de lo que creas. Tú sigues siendo el dueño de tu contenido y no necesitas renunciar a ningún derecho sobre él.',
           source: 'https://edit.tosdr.org/points/13039',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Tu contenido está protegido',
           description:
             'El contenido que creas está protegido de manera que solo tú puedes acceder a él, evitando que otras personas o el servicio puedan verlo sin tu permiso.',
           source: 'https://edit.tosdr.org/points/11582',
+          imgUrl: 'thumbsUp.png',
         },
       ],
     },
@@ -1339,17 +1291,11 @@ export const servicesMock: ServiceMock[] = [
       ],
       c: [
         {
-          title: 'Usan información de otras páginas para publicidad',
-          description: 'El servicio recopila datos de otras páginas que visitas para mostrarte anuncios relacionados.',
-          source: 'https://edit.tosdr.org/points/31559',
-          imgUrl: 'ads.png',
-        },
-        {
-          title: 'Comparten tus datos con otras empresas',
+          title: 'Comparten tus datos',
           description:
             'El servicio puede compartir tus datos con otras empresas, como socios comerciales o para fines publicitarios.',
           source: 'https://edit.tosdr.org/points/31552',
-          imgUrl: 'keepData.png',
+          imgUrl: 'shareDataYellow.png',
         },
         {
           title: 'Pueden dar tus datos a autoridades sin avisar',
@@ -1358,20 +1304,10 @@ export const servicesMock: ServiceMock[] = [
           imgUrl: 'keepData.png',
         },
         {
-          title: 'Registran la página web que te refirió',
-          description: 'El servicio guarda la dirección de la última página que visitaste antes de llegar al sitio.',
-          source: 'https://edit.tosdr.org/points/31543',
-        },
-        {
-          title: 'Usan tus datos para marketing',
-          description: 'El servicio puede usar tus datos para enviarte publicidad personalizada.',
-          source: 'https://edit.tosdr.org/points/31549',
-          imgUrl: 'keepData.png',
-        },
-        {
           title: 'Hay muchos terceros involucrados en su operación',
           description: 'Existen varias empresas externas que ayudan al funcionamiento del servicio.',
           source: 'https://edit.tosdr.org/points/31549',
+          imgUrl: 'thumbsDown.png',
         },
         {
           title: 'Reciben tu ubicación precisa por GPS',
@@ -1390,14 +1326,14 @@ export const servicesMock: ServiceMock[] = [
           title: 'Tus datos se usan para muchos fines',
           description: 'Tus datos pueden ser utilizados para diferentes propósitos, como marketing o análisis.',
           source: 'https://edit.tosdr.org/points/31547',
-          imgUrl: 'keepData.png',
+          imgUrl: 'thumbsDown.png',
         },
         {
-          title: 'Comparten tus datos con empresas necesarias',
+          title: 'Comparten tus datos',
           description:
             'El servicio puede compartir tus datos con empresas necesarias para su funcionamiento, como aquellas que ayudan a evitar el spam.',
           source: 'https://edit.tosdr.org/points/31551',
-          imgUrl: 'keepData.png',
+          imgUrl: 'shareDataYellow.png',
         },
         {
           title: 'Usan tus datos para publicidad',
@@ -1405,67 +1341,44 @@ export const servicesMock: ServiceMock[] = [
           source: 'https://edit.tosdr.org/cases/216',
           imgUrl: 'ads.png',
         },
-        {
-          title: 'Verifican tu información personal',
-          description:
-            'El servicio puede revisar y verificar los datos que proporcionas, lo que puede afectar tu privacidad.',
-          source: 'https://edit.tosdr.org/points/31531',
-        },
-        {
-          title: 'Tus datos pueden estar en cualquier parte del mundo',
-          description:
-            'Tus datos pueden ser almacenados en diferentes países, que tienen leyes de privacidad distintas.',
-          source: 'https://edit.tosdr.org/points/31555',
-          imgUrl: 'keepData.png',
-        },
       ],
       a: [
-        {
-          title: 'No tienes que aceptar arbitraje obligatorio',
-          description:
-            'No estás obligado a resolver disputas mediante arbitraje, lo cual puede ser menos justo que un juicio convencional.',
-          source: 'https://edit.tosdr.org/points/31539',
-        },
         {
           title: 'Puedes acceder, corregir o eliminar tus datos',
           description: 'Tienes derecho a ver, corregir o eliminar los datos que el servicio tiene sobre ti.',
           source: 'https://edit.tosdr.org/points/31558',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'Eliminan tus datos cuando ya no se necesitan',
           description: 'El servicio eliminará tus datos una vez que ya no sean necesarios para su funcionamiento.',
           source: 'https://edit.tosdr.org/points/31557',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'Te informan sobre el uso de tus datos',
           description: 'El servicio te explica en su Política de Privacidad cómo usan y comparten tus datos.',
           source: 'https://edit.tosdr.org/points/31560',
+          imgUrl: 'knowledge.png',
         },
         {
           title: 'Te dicen qué datos recopilan',
           description: 'El servicio te informa qué tipo de datos recopila sobre ti en su Política de Privacidad.',
           source: 'https://edit.tosdr.org/points/31561',
+          imgUrl: 'knowledge.png',
         },
         {
           title: 'Tus datos no se venden',
           description: 'El servicio asegura que no venderá tus datos personales a otras empresas.',
           source: 'https://edit.tosdr.org/points/31548',
-        },
-        {
-          title: 'Puedes usar seudónimos',
-          description: 'No es necesario que uses tu nombre real; puedes optar por usar un seudónimo.',
-          source: 'https://edit.tosdr.org/points/31541',
-        },
-        {
-          title: 'Terceros deben mantener la confidencialidad',
-          description: 'Las empresas externas que usan tus datos están obligadas a mantenerlos en privado.',
-          source: 'https://edit.tosdr.org/points/31550',
+          imgUrl: 'moneyGreen.png',
         },
         {
           title: 'Te avisarán antes de cambiar los términos',
           description:
             'El servicio te notificará al menos una semana antes de realizar cambios en los términos del servicio.',
           source: 'https://edit.tosdr.org/points/31540',
+          imgUrl: 'thumbsUp.png',
         },
       ],
     },
@@ -1478,10 +1391,11 @@ export const servicesMock: ServiceMock[] = [
     termsConditionsRisks: {
       c: [
         {
-          title: 'Pueden cambiar las reglas sin avisar',
+          title: 'Pueden cambiar las normas sin avisar',
           description:
             'El servicio puede modificar sus normas en cualquier momento, incluso de manera que afecte tus derechos, sin avisar antes o después de hacer los cambios.',
           source: 'https://edit.tosdr.org/points/8167',
+          imgUrl: 'thumbsDown.png',
         },
       ],
       a: [
@@ -1490,53 +1404,62 @@ export const servicesMock: ServiceMock[] = [
           description:
             'El servicio elimina la información que guarda sobre tu actividad, como tu dirección de internet y detalles del dispositivo, para no seguirte durante mucho tiempo.',
           source: 'https://edit.tosdr.org/points/8854',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'Eliminan tus datos cuando ya no los necesitan',
           description:
             'El servicio borra tus datos personales cuando ya no los necesita. El tiempo que los guarda depende de qué tipo de datos sean y por qué los guardan.',
           source: 'https://edit.tosdr.org/points/17476',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'Te avisan si el gobierno pide tus datos',
           description:
             'Si el gobierno solicita tus datos, el servicio intentará avisarte, por ejemplo, con una notificación oficial.',
           source: 'https://edit.tosdr.org/points/17478',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Puedes borrar tu contenido',
           description:
             'Puedes pedir que eliminen el contenido que subes en cualquier momento, y lo harán dentro de un plazo razonable.',
           source: 'https://edit.tosdr.org/points/17480',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'Tu contenido está protegido',
           description:
             'Todo lo que creas está protegido de tal forma que nadie, ni el servicio, puede acceder a él sin tu permiso.',
           source: 'https://edit.tosdr.org/points/17472',
+          imgUrl: 'thumbsUp.png',
         },
         {
           title: 'Puedes corregir o borrar tus datos',
           description:
             'Tienes derecho a acceder, corregir o eliminar tus datos personales, siempre que el servicio cumpla con las leyes de protección de datos.',
           source: 'https://edit.tosdr.org/points/11971',
+          imgUrl: 'trashGreen.png',
         },
         {
           title: 'Puedes pedir una copia de tus datos',
           description:
             'Puedes solicitar una copia de la información que el servicio tiene sobre ti, para saber qué datos personales están guardados.',
           source: 'https://edit.tosdr.org/points/8168',
+          imgUrl: 'shareDataGreen.png',
         },
         {
           title: 'Te explican qué datos recopilan',
           description: 'La Política de Privacidad te explica qué datos personales recopila el servicio.',
           source: 'https://edit.tosdr.org/points/14681',
+          imgUrl: 'knowledge.png',
         },
         {
           title: 'Te explican cómo usan tus datos',
           description:
             'La Política de Privacidad también te informa sobre cómo se utilizan, procesan y comparten tus datos personales.',
           source: 'https://edit.tosdr.org/points/17470',
+          imgUrl: 'knowledge.png',
         },
       ],
     },
