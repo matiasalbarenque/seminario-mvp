@@ -428,6 +428,22 @@ export const servicesMock: ServiceMock[] = [
         },
       ],
     },
+    advices: [
+      {
+        title: 'Ajuste de publicaciones compartidas',
+        description:
+          'Configura tu perfil como privado en la sección de ajustes de privacidad. Así, solo las personas que apruebes podrán ver tus publicaciones, historias y videos.',
+      },
+      {
+        title: 'Desactiva la ubicación',
+        description: 'Desactiva la ubicación en tus fotos y videos para evitar revelar tu ubicación.',
+      },
+      {
+        title: 'Habilita la autenticación en dos pasos',
+        description:
+          'Habilita la autenticación en dos pasos en la configuración de seguridad para que se requiera un código adicional al iniciar sesión.',
+      },
+    ],
   },
   {
     name: 'linkedin',

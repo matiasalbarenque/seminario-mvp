@@ -1,19 +1,22 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Icon } from '@/components/ui/icon';
 import { ServicesDetailsDialog } from '@/components/services-details-dialog';
 import { ServicesRiskInfoDialog } from '@/components/services-risk-info-dialog';
 import { useAppStore } from '@/store/app';
 import { useServiceStore } from '@/store/service';
+import { useAccountStore } from '@/store/account';
 import type { NoDataPlaceholderProps, ServiceDetailsData } from '@/typings/pages/services-details';
 import type { RiskLevels, TermsConditionsRiskDetails } from '@/typings/mocks/services';
 import { getColorByRiskLevel, getDescriptionByRiskLevel } from '@/assets/utils';
+import antidotoIsotipoSvg from '@/assets/img/antidoto_isotipo.svg';
 
 export const ServicesDetailsPage = () => {
   const params = useParams();
   const appStore = useAppStore();
   const serviceStore = useServiceStore();
+  const accountStore = useAccountStore();
   const [dialogData, setDialogData] = useState<TermsConditionsRiskDetails>();
   const [showDialog, setShowDialog] = useState(false);
   const [showRiskInfoDialog, setShowRiskInfoDialog] = useState(false);
@@ -135,6 +138,37 @@ export const ServicesDetailsPage = () => {
     ));
   };
 
+  const PremiumFeature = () => {
+    const isServiceUsed = accountStore.myServices.find(a => a.name === params?.name)?.usage;
+    if (!service?.advices || !isServiceUsed) return <></>;
+    return (
+      <div className="flex flex-col gap-2.5">
+        <div className="premium-separator flex items-center justify-between px-3 py-2 rounded-md">
+          <div className="text-lg font-medium text-white tracking-wide drop-shadow-md">Funcionalidades Premium</div>
+        </div>
+        <Link to={`/premium-advices/${params?.name}`}>
+          <div className="flex gap-3 p-2 rounded-md">
+            <div className="premium-avatar w-14 h-14 p-1.5 rounded-full overflow-hidden bg-gray-100">
+              <img
+                src={antidotoIsotipoSvg}
+                alt="antidote"
+                width="100%"
+                height="100%"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex-1 flex items-center">
+              <div className="font-medium leading-snug">Aprende cómo reducir los riesgos</div>
+            </div>
+            <div className="w-12 flex justify-center items-center">
+              <Icon icon="ic:baseline-keyboard-arrow-right" size={26} className="opacity-60" />
+            </div>
+          </div>
+        </Link>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="grid grid-rows-[auto] gap-4">
@@ -145,6 +179,7 @@ export const ServicesDetailsPage = () => {
                 {a.type === 'separator' ? <CategorySeparator {...a} /> : <ServiceDetailsContent {...a} />}
               </div>
             ))}
+            <PremiumFeature />
           </div>
         </div>
       </div>

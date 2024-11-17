@@ -8,6 +8,7 @@ export type ServiceMock = {
   label: string;
   riskLevel: RiskLevels;
   termsConditionsRisks: TermsConditionsRisks;
+  advices?: Advice[];
 };
 
 export type TermsConditionsRisks<T = TermsConditionsRiskDetails[]> = {
@@ -23,6 +24,11 @@ export type TermsConditionsRiskDetails = {
   description: string;
   source: string;
   imgUrl?: string;
+};
+
+export type Advice = {
+  title: string;
+  description: string;
 };
 
 export type Service = ServiceMock & {
